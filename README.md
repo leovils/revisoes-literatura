@@ -2,7 +2,16 @@
 
 > Repositório de referência sobre **abordagens de revisão de literatura** em ciências sociais aplicadas, com foco em Administração. Material pedagógico do curso **MTPQI — Métodos e Técnicas de Pesquisa Quantitativa I** do PPGA/UNINOVE.
 
-**🌳 [Árvore de decisão interativa →](https://SEU-USUARIO.github.io/revisoes-literatura-mtpqi/)** *(será o link após publicar via GitHub Pages)*
+**🌳 [Árvore de decisão interativa →](https://leovils.github.io/revisoes-literatura/)**
+
+---
+
+## 📥 Materiais
+
+- 📊 **[Ver apresentação online](aulas/pdf/Familia_Revisoes_MTPQI.pdf)** (PDF, 38 slides) — abre direto no navegador
+- 📊 [Baixar apresentação editável](aulas/pptx/Familia_Revisoes_MTPQI.pptx) (.pptx) — para edição em PowerPoint
+- 📄 [Baixar material completo](aulas/docx/Familia_Revisoes_Literatura.docx) (.docx, 40 páginas) — texto-base para leitura prévia
+- 🌳 **[Widget interativo de decisão](https://leovils.github.io/revisoes-literatura/)** — árvore de decisão online
 
 ---
 
@@ -66,106 +75,3 @@ TCCM, SPAR-4-SLR, ADO — específicos para revisões em business e management.
 ---
 
 ## Como decidir qual usar
-
-```
-PERGUNTA INICIAL: qual o objetivo principal da sua revisão?
-
-├── SINTETIZAR EVIDÊNCIA → família II (Com Protocolo) ou meta-análise
-│     ├── X→Y quantitativo comparável → Meta-análise
-│     ├── X→Y heterogêneo → Sistemática (SLR)
-│     ├── Quali + Quanti → Integrativa
-│     ├── Por que/em que contexto funciona → Realista
-│     ├── Estudos quali → Síntese Temática ou Meta-etnografia
-│     ├── Várias SLRs já existem → Umbrella Review
-│     └── Prazo curto → Rápida
-│
-├── MAPEAR/EXPLORAR CAMPO → família III (Quantitativas) ou Escopo
-│     ├── "O que se sabe sobre X?" → Escopo
-│     ├── Diagnóstico completo → Bibliometria
-│     ├── Raízes intelectuais → Cocitação
-│     ├── Frentes atuais → Acoplamento bibliográfico
-│     ├── Estrutura social → Coautoria
-│     ├── Estrutura conceitual → Coword
-│     └── Tópicos latentes em corpus textual → Topic Modeling (LDA)
-│
-└── ARGUMENTAR/PROPOR TEORIA → família I (Tradicionais) ou família V
-      ├── Contextualização ampla → Narrativa
-      ├── Questionar paradigma → Crítica
-      ├── Propor framework novo → Ensaio teórico-conceitual
-      ├── Atualização recente do campo → Estado da arte
-      └── Revisão em business → TCCM, SPAR-4-SLR ou ADO
-```
-
-Para usar a versão interativa: [abra o widget](widget/index.html) ou acesse via [GitHub Pages](#) após o deploy.
-
----
-
-## Sete princípios transversais
-
-Independente da abordagem escolhida, estes elevam a qualidade e reduzem rejeição em revisão por pares:
-
-1. **Pergunta de pesquisa clara** (PICO, PICOC, SPIDER, CIMO, TCCM)
-2. **Protocolo explícito** — reprodutibilidade é inegociável
-3. **Bases adequadas e justificadas** — WoS + Scopus se complementam
-4. **Strings de busca testadas** — *garbage in, garbage out*
-5. **Dois revisores na triagem** — cego, com kappa de Cohen reportado
-6. **Avaliação de qualidade** — CASP, MMAT, ROBIS, Newcastle-Ottawa
-7. **Reporte conforme guideline** — PRISMA 2020, eMERGe, RAMESES, MARS
-
----
-
-## Estrutura do repositório
-
-```
-revisoes-literatura-mtpqi/
-├── cards/                  # 19 cards em markdown (fonte de verdade)
-│   ├── 01-tradicionais/
-│   ├── 02-com-protocolo/
-│   ├── 03-quantitativas/
-│   ├── 04-sinteses-qualitativas/
-│   └── 05-frameworks-admin/
-├── aulas/
-│   ├── pptx/              # apresentação MTPQI (38 slides)
-│   └── docx/              # texto-base (40 páginas)
-├── widget/                # árvore de decisão interativa (publicada via Pages)
-├── protocolos/            # templates PRISMA, extração, etc.
-├── queries/               # strings de busca por base (WoS, Scopus)
-├── scripts/
-│   ├── R/                 # meta-análise (metafor), bibliometria (bibliometrix)
-│   └── python/            # topic modeling (gensim, BERTopic)
-└── exemplos/              # papers exemplares por abordagem
-```
-
----
-
-## Como usar este material
-
-**Em aula expositiva** → use o PPTX (`aulas/pptx/`).
-**Como leitura prévia** → distribua o DOCX (`aulas/docx/`).
-**Como atividade de fixação** → peça que o aluno use o widget interativo pensando na própria pesquisa e justifique a escolha.
-**Como referência permanente** → cada card é um arquivo `.md` autocontido, navegável pelo GitHub.
-
----
-
-## Como contribuir
-
-Pull requests com correções, exemplos novos ou abordagens adicionais são bem-vindos. Veja [CONTRIBUTING.md](CONTRIBUTING.md).
-
----
-
-## Licença
-
-- **Conteúdo** (textos, slides, widget): [CC BY 4.0](LICENSE-content) — use, adapte, compartilhe com atribuição.
-- **Código** (scripts, build tools): [MIT](LICENSE-code).
-
----
-
-## Citação
-
-Se este material for útil em seu ensino ou pesquisa, cite assim:
-
-> Vils, L. (2026). *Revisões de Literatura — Família Completa: material didático do curso MTPQI*. PPGA/UNINOVE. Disponível em: https://github.com/SEU-USUARIO/revisoes-literatura-mtpqi
-
----
-
-**Prof. Dr. Leonardo Vils** · MTPQI · PPGA/UNINOVE
