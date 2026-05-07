@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Página não encontrada | Família das Revisões de Literatura</title>
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=EB+Garamond:ital,wght@0,400;0,500;1,400&display=swap" rel="stylesheet">
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+
+  html, body {
+    background: #050511;
+    color: #F5F0E1;
+    font-family: 'EB Garamond', Garamond, serif;
+    min-height: 100vh;
+    line-height: 1.55;
+  }
+
+  body {
+    background: radial-gradient(ellipse at top, #15152B 0%, #050511 70%);
+    padding: 32px 16px 48px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+  }
+
+  .container {
+    max-width: 640px;
+    width: 100%;
+    background: #0F0F1E;
+    padding: 56px 40px 48px;
+    border-radius: 8px;
+    border: 1px solid rgba(212, 175, 55, 0.3);
+    box-shadow: 0 0 50px rgba(0,0,0,0.5);
+    text-align: center;
+  }
+
+  @media (max-width: 600px) {
+    .container { padding: 40px 22px 32px; }
+  }
+
+  .ornament {
+    color: #D4AF37;
+    font-size: 14px;
+    letter-spacing: 12px;
+    margin-bottom: 24px;
+    user-select: none;
+  }
+
+  .runa {
+    font-family: 'Cinzel', serif;
+    color: #C99B30;
+    font-size: 96px;
+    font-weight: 700;
+    line-height: 1;
+    margin-bottom: 12px;
+    letter-spacing: 8px;
+    text-shadow: 0 0 30px rgba(212, 175, 55, 0.2);
+  }
+
+  .runa-label {
+    font-family: 'Cinzel', serif;
+    color: #8A7B4A;
+    font-size: 12px;
+    letter-spacing: 4px;
+    text-transform: uppercase;
+    margin-bottom: 36px;
+  }
+
+  h1 {
+    font-family: 'Cinzel', serif;
+    font-weight: 600;
+    color: #E8B86F;
+    font-size: clamp(22px, 4vw, 30px);
+    line-height: 1.25;
+    margin-bottom: 20px;
+    letter-spacing: 1px;
+  }
+
+  .divider {
+    display: block;
+    width: 60px;
+    height: 1px;
+    background: #D4AF37;
+    margin: 22px auto 28px;
+    position: relative;
+  }
+  .divider::before, .divider::after {
+    content: '';
+    position: absolute;
+    width: 5px; height: 5px;
+    background: #D4AF37;
+    border-radius: 50%;
+    top: -2px;
+  }
+  .divider::before { left: -8px; }
+  .divider::after { right: -8px; }
+
+  .message {
+    color: #E8DCC4;
+    font-size: 17px;
+    font-style: italic;
+    margin-bottom: 36px;
+    max-width: 480px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .home-button {
+    display: inline-block;
+    font-family: 'Cinzel', serif;
+    color: #0F0F1E;
+    background: #D4AF37;
+    text-decoration: none;
+    padding: 14px 32px;
+    border-radius: 4px;
+    font-size: 13px;
+    font-weight: 600;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    transition: all 0.2s ease;
+    border: 1px solid #D4AF37;
+  }
+
+  .home-button:hover {
+    background: #E8B86F;
+    border-color: #E8B86F;
+    transform: translateY(-1px);
+    box-shadow: 0 6px 20px rgba(212, 175, 55, 0.3);
+  }
+
+  .footer {
+    margin-top: 40px;
+    padding-top: 24px;
+    border-top: 1px solid rgba(212, 175, 55, 0.2);
+    color: #8A7B4A;
+    font-size: 11px;
+    font-family: 'Cinzel', serif;
+    letter-spacing: 2px;
+  }
+</style>
+</head>
+<body>
+
+<div class="container">
+
+  <div class="ornament">◊ ◊ ◊</div>
+
+  <div class="runa">404</div>
+  <div class="runa-label">PERGAMINHO PERDIDO</div>
+
+  <h1>O caminho buscado não foi encontrado</h1>
+
+  <span class="divider"></span>
+
+  <p class="message">
+    Esta passagem não existe nos arquivos da Família das Revisões.
+    Talvez o link esteja incorreto ou o pergaminho tenha sido movido para outra estante.
+  </p>
+
+  <a href="/revisoes-literatura/" class="home-button">Voltar ao início</a>
+
+  <div class="footer">
+    MTPQI · PPGA / PPGP · UNINOVE
+  </div>
+
+</div>
+
+</body>
+</html>
