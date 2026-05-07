@@ -1,12 +1,12 @@
 <!DOCTYPE html>
-<html lang="pt-BR">
-<head>
-<meta charset="UTF-8">
+<!-- saved from url=(0054)file:///C:/Users/vilsl/Downloads/guia-de-estudo_1.html -->
+<html lang="pt-BR"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Guia de Estudo · Família das Revisões de Literatura · MTPQI</title>
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600;700&family=EB+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="preconnect" href="https://fonts.googleapis.com/">
+<link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin="">
+<link href="./index_files/css2" rel="stylesheet">
 <style>
   /* =================== RESET & BASE =================== */
   *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
@@ -354,7 +354,213 @@
   /* Listas de leitura */
   .leitura li::before { content: "📖"; font-size: 12px; top: 8px; }
 
-  /* =================== ATIVIDADES =================== */
+  /* =================== MÚLTIPLA ESCOLHA =================== */
+  .atividade.multipla-escolha {
+    border-left-color: #C99B30;
+  }
+
+  .questao-mc {
+    margin-top: 16px;
+    padding: 14px 16px;
+    background: rgba(0, 0, 0, 0.18);
+    border-radius: 3px;
+    border-left: 2px solid rgba(201, 155, 48, 0.3);
+    transition: border-color 0.3s ease;
+  }
+  .questao-mc.correta {
+    border-left-color: #93B583;
+    background: rgba(90, 117, 71, 0.12);
+  }
+  .questao-mc.incorreta {
+    border-left-color: #B8612D;
+    background: rgba(184, 97, 45, 0.12);
+  }
+
+  .questao-mc-pergunta {
+    color: #E8DCC4;
+    font-size: 15px;
+    margin-bottom: 12px;
+    font-weight: 500;
+    line-height: 1.5;
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+  }
+  .questao-mc-pergunta-mark {
+    flex-shrink: 0;
+    width: 18px;
+    height: 18px;
+    margin-top: 2px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+    font-size: 13px;
+    border-radius: 50%;
+    transition: all 0.3s ease;
+  }
+  .questao-mc.correta .questao-mc-pergunta-mark {
+    background: #93B583;
+    color: #050511;
+  }
+  .questao-mc.incorreta .questao-mc-pergunta-mark {
+    background: #B8612D;
+    color: #050511;
+  }
+  .questao-mc:not(.correta):not(.incorreta) .questao-mc-pergunta-mark {
+    display: none;
+  }
+
+  .opcoes-mc {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+  }
+
+  .opcao-mc {
+    display: flex;
+    align-items: center;
+    gap: 11px;
+    padding: 7px 10px;
+    cursor: pointer;
+    border-radius: 2px;
+    transition: background 0.18s ease;
+    color: #C8C0AE;
+    font-size: 14.5px;
+    line-height: 1.4;
+  }
+  .opcao-mc:hover { background: rgba(212, 175, 55, 0.06); }
+
+  .opcao-mc-radio {
+    flex-shrink: 0;
+    width: 16px;
+    height: 16px;
+    border: 1.5px solid rgba(201, 155, 48, 0.5);
+    border-radius: 50%;
+    background: rgba(0, 0, 0, 0.3);
+    position: relative;
+    transition: all 0.2s ease;
+  }
+  .opcao-mc:hover .opcao-mc-radio {
+    border-color: #D4AF37;
+  }
+  .opcao-mc.selecionada .opcao-mc-radio {
+    border-color: #D4AF37;
+    background: rgba(212, 175, 55, 0.15);
+  }
+  .opcao-mc.selecionada .opcao-mc-radio::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 7px;
+    height: 7px;
+    background: #D4AF37;
+    border-radius: 50%;
+    box-shadow: 0 0 6px rgba(212, 175, 55, 0.6);
+  }
+
+  /* Estado pós-verificação */
+  .questao-mc.verificada .opcao-mc { cursor: default; }
+  .questao-mc.verificada .opcao-mc:hover { background: transparent; }
+  .questao-mc.verificada .opcao-mc.correta-resposta {
+    color: #93B583;
+    font-weight: 500;
+  }
+  .questao-mc.verificada .opcao-mc.correta-resposta .opcao-mc-radio {
+    border-color: #93B583;
+  }
+  .questao-mc.verificada .opcao-mc.escolha-errada {
+    color: #E89066;
+    text-decoration: line-through;
+    text-decoration-color: rgba(184, 97, 45, 0.5);
+  }
+  .questao-mc.verificada .opcao-mc.escolha-errada .opcao-mc-radio {
+    border-color: #B8612D;
+  }
+
+  .explicacao-mc {
+    margin-top: 12px;
+    padding: 10px 14px;
+    background: rgba(0, 0, 0, 0.25);
+    border-left: 2px solid #C99B30;
+    border-radius: 2px;
+    font-size: 14px;
+    color: #C8C0AE;
+    line-height: 1.5;
+    font-style: italic;
+    display: none;
+  }
+  .questao-mc.verificada .explicacao-mc { display: block; }
+  .explicacao-mc::before {
+    content: '→ ';
+    color: #C99B30;
+    font-style: normal;
+    font-weight: 500;
+  }
+
+  /* Botão verificar e resumo */
+  .verificar-mc-wrap {
+    margin-top: 18px;
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    flex-wrap: wrap;
+  }
+  .btn-verificar {
+    background: #C99B30;
+    border: 1px solid #D4AF37;
+    color: #050511;
+    font-family: 'Cinzel', serif;
+    font-size: 12px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    padding: 10px 22px;
+    border-radius: 2px;
+    cursor: pointer;
+    font-weight: 600;
+    transition: all 0.25s ease;
+  }
+  .btn-verificar:hover {
+    background: #D4AF37;
+    box-shadow: 0 0 12px rgba(212, 175, 55, 0.4);
+  }
+  .btn-verificar.refazer {
+    background: transparent;
+    color: #C99B30;
+  }
+  .btn-verificar.refazer:hover {
+    background: rgba(201, 155, 48, 0.12);
+  }
+  .btn-verificar:disabled {
+    opacity: 0.4;
+    cursor: not-allowed;
+  }
+
+  .resumo-mc {
+    font-family: 'Cinzel', serif;
+    font-size: 13px;
+    color: #E8B86F;
+    letter-spacing: 1.5px;
+    display: none;
+  }
+  .resumo-mc.visible { display: inline; }
+  .resumo-mc strong {
+    color: #D4AF37;
+    font-size: 18px;
+    margin: 0 4px;
+  }
+  .resumo-mc .pct {
+    color: #93B583;
+    font-style: italic;
+    font-size: 12px;
+    margin-left: 8px;
+    letter-spacing: 0.5px;
+  }
+  .resumo-mc .pct.baixo { color: #E89066; }
+
+  /* =================== ATIVIDADES (existente, continua) =================== */
   .atividade {
     background: rgba(36, 36, 64, 0.45);
     border-left: 3px solid #C99B30;
@@ -598,9 +804,9 @@
     <h1 class="hero-title">Guia de Estudo</h1>
     <p class="hero-sub">Família das Revisões de Literatura — uma trilha estruturada de fundamentos a aprofundamentos, com exercícios, estudos de caso e checklists de autoavaliação.</p>
     <div class="progress-bar-global">
-      <div class="progress-fill-global" id="progressGlobal"></div>
+      <div class="progress-fill-global" id="progressGlobal" style="width: 0%;"></div>
     </div>
-    <div class="progress-text-global"><span id="progressNum">0</span>/<span id="progressTotal">0</span> · sua jornada começa aqui</div>
+    <div class="progress-text-global"><span id="progressNum">0</span>/<span id="progressTotal">154</span> · sua jornada começa aqui</div>
   </header>
 
   <!-- INTRO -->
@@ -612,7 +818,7 @@
   </div>
 
   <!-- CONTEÚDO DAS TRILHAS (renderizado via JS) -->
-  <main id="trilhas-container"></main>
+  <main id="trilhas-container"><div class="trilha" id="trilha-1"><div class="trilha-header"><div class="trilha-rune">ᚠ</div><div class="trilha-info"><div class="trilha-eyebrow">Trilha · Todos os níveis</div><div class="trilha-name">Fundamentos</div><div class="trilha-desc">Antes de escolher um método, é preciso entender por que existem famílias de revisão e como decidir entre elas.</div></div><div class="trilha-progress"><div class="trilha-progress-num" data-trilha="trilha-1">0%</div><div class="trilha-progress-label">concluído</div></div></div><div class="modulo aberto" data-basekey="trilha-1-f1"><div class="modulo-header"><span class="modulo-toggle">▸</span><div class="modulo-titulo-wrap"><div class="modulo-titulo">Por que existem famílias de revisão?</div><div class="modulo-meta"><span class="nivel-tag iniciante">Iniciante</span><span class="modulo-progresso-mini" data-basekey="trilha-1-f1">0/10 itens</span></div></div></div><div class="modulo-body"><div class="modulo-content"><div class="secao"><div class="secao-titulo">Objetivos de aprendizagem</div><ul><li>Compreender que 'revisão de literatura' não é um método único</li><li>Reconhecer as 5 famílias e seus propósitos distintos</li><li>Identificar a família apropriada a partir do propósito da pesquisa</li></ul></div><div class="secao"><div class="secao-titulo">Leitura sugerida</div><ul class="leitura"><li>Slides 1–5 (introdução)</li><li>Texto-base, capítulo introdutório (pp. 1–8)</li><li>Snyder, H. (2019). Literature review as a research methodology</li></ul></div><div class="secao"><div class="secao-titulo">Atividades</div><div class="atividade multipla-escolha"><div class="atividade-header"><span class="atividade-tipo">⚔ Exercício · múltipla escolha</span><span class="nivel-tag iniciante">Iniciante</span></div><div class="atividade-enunciado">Para cada propósito abaixo, identifique qual família é mais adequada:</div><div class="questao-mc"><div class="questao-mc-pergunta"><span class="questao-mc-pergunta-mark"></span><span>a) Mapear estrutura intelectual de um campo com 30 anos de produção</span></div><div class="opcoes-mc"><div class="opcao-mc" data-qidx="0" data-oidx="0"><span class="opcao-mc-radio"></span><span>Tradicional</span></div><div class="opcao-mc" data-qidx="0" data-oidx="1"><span class="opcao-mc-radio"></span><span>Com Protocolo</span></div><div class="opcao-mc" data-qidx="0" data-oidx="2"><span class="opcao-mc-radio"></span><span>Quantitativa/Computacional</span></div><div class="opcao-mc" data-qidx="0" data-oidx="3"><span class="opcao-mc-radio"></span><span>Síntese Qualitativa</span></div><div class="opcao-mc" data-qidx="0" data-oidx="4"><span class="opcao-mc-radio"></span><span>Framework de Administração</span></div></div><div class="explicacao-mc">Bibliometria (cocitação) é ideal para mapear estrutura intelectual histórica.</div></div><div class="questao-mc"><div class="questao-mc-pergunta"><span class="questao-mc-pergunta-mark"></span><span>b) Sintetizar achados de 8 estudos de caso qualitativos sobre liderança feminina</span></div><div class="opcoes-mc"><div class="opcao-mc" data-qidx="1" data-oidx="0"><span class="opcao-mc-radio"></span><span>Tradicional</span></div><div class="opcao-mc" data-qidx="1" data-oidx="1"><span class="opcao-mc-radio"></span><span>Com Protocolo</span></div><div class="opcao-mc" data-qidx="1" data-oidx="2"><span class="opcao-mc-radio"></span><span>Quantitativa/Computacional</span></div><div class="opcao-mc" data-qidx="1" data-oidx="3"><span class="opcao-mc-radio"></span><span>Síntese Qualitativa</span></div><div class="opcao-mc" data-qidx="1" data-oidx="4"><span class="opcao-mc-radio"></span><span>Framework de Administração</span></div></div><div class="explicacao-mc">Síntese de estudos qualitativos pede meta-síntese ou síntese temática.</div></div><div class="questao-mc"><div class="questao-mc-pergunta"><span class="questao-mc-pergunta-mark"></span><span>c) Estimar o efeito médio de programas de mentoring sobre desempenho</span></div><div class="opcoes-mc"><div class="opcao-mc" data-qidx="2" data-oidx="0"><span class="opcao-mc-radio"></span><span>Tradicional</span></div><div class="opcao-mc" data-qidx="2" data-oidx="1"><span class="opcao-mc-radio"></span><span>Com Protocolo</span></div><div class="opcao-mc" data-qidx="2" data-oidx="2"><span class="opcao-mc-radio"></span><span>Quantitativa/Computacional</span></div><div class="opcao-mc" data-qidx="2" data-oidx="3"><span class="opcao-mc-radio"></span><span>Síntese Qualitativa</span></div><div class="opcao-mc" data-qidx="2" data-oidx="4"><span class="opcao-mc-radio"></span><span>Framework de Administração</span></div></div><div class="explicacao-mc">Estimar efeito médio a partir de múltiplos estudos quantitativos é meta-análise.</div></div><div class="questao-mc"><div class="questao-mc-pergunta"><span class="questao-mc-pergunta-mark"></span><span>d) Construir argumento crítico contra um pressuposto consolidado</span></div><div class="opcoes-mc"><div class="opcao-mc" data-qidx="3" data-oidx="0"><span class="opcao-mc-radio"></span><span>Tradicional</span></div><div class="opcao-mc" data-qidx="3" data-oidx="1"><span class="opcao-mc-radio"></span><span>Com Protocolo</span></div><div class="opcao-mc" data-qidx="3" data-oidx="2"><span class="opcao-mc-radio"></span><span>Quantitativa/Computacional</span></div><div class="opcao-mc" data-qidx="3" data-oidx="3"><span class="opcao-mc-radio"></span><span>Síntese Qualitativa</span></div><div class="opcao-mc" data-qidx="3" data-oidx="4"><span class="opcao-mc-radio"></span><span>Framework de Administração</span></div></div><div class="explicacao-mc">Revisão crítica (família Tradicional) é o caminho para questionar pressupostos.</div></div><div class="questao-mc"><div class="questao-mc-pergunta"><span class="questao-mc-pergunta-mark"></span><span>e) Organizar literatura de marketing internacional em quatro dimensões teóricas</span></div><div class="opcoes-mc"><div class="opcao-mc" data-qidx="4" data-oidx="0"><span class="opcao-mc-radio"></span><span>Tradicional</span></div><div class="opcao-mc" data-qidx="4" data-oidx="1"><span class="opcao-mc-radio"></span><span>Com Protocolo</span></div><div class="opcao-mc" data-qidx="4" data-oidx="2"><span class="opcao-mc-radio"></span><span>Quantitativa/Computacional</span></div><div class="opcao-mc" data-qidx="4" data-oidx="3"><span class="opcao-mc-radio"></span><span>Síntese Qualitativa</span></div><div class="opcao-mc" data-qidx="4" data-oidx="4"><span class="opcao-mc-radio"></span><span>Framework de Administração</span></div></div><div class="explicacao-mc">Quatro dimensões teóricas é assinatura do TCCM (Theory-Context-Characteristics-Methodology).</div></div><div class="verificar-mc-wrap"><button class="btn-verificar" disabled="">Verificar respostas</button><span class="resumo-mc"></span></div></div><div class="atividade checklist"><div class="atividade-header"><span class="atividade-tipo">✦ Checklist</span><span class="nivel-tag iniciante">Iniciante</span></div><div class="atividade-enunciado">Checklist de autoavaliação — você sabe?</div><ul class="checkable-list"><li class="checkable-item" data-key="trilha-1-f1-atv1-it0"><span class="checkbox"></span><span class="checkable-text">Sei explicar a diferença entre revisão narrativa e sistemática</span></li><li class="checkable-item" data-key="trilha-1-f1-atv1-it1"><span class="checkbox"></span><span class="checkable-text">Sei o que distingue cocitação de acoplamento bibliográfico</span></li><li class="checkable-item" data-key="trilha-1-f1-atv1-it2"><span class="checkbox"></span><span class="checkable-text">Sei quando usar meta-análise vs. meta-síntese</span></li><li class="checkable-item" data-key="trilha-1-f1-atv1-it3"><span class="checkbox"></span><span class="checkable-text">Conheço pelo menos um framework de revisão em business</span></li><li class="checkable-item" data-key="trilha-1-f1-atv1-it4"><span class="checkbox"></span><span class="checkable-text">Sei explicar para que serve a árvore de decisão do material</span></li></ul></div></div></div></div></div><div class="modulo" data-basekey="trilha-1-f2"><div class="modulo-header"><span class="modulo-toggle">▸</span><div class="modulo-titulo-wrap"><div class="modulo-titulo">Como decidir qual abordagem usar?</div><div class="modulo-meta"><span class="nivel-tag iniciante">Iniciante</span><span class="modulo-progresso-mini" data-basekey="trilha-1-f2">0/11 itens</span></div></div></div><div class="modulo-body"><div class="modulo-content"><div class="secao"><div class="secao-titulo">Objetivos de aprendizagem</div><ul><li>Aplicar a árvore de decisão para casos reais</li><li>Reconhecer que algumas abordagens combinam (não competem)</li><li>Justificar metodologicamente a escolha da abordagem</li></ul></div><div class="secao"><div class="secao-titulo">Leitura sugerida</div><ul class="leitura"><li>Slide 4 (árvore de decisão visual)</li><li>Texto-base, capítulo "Como escolher" (pp. 9–15)</li><li>Widget interativo: leovils.github.io/revisoes-literatura/arvore/</li></ul></div><div class="secao"><div class="secao-titulo">Atividades</div><div class="atividade exercicio"><div class="atividade-header"><span class="atividade-tipo">⚔ Exercício</span><span class="nivel-tag iniciante">Iniciante</span></div><div class="atividade-enunciado">Use o widget interativo da árvore de decisão para 3 cenários distintos. Anote: qual abordagem foi sugerida e por quê.</div><ul class="checkable-list"><li class="checkable-item" data-key="trilha-1-f2-atv0-it0"><span class="checkbox"></span><span class="checkable-text">Cenário 1: Você quer entender o que motiva consumidores a aderirem a marcas sustentáveis. Existem cerca de 40 estudos quantitativos com testes de hipótese.</span></li><li class="checkable-item" data-key="trilha-1-f2-atv0-it1"><span class="checkbox"></span><span class="checkable-text">Cenário 2: Você quer mapear a evolução do conceito de "capacidades dinâmicas" desde 1997.</span></li><li class="checkable-item" data-key="trilha-1-f2-atv0-it2"><span class="checkbox"></span><span class="checkable-text">Cenário 3: Você quer subsidiar uma decisão de política pública sobre inclusão produtiva, com prazo de 6 semanas.</span></li></ul><button class="gabarito-toggle">✧ Revelar gabarito</button><div class="gabarito"><div class="gabarito-titulo">Gabarito</div><div class="gabarito-content"><ul><li>Cenário 1: Meta-análise (literatura quantitativa, mesma relação testada, suficiente para estimar efeito médio)</li><li>Cenário 2: Análise de cocitação (mapear estrutura intelectual histórica de um campo)</li><li>Cenário 3: Revisão Rápida (Rapid Review) — adaptação de SLR para prazo curto, com transparência dos atalhos</li></ul></div></div></div><div class="atividade exercicio"><div class="atividade-header"><span class="atividade-tipo">⚔ Exercício</span><span class="nivel-tag intermediario">Intermediário</span></div><div class="atividade-enunciado">Identifique no seu próprio projeto de pesquisa: qual o propósito da revisão (mapear, sintetizar, estimar efeito, criticar, organizar)? Que abordagem isso implica?</div><ul class="checkable-list"><li class="checkable-item" data-key="trilha-1-f2-atv1-it0"><span class="checkbox"></span><span class="checkable-text">Escreva em 3-5 linhas o propósito principal da sua revisão</span></li><li class="checkable-item" data-key="trilha-1-f2-atv1-it1"><span class="checkbox"></span><span class="checkable-text">Use a árvore de decisão para chegar a uma recomendação</span></li><li class="checkable-item" data-key="trilha-1-f2-atv1-it2"><span class="checkbox"></span><span class="checkable-text">Justifique por escrito por que essa abordagem é adequada (ou não) ao seu projeto</span></li></ul><button class="gabarito-toggle">✧ Revelar gabarito</button><div class="gabarito"><div class="gabarito-titulo">Gabarito</div><div class="gabarito-content"><p>Atividade reflexiva sem gabarito único. Discutir com o orientador.</p></div></div></div><div class="atividade checklist"><div class="atividade-header"><span class="atividade-tipo">✦ Checklist</span><span class="nivel-tag intermediario">Intermediário</span></div><div class="atividade-enunciado">Checklist — sua escolha está fundamentada?</div><ul class="checkable-list"><li class="checkable-item" data-key="trilha-1-f2-atv2-it0"><span class="checkbox"></span><span class="checkable-text">Defini o propósito da revisão antes de escolher o método</span></li><li class="checkable-item" data-key="trilha-1-f2-atv2-it1"><span class="checkbox"></span><span class="checkable-text">Considerei se o tipo de evidência disponível combina com o método</span></li><li class="checkable-item" data-key="trilha-1-f2-atv2-it2"><span class="checkbox"></span><span class="checkable-text">Avaliei o tempo e recursos disponíveis (rapid vs. completa)</span></li><li class="checkable-item" data-key="trilha-1-f2-atv2-it3"><span class="checkbox"></span><span class="checkable-text">Identifiquei se uma combinação de abordagens é mais útil que uma sozinha</span></li><li class="checkable-item" data-key="trilha-1-f2-atv2-it4"><span class="checkbox"></span><span class="checkable-text">Justifiquei a escolha em ao menos um parágrafo, com referência metodológica</span></li></ul></div></div></div></div></div><div class="modulo" data-basekey="trilha-1-f3"><div class="modulo-header"><span class="modulo-toggle">▸</span><div class="modulo-titulo-wrap"><div class="modulo-titulo">Glossário essencial</div><div class="modulo-meta"><span class="nivel-tag iniciante">Iniciante</span><span class="modulo-progresso-mini" data-basekey="trilha-1-f3">0/10 itens</span></div></div></div><div class="modulo-body"><div class="modulo-content"><div class="secao"><div class="secao-titulo">Objetivos de aprendizagem</div><ul><li>Internalizar os termos técnicos centrais</li><li>Distinguir conceitos próximos mas distintos</li></ul></div><div class="secao"><div class="secao-titulo">Leitura sugerida</div><ul class="leitura"><li>Texto-base — apêndice de glossário</li><li>Cards individuais no repositório (cada um define o método)</li></ul></div><div class="secao"><div class="secao-titulo">Atividades</div><div class="atividade exercicio"><div class="atividade-header"><span class="atividade-tipo">⚔ Exercício</span><span class="nivel-tag iniciante">Iniciante</span></div><div class="atividade-enunciado">Defina cada termo em uma frase, sem consultar o material. Depois confira:</div><ul class="checkable-list"><li class="checkable-item" data-key="trilha-1-f3-atv0-it0"><span class="checkbox"></span><span class="checkable-text">1. Bibliometria</span></li><li class="checkable-item" data-key="trilha-1-f3-atv0-it1"><span class="checkbox"></span><span class="checkable-text">2. Cocitação</span></li><li class="checkable-item" data-key="trilha-1-f3-atv0-it2"><span class="checkbox"></span><span class="checkable-text">3. Acoplamento bibliográfico</span></li><li class="checkable-item" data-key="trilha-1-f3-atv0-it3"><span class="checkbox"></span><span class="checkable-text">4. Meta-análise</span></li><li class="checkable-item" data-key="trilha-1-f3-atv0-it4"><span class="checkbox"></span><span class="checkable-text">5. Meta-síntese</span></li><li class="checkable-item" data-key="trilha-1-f3-atv0-it5"><span class="checkbox"></span><span class="checkable-text">6. SLR (Systematic Literature Review)</span></li><li class="checkable-item" data-key="trilha-1-f3-atv0-it6"><span class="checkbox"></span><span class="checkable-text">7. PRISMA</span></li><li class="checkable-item" data-key="trilha-1-f3-atv0-it7"><span class="checkbox"></span><span class="checkable-text">8. TCCM</span></li><li class="checkable-item" data-key="trilha-1-f3-atv0-it8"><span class="checkbox"></span><span class="checkable-text">9. ADO</span></li><li class="checkable-item" data-key="trilha-1-f3-atv0-it9"><span class="checkbox"></span><span class="checkable-text">10. SPAR-4-SLR</span></li></ul><button class="gabarito-toggle">✧ Revelar gabarito</button><div class="gabarito"><div class="gabarito-titulo">Gabarito</div><div class="gabarito-content"><ul><li>1. Bibliometria: análise quantitativa da produção científica usando metadados (autores, citações, keywords)</li><li>2. Cocitação: frequência com que pares de obras são citadas juntas — revela raízes intelectuais</li><li>3. Acoplamento: similaridade entre artigos pelas referências compartilhadas — revela frentes atuais</li><li>4. Meta-análise: síntese estatística que combina estudos quantitativos para estimar efeito médio</li><li>5. Meta-síntese: termo guarda-chuva para sínteses qualitativas que vão além do somatório descritivo</li><li>6. SLR: revisão com protocolo explícito, replicável, transparente — padrão evidence-based</li><li>7. PRISMA: guideline de reporte (Preferred Reporting Items for Systematic reviews and Meta-Analyses)</li><li>8. TCCM: framework Theory-Context-Characteristics-Methodology para revisões em business</li><li>9. ADO: framework Antecedents-Decisions-Outcomes para organizar achados em cadeia causal</li><li>10. SPAR-4-SLR: protocolo de Paul et al. (2021) com 3 estágios e 6 sub-procedimentos para SLR em business</li></ul></div></div></div></div></div></div></div></div><div class="trilha" id="trilha-2"><div class="trilha-header"><div class="trilha-rune">ᚱ</div><div class="trilha-info"><div class="trilha-eyebrow">Trilha · Iniciante → Avançado</div><div class="trilha-name">Por etapa do projeto</div><div class="trilha-desc">O ciclo completo de uma revisão de literatura. Independente do método escolhido, todo projeto passa por estas 5 etapas.</div></div><div class="trilha-progress"><div class="trilha-progress-num" data-trilha="trilha-2">0%</div><div class="trilha-progress-label">concluído</div></div></div><div class="modulo" data-basekey="trilha-2-e1"><div class="modulo-header"><span class="modulo-toggle">▸</span><div class="modulo-titulo-wrap"><div class="modulo-titulo">Etapa 1 — Definir a pergunta de revisão</div><div class="modulo-meta"><span class="nivel-tag iniciante">Iniciante</span><span class="modulo-progresso-mini" data-basekey="trilha-2-e1">0/15 itens</span></div></div></div><div class="modulo-body"><div class="modulo-content"><div class="secao"><div class="secao-titulo">Objetivos de aprendizagem</div><ul><li>Formular pergunta de revisão clara e respondível</li><li>Aplicar frameworks PICO / SPIDER / PCC conforme o tipo de pergunta</li><li>Distinguir pergunta confirmatória, exploratória e mapeadora</li></ul></div><div class="secao"><div class="secao-titulo">Leitura sugerida</div><ul class="leitura"><li>Texto-base, cap. "Pergunta de revisão" (pp. 16–22)</li><li>Booth, A., Sutton, A. &amp; Papaioannou, D. (2016). Systematic Approaches to a Successful Literature Review (cap. 4)</li><li>Card 'Sistemática (SLR)' — passo 1</li></ul></div><div class="secao"><div class="secao-titulo">Atividades</div><div class="atividade exercicio"><div class="atividade-header"><span class="atividade-tipo">⚔ Exercício</span><span class="nivel-tag iniciante">Iniciante</span></div><div class="atividade-enunciado">Reformule cada pergunta vaga em uma pergunta de revisão estruturada, indicando o framework usado:</div><ul class="checkable-list"><li class="checkable-item" data-key="trilha-2-e1-atv0-it0"><span class="checkbox"></span><span class="checkable-text">a) "Como funciona o engajamento de funcionários?"</span></li><li class="checkable-item" data-key="trilha-2-e1-atv0-it1"><span class="checkbox"></span><span class="checkable-text">b) "Liderança transformacional importa?"</span></li><li class="checkable-item" data-key="trilha-2-e1-atv0-it2"><span class="checkbox"></span><span class="checkable-text">c) "O que se sabe sobre economia compartilhada?"</span></li></ul><button class="gabarito-toggle">✧ Revelar gabarito</button><div class="gabarito"><div class="gabarito-titulo">Gabarito</div><div class="gabarito-content"><ul><li>a) Confirmatória/PICO: "Em organizações de serviços (P), práticas de gestão de pessoas (I) comparadas a sua ausência (C) afetam o engajamento (O)?"</li><li>b) Confirmatória/PICO: "Em equipes empresariais (P), liderança transformacional (I) comparada a outros estilos (C) afeta o desempenho da equipe (O)?"</li><li>c) Exploratória/PCC: "Como tem sido conceituada (Concept) a economia compartilhada (Population) na literatura de business (Context) entre 2010 e 2024?"</li></ul></div></div></div><div class="atividade estudo-caso"><div class="atividade-header"><span class="atividade-tipo">◈ Estudo de caso (real)</span><span class="nivel-tag intermediario">Intermediário</span></div><div class="atividade-referencia">📚 Mandler, T., Sezen, B., Chen, J. &amp; Özsomer, A. (2021). Performance consequences of marketing standardization/adaptation. Journal of Business Research, 125, 416–435.</div><div class="atividade-enunciado">Leia o resumo e introdução desse paper. Identifique:</div><ul class="checkable-list"><li class="checkable-item" data-key="trilha-2-e1-atv1-it0"><span class="checkbox"></span><span class="checkable-text">Qual a pergunta principal de revisão?</span></li><li class="checkable-item" data-key="trilha-2-e1-atv1-it1"><span class="checkbox"></span><span class="checkable-text">Qual framework foi usado para estruturar a pergunta (PICO, PCC, TCCM)?</span></li><li class="checkable-item" data-key="trilha-2-e1-atv1-it2"><span class="checkbox"></span><span class="checkable-text">A pergunta é confirmatória, exploratória ou mapeadora?</span></li><li class="checkable-item" data-key="trilha-2-e1-atv1-it3"><span class="checkbox"></span><span class="checkable-text">Como os autores justificam a relevância da pergunta?</span></li></ul><button class="gabarito-toggle">✧ Revelar gabarito</button><div class="gabarito"><div class="gabarito-titulo">Gabarito</div><div class="gabarito-content"><p>Os autores usam TCCM para estruturar a pergunta sobre consequências de desempenho em marketing standardization vs. adaptation. É uma pergunta exploratória (mapeadora) por dimensão. A justificativa é a contradição persistente nos achados anteriores (effects mistos).</p></div></div></div><div class="atividade exercicio"><div class="atividade-header"><span class="atividade-tipo">⚔ Exercício</span><span class="nivel-tag avancado">Avançado</span></div><div class="atividade-enunciado">Para o seu próprio projeto: escreva 3 versões da pergunta de revisão (uma confirmatória, uma exploratória, uma crítica). Discuta com seu orientador qual cabe melhor à sua tese/dissertação.</div><ul class="checkable-list"><li class="checkable-item" data-key="trilha-2-e1-atv2-it0"><span class="checkbox"></span><span class="checkable-text">Versão confirmatória (PICO): __</span></li><li class="checkable-item" data-key="trilha-2-e1-atv2-it1"><span class="checkbox"></span><span class="checkable-text">Versão exploratória (PCC): __</span></li><li class="checkable-item" data-key="trilha-2-e1-atv2-it2"><span class="checkbox"></span><span class="checkable-text">Versão crítica (problematizadora): __</span></li></ul><button class="gabarito-toggle">✧ Revelar gabarito</button><div class="gabarito"><div class="gabarito-titulo">Gabarito</div><div class="gabarito-content"><p>Atividade reflexiva. Sem gabarito fixo.</p></div></div></div><div class="atividade checklist"><div class="atividade-header"><span class="atividade-tipo">✦ Checklist</span><span class="nivel-tag iniciante">Iniciante</span></div><div class="atividade-enunciado">Sua pergunta de revisão está pronta?</div><ul class="checkable-list"><li class="checkable-item" data-key="trilha-2-e1-atv3-it0"><span class="checkbox"></span><span class="checkable-text">É clara e específica (não vaga)</span></li><li class="checkable-item" data-key="trilha-2-e1-atv3-it1"><span class="checkbox"></span><span class="checkable-text">Indica o tipo de evidência buscado</span></li><li class="checkable-item" data-key="trilha-2-e1-atv3-it2"><span class="checkbox"></span><span class="checkable-text">Pode ser respondida com a literatura disponível</span></li><li class="checkable-item" data-key="trilha-2-e1-atv3-it3"><span class="checkbox"></span><span class="checkable-text">Justificada pela lacuna identificada</span></li><li class="checkable-item" data-key="trilha-2-e1-atv3-it4"><span class="checkbox"></span><span class="checkable-text">Compatível com o método escolhido</span></li></ul></div></div></div></div></div><div class="modulo" data-basekey="trilha-2-e2"><div class="modulo-header"><span class="modulo-toggle">▸</span><div class="modulo-titulo-wrap"><div class="modulo-titulo">Etapa 2 — Estratégia de busca</div><div class="modulo-meta"><span class="nivel-tag intermediario">Intermediário</span><span class="modulo-progresso-mini" data-basekey="trilha-2-e2">0/17 itens</span></div></div></div><div class="modulo-body"><div class="modulo-content"><div class="secao"><div class="secao-titulo">Objetivos de aprendizagem</div><ul><li>Construir strings de busca booleanas eficazes</li><li>Selecionar bases adequadas (WoS, Scopus, EBSCO, ABI/Inform)</li><li>Documentar a busca para replicabilidade</li></ul></div><div class="secao"><div class="secao-titulo">Leitura sugerida</div><ul class="leitura"><li>Texto-base, cap. "Busca" (pp. 23–34)</li><li>Bramer, W. M. et al. (2018). Optimal database combinations for literature searches in systematic reviews. Systematic Reviews</li><li>Cards 'Sistemática' e 'Bibliometria' — passos de busca</li></ul></div><div class="secao"><div class="secao-titulo">Atividades</div><div class="atividade exercicio"><div class="atividade-header"><span class="atividade-tipo">⚔ Exercício</span><span class="nivel-tag intermediario">Intermediário</span></div><div class="atividade-enunciado">Construa uma string de busca booleana para o tema "impacto da inteligência artificial na tomada de decisão de gestores":</div><ul class="checkable-list"><li class="checkable-item" data-key="trilha-2-e2-atv0-it0"><span class="checkbox"></span><span class="checkable-text">Liste 5 termos sinônimos para "inteligência artificial"</span></li><li class="checkable-item" data-key="trilha-2-e2-atv0-it1"><span class="checkbox"></span><span class="checkable-text">Liste 5 termos sinônimos para "tomada de decisão gerencial"</span></li><li class="checkable-item" data-key="trilha-2-e2-atv0-it2"><span class="checkbox"></span><span class="checkable-text">Combine com AND, OR e parênteses</span></li><li class="checkable-item" data-key="trilha-2-e2-atv0-it3"><span class="checkbox"></span><span class="checkable-text">Adicione filtros (anos, tipo de documento, idioma)</span></li><li class="checkable-item" data-key="trilha-2-e2-atv0-it4"><span class="checkbox"></span><span class="checkable-text">Teste no Web of Science e anote o número de resultados</span></li></ul><button class="gabarito-toggle">✧ Revelar gabarito</button><div class="gabarito"><div class="gabarito-titulo">Gabarito</div><div class="gabarito-content"><ul><li>Exemplo de string aceitável: TS=(("artificial intelligence" OR "AI" OR "machine learning" OR "deep learning" OR "neural network*") AND ("managerial decision*" OR "executive decision*" OR "strategic decision*" OR "decision making" OR "decision-making")) AND DT=(Article OR Review) AND PY=(2015-2025) AND LA=(English OR Portuguese)</li><li>O número exato de resultados varia conforme a base e a data — anote para sua replicabilidade.</li></ul></div></div></div><div class="atividade exercicio"><div class="atividade-header"><span class="atividade-tipo">⚔ Exercício</span><span class="nivel-tag avancado">Avançado</span></div><div class="atividade-enunciado">Compare WoS e Scopus para o seu tema: qual retorna mais resultados? Qual é mais relevante? Justifique a escolha (ou combinação) baseado em literatura.</div><ul class="checkable-list"><li class="checkable-item" data-key="trilha-2-e2-atv1-it0"><span class="checkbox"></span><span class="checkable-text">Resultado WoS: __ artigos</span></li><li class="checkable-item" data-key="trilha-2-e2-atv1-it1"><span class="checkbox"></span><span class="checkable-text">Resultado Scopus: __ artigos</span></li><li class="checkable-item" data-key="trilha-2-e2-atv1-it2"><span class="checkbox"></span><span class="checkable-text">Sobreposição estimada: __</span></li><li class="checkable-item" data-key="trilha-2-e2-atv1-it3"><span class="checkbox"></span><span class="checkable-text">Justificativa metodológica da escolha</span></li></ul><button class="gabarito-toggle">✧ Revelar gabarito</button><div class="gabarito"><div class="gabarito-titulo">Gabarito</div><div class="gabarito-content"><p>Bramer et al. (2018) recomendam combinar WoS+Scopus para cobrir ~95% dos artigos relevantes em business. Cite essa referência na justificativa.</p></div></div></div><div class="atividade estudo-caso"><div class="atividade-header"><span class="atividade-tipo">◈ Estudo de caso (real)</span><span class="nivel-tag intermediario">Intermediário</span></div><div class="atividade-referencia">📚 Donthu, N., Kumar, S., Mukherjee, D., Pandey, N. &amp; Lim, W. M. (2021). How to conduct a bibliometric analysis. Journal of Business Research, 133, 285–296.</div><div class="atividade-enunciado">Leia a seção "Step 1: Define the aims and scope" e "Step 2: Choose the techniques". Reflita:</div><ul class="checkable-list"><li class="checkable-item" data-key="trilha-2-e2-atv2-it0"><span class="checkbox"></span><span class="checkable-text">Como os autores recomendam definir o escopo da busca?</span></li><li class="checkable-item" data-key="trilha-2-e2-atv2-it1"><span class="checkbox"></span><span class="checkable-text">Que critérios eles dão para escolher entre WoS e Scopus?</span></li><li class="checkable-item" data-key="trilha-2-e2-atv2-it2"><span class="checkbox"></span><span class="checkable-text">Que armadilhas eles alertam (ex: sobre keywords)?</span></li></ul><button class="gabarito-toggle">✧ Revelar gabarito</button><div class="gabarito"><div class="gabarito-titulo">Gabarito</div><div class="gabarito-content"><p>Os autores recomendam definir aims relacionados à performance ou à science mapping. Para a escolha de base, indicam considerar coverage e quality. Alertam sobre limpeza de keywords e desambiguação de autores.</p></div></div></div><div class="atividade checklist"><div class="atividade-header"><span class="atividade-tipo">✦ Checklist</span><span class="nivel-tag intermediario">Intermediário</span></div><div class="atividade-enunciado">Sua estratégia de busca está pronta?</div><ul class="checkable-list"><li class="checkable-item" data-key="trilha-2-e2-atv3-it0"><span class="checkbox"></span><span class="checkable-text">String testada em pelo menos 2 bases</span></li><li class="checkable-item" data-key="trilha-2-e2-atv3-it1"><span class="checkbox"></span><span class="checkable-text">Sinônimos e variações ortográficas incluídos</span></li><li class="checkable-item" data-key="trilha-2-e2-atv3-it2"><span class="checkbox"></span><span class="checkable-text">Operadores booleanos e parênteses corretos</span></li><li class="checkable-item" data-key="trilha-2-e2-atv3-it3"><span class="checkbox"></span><span class="checkable-text">Filtros (anos, idioma, tipo) justificados</span></li><li class="checkable-item" data-key="trilha-2-e2-atv3-it4"><span class="checkbox"></span><span class="checkable-text">Documentei tudo (data, base, string, n. resultados) para replicabilidade</span></li></ul></div></div></div></div></div><div class="modulo" data-basekey="trilha-2-e3"><div class="modulo-header"><span class="modulo-toggle">▸</span><div class="modulo-titulo-wrap"><div class="modulo-titulo">Etapa 3 — Triagem e seleção</div><div class="modulo-meta"><span class="nivel-tag intermediario">Intermediário</span><span class="modulo-progresso-mini" data-basekey="trilha-2-e3">0/18 itens</span></div></div></div><div class="modulo-body"><div class="modulo-content"><div class="secao"><div class="secao-titulo">Objetivos de aprendizagem</div><ul><li>Definir critérios de inclusão e exclusão</li><li>Aplicar triagem em duas etapas (título/resumo + texto completo)</li><li>Calcular concordância entre revisores (kappa de Cohen)</li></ul></div><div class="secao"><div class="secao-titulo">Leitura sugerida</div><ul class="leitura"><li>Texto-base, cap. "Triagem" (pp. 35–42)</li><li>Page, M. J. et al. (2021). The PRISMA 2020 statement</li><li>Card 'Sistemática (SLR)' — passos de triagem</li></ul></div><div class="secao"><div class="secao-titulo">Atividades</div><div class="atividade exercicio"><div class="atividade-header"><span class="atividade-tipo">⚔ Exercício</span><span class="nivel-tag intermediario">Intermediário</span></div><div class="atividade-enunciado">Para um corpus inicial de 250 artigos sobre "liderança remota", defina:</div><ul class="checkable-list"><li class="checkable-item" data-key="trilha-2-e3-atv0-it0"><span class="checkbox"></span><span class="checkable-text">5 critérios de inclusão (positivos)</span></li><li class="checkable-item" data-key="trilha-2-e3-atv0-it1"><span class="checkbox"></span><span class="checkable-text">5 critérios de exclusão (negativos)</span></li><li class="checkable-item" data-key="trilha-2-e3-atv0-it2"><span class="checkbox"></span><span class="checkable-text">Quem fará a triagem (1 ou 2 revisores cegos?)</span></li><li class="checkable-item" data-key="trilha-2-e3-atv0-it3"><span class="checkbox"></span><span class="checkable-text">Como será resolvida discordância</span></li><li class="checkable-item" data-key="trilha-2-e3-atv0-it4"><span class="checkbox"></span><span class="checkable-text">Que ferramenta usar (Rayyan, Covidence, planilha)</span></li></ul><button class="gabarito-toggle">✧ Revelar gabarito</button><div class="gabarito"><div class="gabarito-titulo">Gabarito</div><div class="gabarito-content"><ul><li>Exemplos de inclusão: estudos empíricos, peer-reviewed, em inglês ou português, contexto organizacional, 2015-2025</li><li>Exemplos de exclusão: editoriais e cartas, não peer-reviewed, fora de contexto organizacional, foco em educação remota e não trabalho</li><li>Padrão: 2 revisores cegos. Discordância resolvida por terceiro revisor ou consenso. Ferramenta: Rayyan (gratuito) ou Covidence.</li></ul></div></div></div><div class="atividade exercicio"><div class="atividade-header"><span class="atividade-tipo">⚔ Exercício</span><span class="nivel-tag avancado">Avançado</span></div><div class="atividade-enunciado">Calcule o kappa de Cohen para a triagem de título/resumo de 30 artigos onde os 2 revisores tiveram:</div><ul class="checkable-list"><li class="checkable-item" data-key="trilha-2-e3-atv1-it0"><span class="checkbox"></span><span class="checkable-text">Concordaram em incluir: 8 artigos</span></li><li class="checkable-item" data-key="trilha-2-e3-atv1-it1"><span class="checkbox"></span><span class="checkable-text">Concordaram em excluir: 17 artigos</span></li><li class="checkable-item" data-key="trilha-2-e3-atv1-it2"><span class="checkbox"></span><span class="checkable-text">Discordaram (revisor 1 incluiu, revisor 2 excluiu): 3 artigos</span></li><li class="checkable-item" data-key="trilha-2-e3-atv1-it3"><span class="checkbox"></span><span class="checkable-text">Discordaram (revisor 1 excluiu, revisor 2 incluiu): 2 artigos</span></li><li class="checkable-item" data-key="trilha-2-e3-atv1-it4"><span class="checkbox"></span><span class="checkable-text">Calcule o kappa, interprete (Landis &amp; Koch 1977) e diga se é aceitável</span></li></ul><button class="gabarito-toggle">✧ Revelar gabarito</button><div class="gabarito"><div class="gabarito-titulo">Gabarito</div><div class="gabarito-content"><p>Po = (8+17)/30 = 0.833. Marg revisor 1: 11/30 inclui, 19/30 exclui. Marg revisor 2: 10/30 inclui, 20/30 exclui. Pe = (11/30 × 10/30) + (19/30 × 20/30) = 0.122 + 0.422 = 0.544. Kappa = (0.833 - 0.544) / (1 - 0.544) = 0.633. Interpretação: substancial agreement (Landis &amp; Koch). Aceitável para SLR (≥0.60 é o mínimo padrão).</p></div></div></div><div class="atividade estudo-caso"><div class="atividade-header"><span class="atividade-tipo">◈ Estudo de caso (cenário)</span><span class="nivel-tag intermediario">Intermediário</span></div><div class="atividade-enunciado">Cenário hipotético: você é orientador de mestrando que fez triagem sozinho, encontrou 67 artigos elegíveis, e quer publicar a SLR em journal Qualis A1.</div><ul class="checkable-list"><li class="checkable-item" data-key="trilha-2-e3-atv2-it0"><span class="checkbox"></span><span class="checkable-text">Que problema metodológico isso traz?</span></li><li class="checkable-item" data-key="trilha-2-e3-atv2-it1"><span class="checkbox"></span><span class="checkable-text">Como você orientaria a correção?</span></li><li class="checkable-item" data-key="trilha-2-e3-atv2-it2"><span class="checkbox"></span><span class="checkable-text">Que referência metodológica citar para defender a correção?</span></li></ul><button class="gabarito-toggle">✧ Revelar gabarito</button><div class="gabarito"><div class="gabarito-titulo">Gabarito</div><div class="gabarito-content"><p>Triagem por 1 revisor é fonte de viés (Tranfield, Denyer &amp; Smart 2003). Para Qualis A1 é obrigatório 2 revisores cegos com kappa reportado. Solução: 2º revisor faz triagem cega de uma amostra (mín. 20%), calcula kappa. Se aceitável (&gt;0.60), defende-se a triagem original. Se não, redo completo. Cite: Tranfield et al. 2003 + PRISMA 2020 (item 6).</p></div></div></div><div class="atividade checklist"><div class="atividade-header"><span class="atividade-tipo">✦ Checklist</span><span class="nivel-tag intermediario">Intermediário</span></div><div class="atividade-enunciado">Sua triagem está rigorosa?</div><ul class="checkable-list"><li class="checkable-item" data-key="trilha-2-e3-atv3-it0"><span class="checkbox"></span><span class="checkable-text">Critérios de inclusão e exclusão definidos antes da triagem</span></li><li class="checkable-item" data-key="trilha-2-e3-atv3-it1"><span class="checkbox"></span><span class="checkable-text">Triagem feita por 2 revisores cegos</span></li><li class="checkable-item" data-key="trilha-2-e3-atv3-it2"><span class="checkbox"></span><span class="checkable-text">Concordância calculada (kappa ≥ 0.60)</span></li><li class="checkable-item" data-key="trilha-2-e3-atv3-it3"><span class="checkbox"></span><span class="checkable-text">Discordâncias resolvidas e documentadas</span></li><li class="checkable-item" data-key="trilha-2-e3-atv3-it4"><span class="checkbox"></span><span class="checkable-text">Diagrama de fluxo PRISMA construído</span></li></ul></div></div></div></div></div><div class="modulo" data-basekey="trilha-2-e4"><div class="modulo-header"><span class="modulo-toggle">▸</span><div class="modulo-titulo-wrap"><div class="modulo-titulo">Etapa 4 — Extração e análise</div><div class="modulo-meta"><span class="nivel-tag avancado">Avançado</span><span class="modulo-progresso-mini" data-basekey="trilha-2-e4">0/23 itens</span></div></div></div><div class="modulo-body"><div class="modulo-content"><div class="secao"><div class="secao-titulo">Objetivos de aprendizagem</div><ul><li>Construir formulário de extração de dados</li><li>Conduzir análise compatível com o método escolhido</li><li>Avaliar qualidade dos estudos incluídos</li></ul></div><div class="secao"><div class="secao-titulo">Leitura sugerida</div><ul class="leitura"><li>Texto-base, cap. "Extração e análise" (pp. 43–60)</li><li>Cards do método específico escolhido (cocitação, meta-análise, síntese temática, etc.)</li><li>Hannigan, T. R. et al. (2019). Topic modeling in management research. Academy of Management Annals, 13(2), 586–632. (para extração computacional)</li></ul></div><div class="secao"><div class="secao-titulo">Atividades</div><div class="atividade exercicio"><div class="atividade-header"><span class="atividade-tipo">⚔ Exercício</span><span class="nivel-tag avancado">Avançado</span></div><div class="atividade-enunciado">Desenhe um formulário de extração para uma SLR sobre "adoção de tecnologias digitais em PMEs":</div><ul class="checkable-list"><li class="checkable-item" data-key="trilha-2-e4-atv0-it0"><span class="checkbox"></span><span class="checkable-text">Variáveis bibliográficas (autores, ano, journal, país)</span></li><li class="checkable-item" data-key="trilha-2-e4-atv0-it1"><span class="checkbox"></span><span class="checkable-text">Variáveis teóricas (teoria usada, construtos)</span></li><li class="checkable-item" data-key="trilha-2-e4-atv0-it2"><span class="checkbox"></span><span class="checkable-text">Variáveis metodológicas (método, amostra, contexto)</span></li><li class="checkable-item" data-key="trilha-2-e4-atv0-it3"><span class="checkbox"></span><span class="checkable-text">Variáveis substantivas (achados principais, mediadores, moderadores)</span></li><li class="checkable-item" data-key="trilha-2-e4-atv0-it4"><span class="checkbox"></span><span class="checkable-text">Avaliação de qualidade (instrumento usado)</span></li></ul><button class="gabarito-toggle">✧ Revelar gabarito</button><div class="gabarito"><div class="gabarito-titulo">Gabarito</div><div class="gabarito-content"><p>Use planilha estruturada (Excel, Google Sheets ou software dedicado como CADIMA). Para SLR em business, instrumento de qualidade comum: MMAT (Mixed Methods Appraisal Tool) ou critérios próprios derivados de Tranfield et al.</p></div></div></div><div class="atividade estudo-caso"><div class="atividade-header"><span class="atividade-tipo">◈ Estudo de caso (real)</span><span class="nivel-tag avancado">Avançado</span></div><div class="atividade-referencia">📚 Quevedo-Silva, F., Almeida Santos, E. B., Brandão, M. M. &amp; Vils, L. (2016). Estudo bibliométrico: Orientações sobre sua aplicação. ReMark, 15(2), 246–262.</div><div class="atividade-enunciado">Esse paper é guia em português para análise bibliométrica. Examine o exemplo didático sobre priming e propaganda:</div><ul class="checkable-list"><li class="checkable-item" data-key="trilha-2-e4-atv1-it0"><span class="checkbox"></span><span class="checkable-text">Que dados foram extraídos dos artigos?</span></li><li class="checkable-item" data-key="trilha-2-e4-atv1-it1"><span class="checkbox"></span><span class="checkable-text">Como foi feita a análise dos dados?</span></li><li class="checkable-item" data-key="trilha-2-e4-atv1-it2"><span class="checkbox"></span><span class="checkable-text">Que cuidados de limpeza foram tomados (autores duplicados, sinônimos)?</span></li><li class="checkable-item" data-key="trilha-2-e4-atv1-it3"><span class="checkbox"></span><span class="checkable-text">Que softwares são recomendados?</span></li></ul><button class="gabarito-toggle">✧ Revelar gabarito</button><div class="gabarito"><div class="gabarito-titulo">Gabarito</div><div class="gabarito-content"><p>Os autores extraem: autores, instituições, países, palavras-chave, citações. Análise: contagem de frequência, redes de coautoria, redes de cocitação. Cuidados: padronização de autores ("Smith, J." e "Smith, J.A." desambiguados manualmente). Softwares mencionados: Bibexcel, VOSviewer.</p></div></div></div><div class="atividade estudo-caso"><div class="atividade-header"><span class="atividade-tipo">◈ Estudo de caso (real)</span><span class="nivel-tag avancado">Avançado</span></div><div class="atividade-referencia">📚 Arias, M. I., Serra, F. A. R., Guerrazzi, L. A. de C. &amp; Ferreira, M. P. (2019). Intellectual foundations and mainstream research of e-government in public administration. Management Research, 17(1), 89–115.</div><div class="atividade-enunciado">Esse paper combina cocitação E acoplamento bibliográfico no mesmo estudo. Analise:</div><ul class="checkable-list"><li class="checkable-item" data-key="trilha-2-e4-atv2-it0"><span class="checkbox"></span><span class="checkable-text">Por que combinar as duas técnicas? Que cada uma revela?</span></li><li class="checkable-item" data-key="trilha-2-e4-atv2-it1"><span class="checkbox"></span><span class="checkable-text">Como os autores apresentam os clusters identificados?</span></li><li class="checkable-item" data-key="trilha-2-e4-atv2-it2"><span class="checkbox"></span><span class="checkable-text">Como a apresentação dos achados conecta-se à teoria existente?</span></li><li class="checkable-item" data-key="trilha-2-e4-atv2-it3"><span class="checkbox"></span><span class="checkable-text">Como você adaptaria essa abordagem ao seu tema?</span></li></ul><button class="gabarito-toggle">✧ Revelar gabarito</button><div class="gabarito"><div class="gabarito-titulo">Gabarito</div><div class="gabarito-content"><p>Cocitação revela bases intelectuais (raízes históricas) e acoplamento revela frentes atuais (subcampos contemporâneos). Os autores apresentam clusters nomeados teoricamente (não numéricos). A interpretação dialoga com a literatura prévia de cada cluster — não apenas descreve mecânica. Para adaptação: aplicar o mesmo desenho metodológico a outro tema, ajustando bases e janela temporal.</p></div></div></div><div class="atividade exercicio"><div class="atividade-header"><span class="atividade-tipo">⚔ Exercício</span><span class="nivel-tag avancado">Avançado</span></div><div class="atividade-enunciado">Para uma meta-análise, especifique:</div><ul class="checkable-list"><li class="checkable-item" data-key="trilha-2-e4-atv3-it0"><span class="checkbox"></span><span class="checkable-text">Que tamanho de efeito você usará? (d, r, OR, β)</span></li><li class="checkable-item" data-key="trilha-2-e4-atv3-it1"><span class="checkbox"></span><span class="checkable-text">Que modelo? (efeitos fixos ou aleatórios — justifique)</span></li><li class="checkable-item" data-key="trilha-2-e4-atv3-it2"><span class="checkbox"></span><span class="checkable-text">Como tratar heterogeneidade? (I², τ², subgrupos, meta-regressão)</span></li><li class="checkable-item" data-key="trilha-2-e4-atv3-it3"><span class="checkbox"></span><span class="checkable-text">Como avaliar viés de publicação? (funnel plot, Egger, trim-and-fill)</span></li><li class="checkable-item" data-key="trilha-2-e4-atv3-it4"><span class="checkbox"></span><span class="checkable-text">Que software? (R metafor, CMA, Stata)</span></li></ul><button class="gabarito-toggle">✧ Revelar gabarito</button><div class="gabarito"><div class="gabarito-titulo">Gabarito</div><div class="gabarito-content"><p>Em ciências sociais, modelo de efeitos aleatórios é padrão (heterogeneidade esperada). Sempre reportar I², τ² e funnel plot + teste de Egger. R com metafor é gratuito e padrão atual. Cite: Borenstein et al. (2009) + Combs, Crook &amp; Rauch (2019).</p></div></div></div><div class="atividade checklist"><div class="atividade-header"><span class="atividade-tipo">✦ Checklist</span><span class="nivel-tag avancado">Avançado</span></div><div class="atividade-enunciado">Sua análise está compatível com o método?</div><ul class="checkable-list"><li class="checkable-item" data-key="trilha-2-e4-atv4-it0"><span class="checkbox"></span><span class="checkable-text">Formulário de extração testado em piloto antes da extração completa</span></li><li class="checkable-item" data-key="trilha-2-e4-atv4-it1"><span class="checkbox"></span><span class="checkable-text">Análise compatível com o método declarado</span></li><li class="checkable-item" data-key="trilha-2-e4-atv4-it2"><span class="checkbox"></span><span class="checkable-text">Avaliação de qualidade dos estudos feita e reportada</span></li><li class="checkable-item" data-key="trilha-2-e4-atv4-it3"><span class="checkbox"></span><span class="checkable-text">Software usado documentado (versão, parâmetros)</span></li><li class="checkable-item" data-key="trilha-2-e4-atv4-it4"><span class="checkbox"></span><span class="checkable-text">Critérios de interpretação justificados teoricamente</span></li></ul></div></div></div></div></div><div class="modulo" data-basekey="trilha-2-e5"><div class="modulo-header"><span class="modulo-toggle">▸</span><div class="modulo-titulo-wrap"><div class="modulo-titulo">Etapa 5 — Síntese e escrita</div><div class="modulo-meta"><span class="nivel-tag avancado">Avançado</span><span class="modulo-progresso-mini" data-basekey="trilha-2-e5">0/23 itens</span></div></div></div><div class="modulo-body"><div class="modulo-content"><div class="secao"><div class="secao-titulo">Objetivos de aprendizagem</div><ul><li>Construir narrativa coerente a partir dos achados</li><li>Reportar conforme guideline apropriado (PRISMA, eMERGe, RAMESES)</li><li>Identificar contribuição teórica e prática</li></ul></div><div class="secao"><div class="secao-titulo">Leitura sugerida</div><ul class="leitura"><li>Texto-base, cap. "Síntese e escrita" (pp. 61–75)</li><li>Page, M. J. et al. (2021). PRISMA 2020 statement</li><li>Elsbach, K. D. &amp; van Knippenberg, D. (2020). Creating high-impact literature reviews</li></ul></div><div class="secao"><div class="secao-titulo">Atividades</div><div class="atividade exercicio"><div class="atividade-header"><span class="atividade-tipo">⚔ Exercício</span><span class="nivel-tag avancado">Avançado</span></div><div class="atividade-enunciado">Esboce a estrutura de um manuscrito de revisão para o seu tema:</div><ul class="checkable-list"><li class="checkable-item" data-key="trilha-2-e5-atv0-it0"><span class="checkbox"></span><span class="checkable-text">Título (10-15 palavras, com método explícito)</span></li><li class="checkable-item" data-key="trilha-2-e5-atv0-it1"><span class="checkbox"></span><span class="checkable-text">Resumo estruturado (Background, Aims, Methods, Findings, Implications)</span></li><li class="checkable-item" data-key="trilha-2-e5-atv0-it2"><span class="checkbox"></span><span class="checkable-text">Introdução (problema, lacuna, contribuição esperada)</span></li><li class="checkable-item" data-key="trilha-2-e5-atv0-it3"><span class="checkbox"></span><span class="checkable-text">Método (replicável)</span></li><li class="checkable-item" data-key="trilha-2-e5-atv0-it4"><span class="checkbox"></span><span class="checkable-text">Achados (organizados por tema/cluster)</span></li><li class="checkable-item" data-key="trilha-2-e5-atv0-it5"><span class="checkbox"></span><span class="checkable-text">Discussão (3 contribuições teóricas + 3 práticas)</span></li><li class="checkable-item" data-key="trilha-2-e5-atv0-it6"><span class="checkbox"></span><span class="checkable-text">Limitações + agenda futura</span></li></ul><button class="gabarito-toggle">✧ Revelar gabarito</button><div class="gabarito"><div class="gabarito-titulo">Gabarito</div><div class="gabarito-content"><p>Use frameworks como TCCM, ADO ou SPAR-4-SLR para estruturar achados. Discussão deve ir além de "resumir" — precisa interpretar e propor. Cite: Elsbach &amp; van Knippenberg (2020) sobre revisões de alto impacto.</p></div></div></div><div class="atividade estudo-caso"><div class="atividade-header"><span class="atividade-tipo">◈ Estudo de caso (real)</span><span class="nivel-tag avancado">Avançado</span></div><div class="atividade-referencia">📚 Lim, W. M., Yap, S. F. &amp; Makkar, M. (2021). Home sharing in marketing and tourism at a tipping point. Journal of Business Research, 125, 534–566.</div><div class="atividade-enunciado">Esse paper combina SPAR-4-SLR + ADO + TCCM. Analise como os 3 frameworks são integrados:</div><ul class="checkable-list"><li class="checkable-item" data-key="trilha-2-e5-atv1-it0"><span class="checkbox"></span><span class="checkable-text">Onde cada framework aparece na estrutura do paper?</span></li><li class="checkable-item" data-key="trilha-2-e5-atv1-it1"><span class="checkbox"></span><span class="checkable-text">Como os 3 conversam entre si (não competem)?</span></li><li class="checkable-item" data-key="trilha-2-e5-atv1-it2"><span class="checkbox"></span><span class="checkable-text">Que tabelas e figuras eles usam para apresentar achados?</span></li><li class="checkable-item" data-key="trilha-2-e5-atv1-it3"><span class="checkbox"></span><span class="checkable-text">Como a agenda de pesquisa futura é estruturada?</span></li></ul><button class="gabarito-toggle">✧ Revelar gabarito</button><div class="gabarito"><div class="gabarito-titulo">Gabarito</div><div class="gabarito-content"><p>SPAR-4-SLR estrutura o método (assemble-arrange-assess). TCCM organiza os achados em 4 dimensões. ADO organiza a discussão em cadeia causal. Tabelas: TCCM-grid; figuras: ADO-network. Agenda futura é estruturada por dimensão (TCCM) com proposições no formato ADO.</p></div></div></div><div class="atividade exercicio"><div class="atividade-header"><span class="atividade-tipo">⚔ Exercício</span><span class="nivel-tag avancado">Avançado</span></div><div class="atividade-enunciado">Aplique o checklist PRISMA 2020 ao seu próprio rascunho de revisão. Marque quais dos 27 itens estão atendidos:</div><ul class="checkable-list"><li class="checkable-item" data-key="trilha-2-e5-atv2-it0"><span class="checkbox"></span><span class="checkable-text">Items 1-4 (título e resumo)</span></li><li class="checkable-item" data-key="trilha-2-e5-atv2-it1"><span class="checkbox"></span><span class="checkable-text">Items 5-9 (introdução e métodos — eligibilidade, fontes, busca, seleção, extração)</span></li><li class="checkable-item" data-key="trilha-2-e5-atv2-it2"><span class="checkbox"></span><span class="checkable-text">Items 10-15 (métodos continuação — síntese, viés, certeza)</span></li><li class="checkable-item" data-key="trilha-2-e5-atv2-it3"><span class="checkbox"></span><span class="checkable-text">Items 16-23 (resultados — fluxo, características, viés, achados, certeza)</span></li><li class="checkable-item" data-key="trilha-2-e5-atv2-it4"><span class="checkbox"></span><span class="checkable-text">Items 24-27 (discussão e outros — interpretação, limitações, conclusões, registro)</span></li></ul><button class="gabarito-toggle">✧ Revelar gabarito</button><div class="gabarito"><div class="gabarito-titulo">Gabarito</div><div class="gabarito-content"><p>PRISMA 2020 está em http://www.prisma-statement.org/. O ideal é atender 100% dos itens em SLRs publicáveis em journals top. Items frequentemente esquecidos: 24c (avaliação de certeza), 25 (limitações da evidência) e 27 (registro do protocolo).</p></div></div></div><div class="atividade checklist"><div class="atividade-header"><span class="atividade-tipo">✦ Checklist</span><span class="nivel-tag avancado">Avançado</span></div><div class="atividade-enunciado">Seu manuscrito está pronto para submissão?</div><ul class="checkable-list"><li class="checkable-item" data-key="trilha-2-e5-atv3-it0"><span class="checkbox"></span><span class="checkable-text">Resumo estruturado nos 250 palavras com métodos e achados</span></li><li class="checkable-item" data-key="trilha-2-e5-atv3-it1"><span class="checkbox"></span><span class="checkable-text">Diagrama PRISMA incluído (para SLR/meta-análise)</span></li><li class="checkable-item" data-key="trilha-2-e5-atv3-it2"><span class="checkbox"></span><span class="checkable-text">Tabelas e figuras autoexplicativas</span></li><li class="checkable-item" data-key="trilha-2-e5-atv3-it3"><span class="checkbox"></span><span class="checkable-text">Discussão com contribuição teórica clara</span></li><li class="checkable-item" data-key="trilha-2-e5-atv3-it4"><span class="checkbox"></span><span class="checkable-text">Limitações honestas</span></li><li class="checkable-item" data-key="trilha-2-e5-atv3-it5"><span class="checkbox"></span><span class="checkable-text">Agenda de pesquisa concreta</span></li><li class="checkable-item" data-key="trilha-2-e5-atv3-it6"><span class="checkbox"></span><span class="checkable-text">Reportagem conforme guideline (PRISMA, eMERGe, RAMESES, etc.)</span></li></ul></div></div></div></div></div></div><div class="trilha" id="trilha-3"><div class="trilha-header"><div class="trilha-rune">ᛟ</div><div class="trilha-info"><div class="trilha-eyebrow">Trilha · Intermediário → Avançado</div><div class="trilha-name">Aprofundamentos opcionais</div><div class="trilha-desc">Para quem quer dominar uma técnica específica. Cada módulo é independente e pode ser feito conforme a necessidade do projeto.</div></div><div class="trilha-progress"><div class="trilha-progress-num" data-trilha="trilha-3">0%</div><div class="trilha-progress-label">concluído</div></div></div><div class="modulo" data-basekey="trilha-3-a1"><div class="modulo-header"><span class="modulo-toggle">▸</span><div class="modulo-titulo-wrap"><div class="modulo-titulo">Bibliometria avançada — combinando técnicas</div><div class="modulo-meta"><span class="nivel-tag avancado">Avançado</span><span class="modulo-progresso-mini" data-basekey="trilha-3-a1">0/10 itens</span></div></div></div><div class="modulo-body"><div class="modulo-content"><div class="secao"><div class="secao-titulo">Objetivos de aprendizagem</div><ul><li>Combinar cocitação + acoplamento + coword + coautoria em um mesmo estudo</li><li>Interpretar visualizações de redes (clusters, centralidade, density)</li><li>Reportar bibliometria publicável em journals top</li></ul></div><div class="secao"><div class="secao-titulo">Leitura sugerida</div><ul class="leitura"><li>Donthu et al. (2021). How to conduct a bibliometric analysis</li><li>Zupic &amp; Čater (2015). Bibliometric methods in management and organization</li><li>Quevedo-Silva, Almeida Santos, Brandão &amp; Vils (2016). Estudo bibliométrico (em português)</li><li>Mukherjee, Lim, Kumar &amp; Donthu (2022). Guidelines for advancing theory and practice through bibliometric research</li></ul></div><div class="secao"><div class="secao-titulo">Atividades</div><div class="atividade exercicio"><div class="atividade-header"><span class="atividade-tipo">⚔ Exercício</span><span class="nivel-tag avancado">Avançado</span></div><div class="atividade-enunciado">Conduza um mini-bibliometria sobre seu tema usando o Bibliometrix (R):</div><ul class="checkable-list"><li class="checkable-item" data-key="trilha-3-a1-atv0-it0"><span class="checkbox"></span><span class="checkable-text">Baixe corpus de 100-300 artigos da WoS</span></li><li class="checkable-item" data-key="trilha-3-a1-atv0-it1"><span class="checkbox"></span><span class="checkable-text">Importe no Bibliometrix (biblioshiny)</span></li><li class="checkable-item" data-key="trilha-3-a1-atv0-it2"><span class="checkbox"></span><span class="checkable-text">Gere análise de cocitação (top 30 referências)</span></li><li class="checkable-item" data-key="trilha-3-a1-atv0-it3"><span class="checkbox"></span><span class="checkable-text">Gere análise de acoplamento (clusters de frentes atuais)</span></li><li class="checkable-item" data-key="trilha-3-a1-atv0-it4"><span class="checkbox"></span><span class="checkable-text">Gere coautoria (rede)</span></li><li class="checkable-item" data-key="trilha-3-a1-atv0-it5"><span class="checkbox"></span><span class="checkable-text">Interprete cada análise em 1 parágrafo</span></li></ul><button class="gabarito-toggle">✧ Revelar gabarito</button><div class="gabarito"><div class="gabarito-titulo">Gabarito</div><div class="gabarito-content"><p>Bibliometrix é gratuito e roda como Shiny app (biblioshiny). Tutorial em https://www.bibliometrix.org/. Cocitação revela raízes; acoplamento revela frentes; coautoria revela rede social.</p></div></div></div><div class="atividade estudo-caso"><div class="atividade-header"><span class="atividade-tipo">◈ Estudo de caso (real)</span><span class="nivel-tag avancado">Avançado</span></div><div class="atividade-referencia">📚 Paraíso de Campos Serra, B., Tomei, P. A., Serra, F. &amp; Guerrazzi, L. A. de C. (2022). What has been studied in cultural intelligence? Management Research, 20(1), 50–73.</div><div class="atividade-enunciado">Modelo brasileiro de bibliometria publicada em Emerald (Qualis A2). Estude o desenho:</div><ul class="checkable-list"><li class="checkable-item" data-key="trilha-3-a1-atv1-it0"><span class="checkbox"></span><span class="checkable-text">Quantos artigos analisados? Como o corpus foi montado?</span></li><li class="checkable-item" data-key="trilha-3-a1-atv1-it1"><span class="checkbox"></span><span class="checkable-text">Como cocitação e acoplamento foram apresentados?</span></li><li class="checkable-item" data-key="trilha-3-a1-atv1-it2"><span class="checkbox"></span><span class="checkable-text">Que softwares foram usados?</span></li><li class="checkable-item" data-key="trilha-3-a1-atv1-it3"><span class="checkbox"></span><span class="checkable-text">Como os autores discutem implicações teóricas dos clusters identificados?</span></li></ul><button class="gabarito-toggle">✧ Revelar gabarito</button><div class="gabarito"><div class="gabarito-titulo">Gabarito</div><div class="gabarito-content"><p>Corpus de 219 artigos. 60 selecionados para acoplamento (frentes atuais), 32 referências para cocitação (raízes). Apresentação em redes visuais com clusters nomeados. Software: VOSviewer + Bibexcel. Discussão articula clusters teóricos (CQ como traço, CQ como capacidade, CQ como processo) à literatura prévia.</p></div></div></div></div></div></div></div><div class="modulo" data-basekey="trilha-3-a2"><div class="modulo-header"><span class="modulo-toggle">▸</span><div class="modulo-titulo-wrap"><div class="modulo-titulo">Meta-análise estatística</div><div class="modulo-meta"><span class="nivel-tag avancado">Avançado</span><span class="modulo-progresso-mini" data-basekey="trilha-3-a2">0/6 itens</span></div></div></div><div class="modulo-body"><div class="modulo-content"><div class="secao"><div class="secao-titulo">Objetivos de aprendizagem</div><ul><li>Calcular tamanhos de efeito e seus intervalos de confiança</li><li>Conduzir meta-análise de efeitos aleatórios</li><li>Diagnosticar e tratar viés de publicação</li></ul></div><div class="secao"><div class="secao-titulo">Leitura sugerida</div><ul class="leitura"><li>Borenstein, M., Hedges, L. V., Higgins, J. P. T. &amp; Rothstein, H. R. (2009). Introduction to Meta-Analysis (cap. 1-15)</li><li>Hunter, J. E. &amp; Schmidt, F. L. (2004). Methods of Meta-Analysis (cap. 1-7)</li><li>Combs, J. G., Crook, T. R. &amp; Rauch, A. (2019). Meta-analytic research in management</li></ul></div><div class="secao"><div class="secao-titulo">Atividades</div><div class="atividade exercicio"><div class="atividade-header"><span class="atividade-tipo">⚔ Exercício</span><span class="nivel-tag avancado">Avançado</span></div><div class="atividade-enunciado">Replique uma meta-análise simples no R com metafor:</div><ul class="checkable-list"><li class="checkable-item" data-key="trilha-3-a2-atv0-it0"><span class="checkbox"></span><span class="checkable-text">Instale o pacote metafor: install.packages('metafor')</span></li><li class="checkable-item" data-key="trilha-3-a2-atv0-it1"><span class="checkbox"></span><span class="checkable-text">Carregue dataset de exemplo: data(dat.bcg) [estudos sobre vacina BCG]</span></li><li class="checkable-item" data-key="trilha-3-a2-atv0-it2"><span class="checkbox"></span><span class="checkable-text">Calcule risco relativo (RR) com escalc()</span></li><li class="checkable-item" data-key="trilha-3-a2-atv0-it3"><span class="checkbox"></span><span class="checkable-text">Conduza meta-análise de efeitos aleatórios com rma()</span></li><li class="checkable-item" data-key="trilha-3-a2-atv0-it4"><span class="checkbox"></span><span class="checkable-text">Gere forest plot e funnel plot</span></li><li class="checkable-item" data-key="trilha-3-a2-atv0-it5"><span class="checkbox"></span><span class="checkable-text">Calcule heterogeneidade (Q, I², τ²) e teste de Egger</span></li></ul><button class="gabarito-toggle">✧ Revelar gabarito</button><div class="gabarito"><div class="gabarito-titulo">Gabarito</div><div class="gabarito-content"><p>Pacote metafor é o padrão atual (gratuito). Documentação em https://www.metafor-project.org/. Forest plot mostra tamanhos individuais + síntese. Funnel plot avalia simetria (publication bias).</p></div></div></div></div></div></div></div><div class="modulo" data-basekey="trilha-3-a3"><div class="modulo-header"><span class="modulo-toggle">▸</span><div class="modulo-titulo-wrap"><div class="modulo-titulo">Topic modeling computacional</div><div class="modulo-meta"><span class="nivel-tag avancado">Avançado</span><span class="modulo-progresso-mini" data-basekey="trilha-3-a3">0/5 itens</span></div></div></div><div class="modulo-body"><div class="modulo-content"><div class="secao"><div class="secao-titulo">Objetivos de aprendizagem</div><ul><li>Compreender a lógica do LDA (Latent Dirichlet Allocation)</li><li>Pré-processar corpus para análise topical</li><li>Validar tópicos qualitativamente</li></ul></div><div class="secao"><div class="secao-titulo">Leitura sugerida</div><ul class="leitura"><li>Blei, D. M., Ng, A. Y. &amp; Jordan, M. I. (2003). Latent Dirichlet Allocation. JMLR</li><li>Hannigan, T. R. et al. (2019). Topic modeling in management research. AOM Annals</li><li>Kobayashi, V. B. et al. (2018). Text classification for organizational researchers. ORM</li></ul></div><div class="secao"><div class="secao-titulo">Atividades</div><div class="atividade exercicio"><div class="atividade-header"><span class="atividade-tipo">⚔ Exercício</span><span class="nivel-tag avancado">Avançado</span></div><div class="atividade-enunciado">Conduza topic modeling em R no seu corpus:</div><ul class="checkable-list"><li class="checkable-item" data-key="trilha-3-a3-atv0-it0"><span class="checkbox"></span><span class="checkable-text">Pacote: topicmodels ou stm</span></li><li class="checkable-item" data-key="trilha-3-a3-atv0-it1"><span class="checkbox"></span><span class="checkable-text">Pré-processamento: tokenização, stopwords, lemmatização</span></li><li class="checkable-item" data-key="trilha-3-a3-atv0-it2"><span class="checkbox"></span><span class="checkable-text">Escolha K (número de tópicos) por perplexity ou coherence score</span></li><li class="checkable-item" data-key="trilha-3-a3-atv0-it3"><span class="checkbox"></span><span class="checkable-text">Rode LDA</span></li><li class="checkable-item" data-key="trilha-3-a3-atv0-it4"><span class="checkbox"></span><span class="checkable-text">Valide tópicos qualitativamente (top words por tópico fazem sentido?)</span></li></ul><button class="gabarito-toggle">✧ Revelar gabarito</button><div class="gabarito"><div class="gabarito-titulo">Gabarito</div><div class="gabarito-content"><p>K mal escolhido gera tópicos sem sentido. Sempre validar qualitativamente após o algoritmo. Cite: Hannigan et al. (2019) — topic modeling em management requer validação humana, não é automation.</p></div></div></div></div></div></div></div><div class="modulo" data-basekey="trilha-3-a4"><div class="modulo-header"><span class="modulo-toggle">▸</span><div class="modulo-titulo-wrap"><div class="modulo-titulo">Frameworks de business — TCCM, SPAR-4-SLR e ADO</div><div class="modulo-meta"><span class="nivel-tag intermediario">Intermediário</span><span class="modulo-progresso-mini" data-basekey="trilha-3-a4">0/6 itens</span></div></div></div><div class="modulo-body"><div class="modulo-content"><div class="secao"><div class="secao-titulo">Objetivos de aprendizagem</div><ul><li>Aplicar TCCM para organizar revisão temática</li><li>Seguir SPAR-4-SLR como protocolo de SLR em business</li><li>Construir cadeia ADO para apresentar achados</li></ul></div><div class="secao"><div class="secao-titulo">Leitura sugerida</div><ul class="leitura"><li>Paul, J. &amp; Rosado-Serrano, A. (2019). Gradual Internationalization vs Born-Global. International Marketing Review (TCCM)</li><li>Paul, J. et al. (2021). Scientific procedures and rationales for systematic literature reviews (SPAR-4-SLR). IJCS</li><li>Paul, J. &amp; Benito, G. R. G. (2018). A review of research on outward FDI from emerging countries. APBR (ADO)</li></ul></div><div class="secao"><div class="secao-titulo">Atividades</div><div class="atividade exercicio"><div class="atividade-header"><span class="atividade-tipo">⚔ Exercício</span><span class="nivel-tag intermediario">Intermediário</span></div><div class="atividade-enunciado">Para uma SLR fictícia sobre "engajamento de funcionários em trabalho híbrido", aplique:</div><ul class="checkable-list"><li class="checkable-item" data-key="trilha-3-a4-atv0-it0"><span class="checkbox"></span><span class="checkable-text">TCCM: liste 3 teorias usadas, 3 contextos, 3 características de população, 3 métodos</span></li><li class="checkable-item" data-key="trilha-3-a4-atv0-it1"><span class="checkbox"></span><span class="checkable-text">SPAR-4-SLR: descreva os 6 sub-passos com decisões justificadas</span></li><li class="checkable-item" data-key="trilha-3-a4-atv0-it2"><span class="checkbox"></span><span class="checkable-text">ADO: organize 3 antecedentes, 3 decisões e 3 outcomes da literatura</span></li></ul><button class="gabarito-toggle">✧ Revelar gabarito</button><div class="gabarito"><div class="gabarito-titulo">Gabarito</div><div class="gabarito-content"><p>TCCM exemplo: Teorias (JD-R, social exchange, conservation of resources). Contextos (knowledge workers, retail, healthcare). SPAR-4-SLR: Identification (problema), Acquisition (busca), Organization (extração), Purification (filtragem), Evaluation (síntese), Reporting (PRISMA). ADO: Antecedentes (cultura, tecnologia, autonomia), Decisões (políticas de hibridização), Outcomes (engajamento, performance, retenção).</p></div></div></div><div class="atividade estudo-caso"><div class="atividade-header"><span class="atividade-tipo">◈ Estudo de caso (real)</span><span class="nivel-tag avancado">Avançado</span></div><div class="atividade-referencia">📚 Lim, W. M., Yap, S. F. &amp; Makkar, M. (2021). Home sharing in marketing and tourism at a tipping point. JBR, 125, 534–566.</div><div class="atividade-enunciado">Modelo de aplicação combinada dos 3 frameworks. Reproduza a estrutura para o seu tema:</div><ul class="checkable-list"><li class="checkable-item" data-key="trilha-3-a4-atv1-it0"><span class="checkbox"></span><span class="checkable-text">Use SPAR-4-SLR para descrever seu protocolo metodológico</span></li><li class="checkable-item" data-key="trilha-3-a4-atv1-it1"><span class="checkbox"></span><span class="checkable-text">Use TCCM para organizar a apresentação dos achados</span></li><li class="checkable-item" data-key="trilha-3-a4-atv1-it2"><span class="checkbox"></span><span class="checkable-text">Use ADO para apresentar a discussão como cadeia causal</span></li></ul><button class="gabarito-toggle">✧ Revelar gabarito</button><div class="gabarito"><div class="gabarito-titulo">Gabarito</div><div class="gabarito-content"><p>Atividade integradora. Discutir com orientador a integração dos 3.</p></div></div></div></div></div></div></div></div></main>
 
   <!-- FOOTER -->
   <footer class="footer">
@@ -623,7 +829,7 @@
     <div class="footer-actions">
       <button class="footer-btn" onclick="window.print()">Imprimir versão</button>
       <button class="footer-btn" onclick="resetProgress()">Reiniciar progresso</button>
-      <button class="footer-btn" onclick="window.location.href='https://leovils.github.io/revisoes-literatura/'">Voltar ao material</button>
+      <button class="footer-btn" onclick="window.location.href=&#39;https://leovils.github.io/revisoes-literatura/&#39;">Voltar ao material</button>
     </div>
   </footer>
 
@@ -672,22 +878,42 @@ const guideData = {
         ],
         atividades: [
           {
-            tipo: "exercicio",
+            tipo: "multipla-escolha",
             nivel: "iniciante",
-            enunciado: "Para cada propósito abaixo, identifique qual família é mais adequada (Tradicional, Com Protocolo, Quantitativa/Computacional, Síntese Qualitativa, ou Framework de Administração):",
-            itens: [
-              "a) Mapear estrutura intelectual de um campo com 30 anos de produção",
-              "b) Sintetizar achados de 8 estudos de caso qualitativos sobre liderança feminina",
-              "c) Estimar o efeito médio de programas de mentoring sobre desempenho",
-              "d) Construir argumento crítico contra um pressuposto consolidado",
-              "e) Organizar literatura de marketing internacional em quatro dimensões teóricas"
+            enunciado: "Para cada propósito abaixo, identifique qual família é mais adequada:",
+            opcoes: [
+              "Tradicional",
+              "Com Protocolo",
+              "Quantitativa/Computacional",
+              "Síntese Qualitativa",
+              "Framework de Administração"
             ],
-            gabarito: [
-              "a) Quantitativa/Computacional (bibliometria — cocitação)",
-              "b) Síntese Qualitativa (meta-síntese ou síntese temática)",
-              "c) Quantitativa/Computacional (meta-análise)",
-              "d) Tradicional (revisão crítica)",
-              "e) Framework de Administração (TCCM)"
+            questoes: [
+              {
+                pergunta: "a) Mapear estrutura intelectual de um campo com 30 anos de produção",
+                correta: 2,
+                explicacao: "Bibliometria (cocitação) é ideal para mapear estrutura intelectual histórica."
+              },
+              {
+                pergunta: "b) Sintetizar achados de 8 estudos de caso qualitativos sobre liderança feminina",
+                correta: 3,
+                explicacao: "Síntese de estudos qualitativos pede meta-síntese ou síntese temática."
+              },
+              {
+                pergunta: "c) Estimar o efeito médio de programas de mentoring sobre desempenho",
+                correta: 2,
+                explicacao: "Estimar efeito médio a partir de múltiplos estudos quantitativos é meta-análise."
+              },
+              {
+                pergunta: "d) Construir argumento crítico contra um pressuposto consolidado",
+                correta: 0,
+                explicacao: "Revisão crítica (família Tradicional) é o caminho para questionar pressupostos."
+              },
+              {
+                pergunta: "e) Organizar literatura de marketing internacional em quatro dimensões teóricas",
+                correta: 4,
+                explicacao: "Quatro dimensões teóricas é assinatura do TCCM (Theory-Context-Characteristics-Methodology)."
+              }
             ]
           },
           {
@@ -1436,6 +1662,7 @@ window.guideData = guideData;
     const header = el('div', 'atividade-header');
     const tipoTag = el('span', 'atividade-tipo',
       tipo === 'exercicio' ? '⚔ Exercício' :
+      tipo === 'multipla-escolha' ? '⚔ Exercício · múltipla escolha' :
       tipo === 'estudo-caso' ? (atv.real ? '◈ Estudo de caso (real)' : '◈ Estudo de caso (cenário)') :
       '✦ Checklist'
     );
@@ -1454,7 +1681,129 @@ window.guideData = guideData;
     const enun = el('div', 'atividade-enunciado', atv.enunciado);
     wrap.appendChild(enun);
 
-    // Lista de items (checkboxes)
+    // ============ MÚLTIPLA ESCOLHA ============
+    if (tipo === 'multipla-escolha' && atv.questoes) {
+      const respostas = {}; // { qIdx: opcaoIdx }
+      const questoesEls = [];
+
+      atv.questoes.forEach((q, qIdx) => {
+        const qDiv = el('div', 'questao-mc');
+
+        // Pergunta
+        const perg = el('div', 'questao-mc-pergunta');
+        const mark = el('span', 'questao-mc-pergunta-mark');
+        const pergTxt = el('span', null, q.pergunta);
+        perg.appendChild(mark);
+        perg.appendChild(pergTxt);
+        qDiv.appendChild(perg);
+
+        // Opções
+        const opcoesDiv = el('div', 'opcoes-mc');
+        atv.opcoes.forEach((opc, oIdx) => {
+          const opcDiv = el('div', 'opcao-mc');
+          opcDiv.dataset.qidx = qIdx;
+          opcDiv.dataset.oidx = oIdx;
+          const radio = el('span', 'opcao-mc-radio');
+          const txt = el('span', null, opc);
+          opcDiv.appendChild(radio);
+          opcDiv.appendChild(txt);
+
+          opcDiv.addEventListener('click', () => {
+            if (qDiv.classList.contains('verificada')) return;
+            // Limpa seleção anterior dessa questão
+            opcoesDiv.querySelectorAll('.opcao-mc').forEach(e => e.classList.remove('selecionada'));
+            opcDiv.classList.add('selecionada');
+            respostas[qIdx] = oIdx;
+            // Habilita botão se todas respondidas
+            if (Object.keys(respostas).length === atv.questoes.length) {
+              btnVerificar.disabled = false;
+            }
+          });
+
+          opcoesDiv.appendChild(opcDiv);
+        });
+        qDiv.appendChild(opcoesDiv);
+
+        // Explicação (escondida até verificar)
+        const expl = el('div', 'explicacao-mc', q.explicacao);
+        qDiv.appendChild(expl);
+
+        wrap.appendChild(qDiv);
+        questoesEls.push(qDiv);
+      });
+
+      // Botão verificar + resumo
+      const verifWrap = el('div', 'verificar-mc-wrap');
+      const btnVerificar = el('button', 'btn-verificar', 'Verificar respostas');
+      btnVerificar.disabled = true;
+      const resumo = el('span', 'resumo-mc');
+      verifWrap.appendChild(btnVerificar);
+      verifWrap.appendChild(resumo);
+      wrap.appendChild(verifWrap);
+
+      btnVerificar.addEventListener('click', () => {
+        if (btnVerificar.classList.contains('refazer')) {
+          // Refazer: limpa tudo
+          Object.keys(respostas).forEach(k => delete respostas[k]);
+          questoesEls.forEach(qd => {
+            qd.classList.remove('verificada', 'correta', 'incorreta');
+            qd.querySelectorAll('.opcao-mc').forEach(o => {
+              o.classList.remove('selecionada', 'correta-resposta', 'escolha-errada');
+            });
+          });
+          resumo.classList.remove('visible');
+          btnVerificar.textContent = 'Verificar respostas';
+          btnVerificar.classList.remove('refazer');
+          btnVerificar.disabled = true;
+          return;
+        }
+
+        // Verificar
+        let acertos = 0;
+        atv.questoes.forEach((q, qIdx) => {
+          const qd = questoesEls[qIdx];
+          qd.classList.add('verificada');
+          const escolhida = respostas[qIdx];
+          const correta = q.correta;
+          const acertou = escolhida === correta;
+          if (acertou) acertos++;
+          qd.classList.add(acertou ? 'correta' : 'incorreta');
+          qd.querySelector('.questao-mc-pergunta-mark').textContent = acertou ? '✓' : '✗';
+          // Marca a opção correta
+          qd.querySelector(`.opcao-mc[data-oidx="${correta}"]`).classList.add('correta-resposta');
+          // Se errou, marca a escolha como erro
+          if (!acertou) {
+            qd.querySelector(`.opcao-mc[data-oidx="${escolhida}"]`).classList.add('escolha-errada');
+          }
+        });
+        const total = atv.questoes.length;
+        const pct = Math.round((acertos / total) * 100);
+        const pctClass = pct < 60 ? 'baixo' : '';
+        resumo.innerHTML = `Você acertou <strong>${acertos}</strong> de ${total} <span class="pct ${pctClass}">(${pct}%)</span>`;
+        resumo.classList.add('visible');
+        btnVerificar.textContent = 'Refazer';
+        btnVerificar.classList.add('refazer');
+        btnVerificar.disabled = false;
+
+        // Atualiza progresso global
+        // Cada questão correta conta como 1 item progredido
+        const baseQKey = baseKey + '-atv' + idx + '-mc';
+        atv.questoes.forEach((_, qIdx) => {
+          const qKey = baseQKey + qIdx;
+          if (qIdx in respostas && respostas[qIdx] === atv.questoes[qIdx].correta) {
+            progress[qKey] = true;
+          } else {
+            delete progress[qKey];
+          }
+        });
+        saveProgress();
+        updateAllProgress();
+      });
+
+      return wrap;
+    }
+
+    // ============ EXERCICIO/CHECKLIST/ESTUDO-CASO (com itens marcáveis) ============
     if (atv.itens && atv.itens.length > 0) {
       const ul = el('ul', 'checkable-list');
       atv.itens.forEach((item, i) => {
@@ -1594,6 +1943,7 @@ window.guideData = guideData;
         if (mod.atividades) {
           mod.atividades.forEach(atv => {
             if (atv.itens) total += atv.itens.length;
+            if (atv.questoes) total += atv.questoes.length;
           });
         }
       });
@@ -1612,6 +1962,13 @@ window.guideData = guideData;
               atv.itens.forEach((_, j) => {
                 total++;
                 const key = t.id + '-' + mod.id + '-atv' + i + '-it' + j;
+                if (progress[key]) done++;
+              });
+            }
+            if (atv.questoes) {
+              atv.questoes.forEach((_, j) => {
+                total++;
+                const key = t.id + '-' + mod.id + '-atv' + i + '-mc' + j;
                 if (progress[key]) done++;
               });
             }
@@ -1634,6 +1991,13 @@ window.guideData = guideData;
               atv.itens.forEach((_, j) => {
                 total++;
                 const key = mbk + '-atv' + i + '-it' + j;
+                if (progress[key]) done++;
+              });
+            }
+            if (atv.questoes) {
+              atv.questoes.forEach((_, j) => {
+                total++;
+                const key = mbk + '-atv' + i + '-mc' + j;
                 if (progress[key]) done++;
               });
             }
@@ -1694,5 +2058,6 @@ window.guideData = guideData;
   init();
 })();
 </script>
-</body>
-</html>
+
+
+</body></html>
