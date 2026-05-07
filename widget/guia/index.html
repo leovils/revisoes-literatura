@@ -1,0 +1,1698 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Guia de Estudo · Família das Revisões de Literatura · MTPQI</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600;700&family=EB+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  /* =================== RESET & BASE =================== */
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  html { scroll-behavior: smooth; }
+  body {
+    background:
+      radial-gradient(ellipse at top, #15152a 0%, #0a0a14 60%, #050511 100%);
+    background-attachment: fixed;
+    color: #E8DCC4;
+    font-family: 'EB Garamond', Georgia, serif;
+    font-size: 17px;
+    line-height: 1.65;
+    min-height: 100vh;
+    overflow-x: hidden;
+  }
+
+  /* Sutil textura de pergaminho/grão */
+  body::before {
+    content: "";
+    position: fixed;
+    inset: 0;
+    background-image:
+      radial-gradient(circle at 20% 30%, rgba(212, 175, 55, 0.04) 0%, transparent 40%),
+      radial-gradient(circle at 80% 70%, rgba(201, 155, 48, 0.03) 0%, transparent 40%);
+    pointer-events: none;
+    z-index: 0;
+  }
+
+  /* =================== CONTAINER PRINCIPAL =================== */
+  .wrap {
+    max-width: 1180px;
+    margin: 0 auto;
+    padding: 60px 30px 100px;
+    position: relative;
+    z-index: 1;
+  }
+
+  /* =================== HEADER =================== */
+  .hero {
+    text-align: center;
+    padding: 40px 0 60px;
+    position: relative;
+  }
+  .hero::before, .hero::after {
+    content: "❦";
+    position: absolute;
+    color: #C99B30;
+    font-size: 18px;
+    opacity: 0.55;
+  }
+  .hero::before { left: 50%; top: 0; transform: translateX(-50%); }
+  .hero::after { left: 50%; bottom: 10px; transform: translateX(-50%) rotate(180deg); }
+
+  .hero-eyebrow {
+    font-family: 'Cinzel', serif;
+    font-size: 12px;
+    color: #C99B30;
+    letter-spacing: 6px;
+    text-transform: uppercase;
+    margin-bottom: 20px;
+    font-weight: 500;
+  }
+  .hero-title {
+    font-family: 'Cinzel', serif;
+    font-size: 48px;
+    font-weight: 700;
+    color: #D4AF37;
+    letter-spacing: 2px;
+    line-height: 1.15;
+    margin-bottom: 18px;
+    text-shadow: 0 2px 20px rgba(212, 175, 55, 0.15);
+  }
+  .hero-sub {
+    font-family: 'EB Garamond', serif;
+    font-size: 19px;
+    color: #A8A39A;
+    font-style: italic;
+    max-width: 640px;
+    margin: 0 auto 30px;
+  }
+
+  /* Progresso global */
+  .progress-bar-global {
+    max-width: 480px;
+    margin: 30px auto 0;
+    background: rgba(212, 175, 55, 0.08);
+    border-radius: 2px;
+    height: 6px;
+    overflow: hidden;
+    position: relative;
+  }
+  .progress-fill-global {
+    height: 100%;
+    background: linear-gradient(90deg, #C99B30, #D4AF37, #E8B86F);
+    width: 0%;
+    transition: width 0.6s ease;
+    box-shadow: 0 0 12px rgba(212, 175, 55, 0.4);
+  }
+  .progress-text-global {
+    margin-top: 12px;
+    font-family: 'Cinzel', serif;
+    font-size: 11px;
+    color: #C99B30;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+  }
+
+  /* =================== INTRO BOX =================== */
+  .intro {
+    background: rgba(36, 36, 64, 0.4);
+    border-left: 3px solid #C99B30;
+    padding: 28px 34px;
+    margin-bottom: 60px;
+    border-radius: 0 4px 4px 0;
+  }
+  .intro h2 {
+    font-family: 'Cinzel', serif;
+    font-size: 16px;
+    color: #D4AF37;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    margin-bottom: 14px;
+    font-weight: 600;
+  }
+  .intro p {
+    color: #E8DCC4;
+    font-size: 16px;
+  }
+  .intro p + p { margin-top: 10px; }
+
+  /* =================== TRILHA HEADER =================== */
+  .trilha {
+    margin-bottom: 80px;
+    position: relative;
+  }
+  .trilha-header {
+    display: flex;
+    align-items: flex-start;
+    gap: 24px;
+    margin-bottom: 36px;
+    padding-bottom: 24px;
+    border-bottom: 1px solid rgba(201, 155, 48, 0.25);
+  }
+  .trilha-rune {
+    flex-shrink: 0;
+    width: 78px;
+    height: 78px;
+    border: 2px solid #C99B30;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: 'Cinzel', serif;
+    font-size: 38px;
+    color: #D4AF37;
+    background: rgba(36, 36, 64, 0.5);
+    box-shadow: 0 0 24px rgba(212, 175, 55, 0.15);
+  }
+  .trilha-info { flex: 1; padding-top: 6px; }
+  .trilha-eyebrow {
+    font-family: 'Cinzel', serif;
+    font-size: 11px;
+    color: #C99B30;
+    letter-spacing: 4px;
+    text-transform: uppercase;
+    margin-bottom: 8px;
+    font-weight: 500;
+  }
+  .trilha-name {
+    font-family: 'Cinzel', serif;
+    font-size: 32px;
+    color: #D4AF37;
+    font-weight: 600;
+    letter-spacing: 1px;
+    margin-bottom: 8px;
+  }
+  .trilha-desc {
+    color: #C8C0AE;
+    font-style: italic;
+    font-size: 17px;
+    max-width: 800px;
+  }
+  .trilha-progress {
+    flex-shrink: 0;
+    text-align: right;
+    padding-top: 10px;
+  }
+  .trilha-progress-num {
+    font-family: 'Cinzel', serif;
+    font-size: 28px;
+    color: #D4AF37;
+    font-weight: 600;
+  }
+  .trilha-progress-label {
+    font-family: 'Cinzel', serif;
+    font-size: 10px;
+    color: #A8A39A;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    margin-top: 2px;
+  }
+
+  /* =================== MÓDULO =================== */
+  .modulo {
+    background: rgba(26, 26, 46, 0.55);
+    border: 1px solid rgba(201, 155, 48, 0.2);
+    border-radius: 4px;
+    margin-bottom: 26px;
+    overflow: hidden;
+    transition: border-color 0.3s ease;
+  }
+  .modulo:hover { border-color: rgba(201, 155, 48, 0.45); }
+
+  .modulo-header {
+    padding: 22px 28px;
+    cursor: pointer;
+    user-select: none;
+    display: flex;
+    align-items: center;
+    gap: 18px;
+    transition: background 0.2s ease;
+  }
+  .modulo-header:hover {
+    background: rgba(212, 175, 55, 0.04);
+  }
+  .modulo-toggle {
+    flex-shrink: 0;
+    width: 28px;
+    height: 28px;
+    color: #C99B30;
+    font-family: 'Cinzel', serif;
+    font-size: 18px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: transform 0.3s ease;
+  }
+  .modulo.aberto .modulo-toggle { transform: rotate(90deg); }
+
+  .modulo-titulo-wrap { flex: 1; min-width: 0; }
+  .modulo-titulo {
+    font-family: 'Cinzel', serif;
+    font-size: 20px;
+    color: #E8B86F;
+    font-weight: 500;
+    letter-spacing: 0.5px;
+    line-height: 1.3;
+  }
+  .modulo-meta {
+    margin-top: 4px;
+    display: flex;
+    gap: 14px;
+    align-items: center;
+    flex-wrap: wrap;
+  }
+  .nivel-tag {
+    font-family: 'Cinzel', serif;
+    font-size: 10px;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    padding: 3px 10px;
+    border-radius: 2px;
+    font-weight: 500;
+  }
+  .nivel-tag.iniciante {
+    background: rgba(90, 117, 71, 0.2);
+    color: #93B583;
+    border: 1px solid rgba(147, 181, 131, 0.4);
+  }
+  .nivel-tag.intermediario {
+    background: rgba(201, 155, 48, 0.15);
+    color: #E8B86F;
+    border: 1px solid rgba(232, 184, 111, 0.4);
+  }
+  .nivel-tag.avancado {
+    background: rgba(184, 97, 45, 0.18);
+    color: #E89066;
+    border: 1px solid rgba(232, 144, 102, 0.4);
+  }
+  .nivel-tag.todos {
+    background: rgba(168, 163, 154, 0.15);
+    color: #C8C0AE;
+    border: 1px solid rgba(168, 163, 154, 0.4);
+  }
+  .modulo-progresso-mini {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 11px;
+    color: #A8A39A;
+    letter-spacing: 1px;
+  }
+
+  .modulo-body {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.4s ease;
+  }
+  .modulo.aberto .modulo-body { max-height: 50000px; }
+  .modulo-content {
+    padding: 8px 28px 32px;
+    border-top: 1px solid rgba(201, 155, 48, 0.15);
+    margin-top: 4px;
+  }
+
+  /* =================== SEÇÕES INTERNAS =================== */
+  .secao {
+    margin-top: 26px;
+  }
+  .secao-titulo {
+    font-family: 'Cinzel', serif;
+    font-size: 12px;
+    color: #C99B30;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    margin-bottom: 12px;
+    font-weight: 500;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+  .secao-titulo::before {
+    content: "";
+    width: 14px;
+    height: 1px;
+    background: #C99B30;
+  }
+  .secao ul, .secao ol {
+    list-style: none;
+    padding-left: 0;
+  }
+  .secao li {
+    padding: 6px 0 6px 22px;
+    color: #E8DCC4;
+    position: relative;
+    line-height: 1.55;
+  }
+  .secao li::before {
+    content: "◆";
+    position: absolute;
+    left: 0;
+    color: #C99B30;
+    font-size: 9px;
+    top: 11px;
+  }
+
+  /* Listas de leitura */
+  .leitura li::before { content: "📖"; font-size: 12px; top: 8px; }
+
+  /* =================== ATIVIDADES =================== */
+  .atividade {
+    background: rgba(36, 36, 64, 0.45);
+    border-left: 3px solid #C99B30;
+    border-radius: 0 4px 4px 0;
+    padding: 20px 24px;
+    margin-top: 18px;
+    position: relative;
+  }
+  .atividade.exercicio { border-left-color: #C99B30; }
+  .atividade.estudo-caso { border-left-color: #93B583; background: rgba(36, 50, 36, 0.35); }
+  .atividade.checklist { border-left-color: #E8B86F; background: rgba(50, 40, 30, 0.4); }
+
+  .atividade-header {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 12px;
+    flex-wrap: wrap;
+  }
+  .atividade-tipo {
+    font-family: 'Cinzel', serif;
+    font-size: 11px;
+    letter-spacing: 2.5px;
+    text-transform: uppercase;
+    font-weight: 600;
+  }
+  .atividade.exercicio .atividade-tipo { color: #D4AF37; }
+  .atividade.estudo-caso .atividade-tipo { color: #93B583; }
+  .atividade.checklist .atividade-tipo { color: #E8B86F; }
+
+  .atividade-enunciado {
+    color: #E8DCC4;
+    font-size: 16px;
+    margin-bottom: 12px;
+    line-height: 1.55;
+  }
+  .atividade-referencia {
+    font-size: 14px;
+    color: #93B583;
+    font-style: italic;
+    margin-bottom: 12px;
+    padding: 10px 14px;
+    background: rgba(0, 0, 0, 0.2);
+    border-radius: 2px;
+    border-left: 2px solid #93B583;
+  }
+
+  /* Items com checkbox interativo */
+  .checkable-list {
+    list-style: none;
+    padding: 0;
+  }
+  .checkable-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 12px;
+    padding: 10px 0;
+    cursor: pointer;
+    border-bottom: 1px dotted rgba(201, 155, 48, 0.12);
+    transition: opacity 0.3s ease;
+  }
+  .checkable-item:last-child { border-bottom: none; }
+  .checkable-item:hover .checkbox { border-color: #D4AF37; }
+  .checkbox {
+    flex-shrink: 0;
+    width: 20px;
+    height: 20px;
+    border: 1.5px solid rgba(201, 155, 48, 0.5);
+    border-radius: 2px;
+    margin-top: 4px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.25s ease;
+    background: rgba(0, 0, 0, 0.25);
+  }
+  .checkable-item.done .checkbox {
+    background: #C99B30;
+    border-color: #D4AF37;
+    box-shadow: 0 0 10px rgba(212, 175, 55, 0.3);
+  }
+  .checkbox::after {
+    content: "✓";
+    color: #050511;
+    font-weight: 700;
+    font-size: 13px;
+    opacity: 0;
+    transform: scale(0);
+    transition: all 0.25s ease;
+  }
+  .checkable-item.done .checkbox::after {
+    opacity: 1;
+    transform: scale(1);
+  }
+  .checkable-text {
+    color: #E8DCC4;
+    line-height: 1.55;
+    flex: 1;
+    transition: opacity 0.3s ease;
+  }
+  .checkable-item.done .checkable-text {
+    opacity: 0.5;
+    text-decoration: line-through;
+    text-decoration-color: rgba(201, 155, 48, 0.5);
+  }
+
+  /* =================== GABARITO (toggle) =================== */
+  .gabarito-toggle {
+    background: transparent;
+    border: 1px solid rgba(201, 155, 48, 0.5);
+    color: #C99B30;
+    font-family: 'Cinzel', serif;
+    font-size: 11px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    padding: 8px 18px;
+    border-radius: 2px;
+    cursor: pointer;
+    margin-top: 14px;
+    transition: all 0.25s ease;
+    font-weight: 500;
+  }
+  .gabarito-toggle:hover {
+    background: rgba(201, 155, 48, 0.12);
+    border-color: #D4AF37;
+    color: #D4AF37;
+  }
+  .gabarito {
+    display: none;
+    margin-top: 14px;
+    padding: 16px 18px;
+    background: rgba(15, 15, 30, 0.7);
+    border-radius: 2px;
+    border-left: 2px solid #93B583;
+  }
+  .gabarito.visible { display: block; }
+  .gabarito-titulo {
+    font-family: 'Cinzel', serif;
+    font-size: 11px;
+    color: #93B583;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    margin-bottom: 10px;
+    font-weight: 500;
+  }
+  .gabarito-content {
+    color: #C8C0AE;
+    font-size: 15px;
+    line-height: 1.6;
+  }
+  .gabarito-content ul {
+    list-style: none;
+    padding-left: 0;
+  }
+  .gabarito-content li {
+    padding: 4px 0 4px 18px;
+    position: relative;
+  }
+  .gabarito-content li::before {
+    content: "›";
+    position: absolute;
+    left: 0;
+    color: #93B583;
+    top: 4px;
+  }
+
+  /* =================== FOOTER =================== */
+  .footer {
+    text-align: center;
+    margin-top: 80px;
+    padding: 40px 0 20px;
+    border-top: 1px solid rgba(201, 155, 48, 0.15);
+  }
+  .footer-mark {
+    font-family: 'Cinzel', serif;
+    font-size: 16px;
+    color: #C99B30;
+    letter-spacing: 4px;
+    margin-bottom: 14px;
+  }
+  .footer-text {
+    color: #A8A39A;
+    font-size: 14px;
+    font-style: italic;
+  }
+  .footer-text strong {
+    color: #E8B86F;
+    font-style: normal;
+  }
+  .footer-actions {
+    margin-top: 24px;
+    display: flex;
+    gap: 14px;
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+  .footer-btn {
+    background: transparent;
+    border: 1px solid rgba(201, 155, 48, 0.45);
+    color: #C99B30;
+    font-family: 'Cinzel', serif;
+    font-size: 11px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    padding: 10px 22px;
+    border-radius: 2px;
+    cursor: pointer;
+    transition: all 0.25s ease;
+  }
+  .footer-btn:hover {
+    background: rgba(201, 155, 48, 0.1);
+    color: #D4AF37;
+    border-color: #D4AF37;
+  }
+
+  /* =================== RESPONSIVO =================== */
+  @media (max-width: 768px) {
+    .hero-title { font-size: 32px; }
+    .trilha-header {
+      flex-direction: column;
+      gap: 16px;
+    }
+    .trilha-rune { width: 60px; height: 60px; font-size: 28px; }
+    .trilha-name { font-size: 24px; }
+    .trilha-progress { text-align: left; }
+    .modulo-header { padding: 18px 20px; }
+    .modulo-titulo { font-size: 17px; }
+    .modulo-content { padding: 8px 20px 24px; }
+    .atividade { padding: 16px 18px; }
+    .wrap { padding: 30px 18px 60px; }
+  }
+</style>
+</head>
+<body>
+
+<div class="wrap">
+
+  <!-- HERO -->
+  <header class="hero">
+    <div class="hero-eyebrow">Programa MTPQI · UNINOVE</div>
+    <h1 class="hero-title">Guia de Estudo</h1>
+    <p class="hero-sub">Família das Revisões de Literatura — uma trilha estruturada de fundamentos a aprofundamentos, com exercícios, estudos de caso e checklists de autoavaliação.</p>
+    <div class="progress-bar-global">
+      <div class="progress-fill-global" id="progressGlobal"></div>
+    </div>
+    <div class="progress-text-global"><span id="progressNum">0</span>/<span id="progressTotal">0</span> · sua jornada começa aqui</div>
+  </header>
+
+  <!-- INTRO -->
+  <div class="intro">
+    <h2>Como usar este guia</h2>
+    <p>Este guia complementa o material principal (slides, texto-base e árvore de decisão). Ele foi desenhado para uso flexível: <strong>mestrandos iniciantes</strong> percorrem a Trilha I e Trilha II em sequência; <strong>doutorandos avançados</strong> usam principalmente a Trilha II e III conforme a etapa do projeto.</p>
+    <p>Cada atividade tem um marcador de nível (<span style="color:#93B583">iniciante</span>, <span style="color:#E8B86F">intermediário</span>, <span style="color:#E89066">avançado</span>). Use os checkboxes para marcar o que já completou — o progresso é salvo automaticamente neste navegador. Cada exercício traz gabarito ocultável; tente responder antes de revelar.</p>
+    <p style="margin-top: 14px; color: #A8A39A; font-size: 14.5px;">— <em>Prof. Leonardo Vils</em></p>
+  </div>
+
+  <!-- CONTEÚDO DAS TRILHAS (renderizado via JS) -->
+  <main id="trilhas-container"></main>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="footer-mark">❦ ◊ ❦</div>
+    <div class="footer-text">
+      Material do curso <strong>MTPQI</strong> · Programa de Pós-Graduação em Administração e Gestão de Projetos · UNINOVE
+    </div>
+    <div class="footer-actions">
+      <button class="footer-btn" onclick="window.print()">Imprimir versão</button>
+      <button class="footer-btn" onclick="resetProgress()">Reiniciar progresso</button>
+      <button class="footer-btn" onclick="window.location.href='https://leovils.github.io/revisoes-literatura/'">Voltar ao material</button>
+    </div>
+  </footer>
+
+</div>
+
+<script>
+// =============================================================
+// GUIA DE ESTUDO — Família das Revisões de Literatura
+// Conteúdo estruturado: Trilha I (Fundamentos), II (Núcleo), III (Aprofundamentos)
+// Cada item tem nível: iniciante | intermediario | avancado
+// =============================================================
+
+const guideData = {
+
+  meta: {
+    title: "Guia de Estudo — Família das Revisões de Literatura",
+    subtitle: "MTPQI · UNINOVE",
+    version: "1.0",
+    storageKey: "leo-guia-estudo-progresso"
+  },
+
+  // =============================================================
+  // TRILHA I — FUNDAMENTOS
+  // Para todos os níveis. Base conceitual antes de mergulhar.
+  // =============================================================
+  trilhaI: {
+    id: "trilha-1",
+    nome: "Fundamentos",
+    icone: "ᚠ",
+    descricao: "Antes de escolher um método, é preciso entender por que existem famílias de revisão e como decidir entre elas.",
+    nivel: "todos",
+    modulos: [
+      {
+        id: "f1",
+        titulo: "Por que existem famílias de revisão?",
+        nivel: "iniciante",
+        objetivos: [
+          "Compreender que 'revisão de literatura' não é um método único",
+          "Reconhecer as 5 famílias e seus propósitos distintos",
+          "Identificar a família apropriada a partir do propósito da pesquisa"
+        ],
+        leitura: [
+          "Slides 1–5 (introdução)",
+          "Texto-base, capítulo introdutório (pp. 1–8)",
+          "Snyder, H. (2019). Literature review as a research methodology"
+        ],
+        atividades: [
+          {
+            tipo: "exercicio",
+            nivel: "iniciante",
+            enunciado: "Para cada propósito abaixo, identifique qual família é mais adequada (Tradicional, Com Protocolo, Quantitativa/Computacional, Síntese Qualitativa, ou Framework de Administração):",
+            itens: [
+              "a) Mapear estrutura intelectual de um campo com 30 anos de produção",
+              "b) Sintetizar achados de 8 estudos de caso qualitativos sobre liderança feminina",
+              "c) Estimar o efeito médio de programas de mentoring sobre desempenho",
+              "d) Construir argumento crítico contra um pressuposto consolidado",
+              "e) Organizar literatura de marketing internacional em quatro dimensões teóricas"
+            ],
+            gabarito: [
+              "a) Quantitativa/Computacional (bibliometria — cocitação)",
+              "b) Síntese Qualitativa (meta-síntese ou síntese temática)",
+              "c) Quantitativa/Computacional (meta-análise)",
+              "d) Tradicional (revisão crítica)",
+              "e) Framework de Administração (TCCM)"
+            ]
+          },
+          {
+            tipo: "checklist",
+            nivel: "iniciante",
+            enunciado: "Checklist de autoavaliação — você sabe?",
+            itens: [
+              "Sei explicar a diferença entre revisão narrativa e sistemática",
+              "Sei o que distingue cocitação de acoplamento bibliográfico",
+              "Sei quando usar meta-análise vs. meta-síntese",
+              "Conheço pelo menos um framework de revisão em business",
+              "Sei explicar para que serve a árvore de decisão do material"
+            ]
+          }
+        ]
+      },
+      {
+        id: "f2",
+        titulo: "Como decidir qual abordagem usar?",
+        nivel: "iniciante",
+        objetivos: [
+          "Aplicar a árvore de decisão para casos reais",
+          "Reconhecer que algumas abordagens combinam (não competem)",
+          "Justificar metodologicamente a escolha da abordagem"
+        ],
+        leitura: [
+          "Slide 4 (árvore de decisão visual)",
+          "Texto-base, capítulo \"Como escolher\" (pp. 9–15)",
+          "Widget interativo: leovils.github.io/revisoes-literatura/arvore/"
+        ],
+        atividades: [
+          {
+            tipo: "exercicio",
+            nivel: "iniciante",
+            enunciado: "Use o widget interativo da árvore de decisão para 3 cenários distintos. Anote: qual abordagem foi sugerida e por quê.",
+            itens: [
+              "Cenário 1: Você quer entender o que motiva consumidores a aderirem a marcas sustentáveis. Existem cerca de 40 estudos quantitativos com testes de hipótese.",
+              "Cenário 2: Você quer mapear a evolução do conceito de \"capacidades dinâmicas\" desde 1997.",
+              "Cenário 3: Você quer subsidiar uma decisão de política pública sobre inclusão produtiva, com prazo de 6 semanas."
+            ],
+            gabarito: [
+              "Cenário 1: Meta-análise (literatura quantitativa, mesma relação testada, suficiente para estimar efeito médio)",
+              "Cenário 2: Análise de cocitação (mapear estrutura intelectual histórica de um campo)",
+              "Cenário 3: Revisão Rápida (Rapid Review) — adaptação de SLR para prazo curto, com transparência dos atalhos"
+            ]
+          },
+          {
+            tipo: "exercicio",
+            nivel: "intermediario",
+            enunciado: "Identifique no seu próprio projeto de pesquisa: qual o propósito da revisão (mapear, sintetizar, estimar efeito, criticar, organizar)? Que abordagem isso implica?",
+            itens: [
+              "Escreva em 3-5 linhas o propósito principal da sua revisão",
+              "Use a árvore de decisão para chegar a uma recomendação",
+              "Justifique por escrito por que essa abordagem é adequada (ou não) ao seu projeto"
+            ],
+            gabarito: "Atividade reflexiva sem gabarito único. Discutir com o orientador."
+          },
+          {
+            tipo: "checklist",
+            nivel: "intermediario",
+            enunciado: "Checklist — sua escolha está fundamentada?",
+            itens: [
+              "Defini o propósito da revisão antes de escolher o método",
+              "Considerei se o tipo de evidência disponível combina com o método",
+              "Avaliei o tempo e recursos disponíveis (rapid vs. completa)",
+              "Identifiquei se uma combinação de abordagens é mais útil que uma sozinha",
+              "Justifiquei a escolha em ao menos um parágrafo, com referência metodológica"
+            ]
+          }
+        ]
+      },
+      {
+        id: "f3",
+        titulo: "Glossário essencial",
+        nivel: "iniciante",
+        objetivos: [
+          "Internalizar os termos técnicos centrais",
+          "Distinguir conceitos próximos mas distintos"
+        ],
+        leitura: [
+          "Texto-base — apêndice de glossário",
+          "Cards individuais no repositório (cada um define o método)"
+        ],
+        atividades: [
+          {
+            tipo: "exercicio",
+            nivel: "iniciante",
+            enunciado: "Defina cada termo em uma frase, sem consultar o material. Depois confira:",
+            itens: [
+              "1. Bibliometria",
+              "2. Cocitação",
+              "3. Acoplamento bibliográfico",
+              "4. Meta-análise",
+              "5. Meta-síntese",
+              "6. SLR (Systematic Literature Review)",
+              "7. PRISMA",
+              "8. TCCM",
+              "9. ADO",
+              "10. SPAR-4-SLR"
+            ],
+            gabarito: [
+              "1. Bibliometria: análise quantitativa da produção científica usando metadados (autores, citações, keywords)",
+              "2. Cocitação: frequência com que pares de obras são citadas juntas — revela raízes intelectuais",
+              "3. Acoplamento: similaridade entre artigos pelas referências compartilhadas — revela frentes atuais",
+              "4. Meta-análise: síntese estatística que combina estudos quantitativos para estimar efeito médio",
+              "5. Meta-síntese: termo guarda-chuva para sínteses qualitativas que vão além do somatório descritivo",
+              "6. SLR: revisão com protocolo explícito, replicável, transparente — padrão evidence-based",
+              "7. PRISMA: guideline de reporte (Preferred Reporting Items for Systematic reviews and Meta-Analyses)",
+              "8. TCCM: framework Theory-Context-Characteristics-Methodology para revisões em business",
+              "9. ADO: framework Antecedents-Decisions-Outcomes para organizar achados em cadeia causal",
+              "10. SPAR-4-SLR: protocolo de Paul et al. (2021) com 3 estágios e 6 sub-procedimentos para SLR em business"
+            ]
+          }
+        ]
+      }
+    ]
+  },
+
+  // =============================================================
+  // TRILHA II — NÚCLEO (Por etapa do projeto)
+  // Aqui o aluno passa pelo ciclo completo de uma revisão.
+  // =============================================================
+  trilhaII: {
+    id: "trilha-2",
+    nome: "Por etapa do projeto",
+    icone: "ᚱ",
+    descricao: "O ciclo completo de uma revisão de literatura. Independente do método escolhido, todo projeto passa por estas 5 etapas.",
+    nivel: "iniciante-a-avancado",
+    modulos: [
+      // ============================================================
+      {
+        id: "e1",
+        titulo: "Etapa 1 — Definir a pergunta de revisão",
+        nivel: "iniciante",
+        objetivos: [
+          "Formular pergunta de revisão clara e respondível",
+          "Aplicar frameworks PICO / SPIDER / PCC conforme o tipo de pergunta",
+          "Distinguir pergunta confirmatória, exploratória e mapeadora"
+        ],
+        leitura: [
+          "Texto-base, cap. \"Pergunta de revisão\" (pp. 16–22)",
+          "Booth, A., Sutton, A. & Papaioannou, D. (2016). Systematic Approaches to a Successful Literature Review (cap. 4)",
+          "Card 'Sistemática (SLR)' — passo 1"
+        ],
+        atividades: [
+          {
+            tipo: "exercicio",
+            nivel: "iniciante",
+            enunciado: "Reformule cada pergunta vaga em uma pergunta de revisão estruturada, indicando o framework usado:",
+            itens: [
+              "a) \"Como funciona o engajamento de funcionários?\"",
+              "b) \"Liderança transformacional importa?\"",
+              "c) \"O que se sabe sobre economia compartilhada?\""
+            ],
+            gabarito: [
+              "a) Confirmatória/PICO: \"Em organizações de serviços (P), práticas de gestão de pessoas (I) comparadas a sua ausência (C) afetam o engajamento (O)?\"",
+              "b) Confirmatória/PICO: \"Em equipes empresariais (P), liderança transformacional (I) comparada a outros estilos (C) afeta o desempenho da equipe (O)?\"",
+              "c) Exploratória/PCC: \"Como tem sido conceituada (Concept) a economia compartilhada (Population) na literatura de business (Context) entre 2010 e 2024?\""
+            ]
+          },
+          {
+            tipo: "estudo-caso",
+            nivel: "intermediario",
+            real: true,
+            referencia: "Mandler, T., Sezen, B., Chen, J. & Özsomer, A. (2021). Performance consequences of marketing standardization/adaptation. Journal of Business Research, 125, 416–435.",
+            enunciado: "Leia o resumo e introdução desse paper. Identifique:",
+            itens: [
+              "Qual a pergunta principal de revisão?",
+              "Qual framework foi usado para estruturar a pergunta (PICO, PCC, TCCM)?",
+              "A pergunta é confirmatória, exploratória ou mapeadora?",
+              "Como os autores justificam a relevância da pergunta?"
+            ],
+            gabarito: "Os autores usam TCCM para estruturar a pergunta sobre consequências de desempenho em marketing standardization vs. adaptation. É uma pergunta exploratória (mapeadora) por dimensão. A justificativa é a contradição persistente nos achados anteriores (effects mistos)."
+          },
+          {
+            tipo: "exercicio",
+            nivel: "avancado",
+            enunciado: "Para o seu próprio projeto: escreva 3 versões da pergunta de revisão (uma confirmatória, uma exploratória, uma crítica). Discuta com seu orientador qual cabe melhor à sua tese/dissertação.",
+            itens: [
+              "Versão confirmatória (PICO): __",
+              "Versão exploratória (PCC): __",
+              "Versão crítica (problematizadora): __"
+            ],
+            gabarito: "Atividade reflexiva. Sem gabarito fixo."
+          },
+          {
+            tipo: "checklist",
+            nivel: "iniciante",
+            enunciado: "Sua pergunta de revisão está pronta?",
+            itens: [
+              "É clara e específica (não vaga)",
+              "Indica o tipo de evidência buscado",
+              "Pode ser respondida com a literatura disponível",
+              "Justificada pela lacuna identificada",
+              "Compatível com o método escolhido"
+            ]
+          }
+        ]
+      },
+
+      // ============================================================
+      {
+        id: "e2",
+        titulo: "Etapa 2 — Estratégia de busca",
+        nivel: "intermediario",
+        objetivos: [
+          "Construir strings de busca booleanas eficazes",
+          "Selecionar bases adequadas (WoS, Scopus, EBSCO, ABI/Inform)",
+          "Documentar a busca para replicabilidade"
+        ],
+        leitura: [
+          "Texto-base, cap. \"Busca\" (pp. 23–34)",
+          "Bramer, W. M. et al. (2018). Optimal database combinations for literature searches in systematic reviews. Systematic Reviews",
+          "Cards 'Sistemática' e 'Bibliometria' — passos de busca"
+        ],
+        atividades: [
+          {
+            tipo: "exercicio",
+            nivel: "intermediario",
+            enunciado: "Construa uma string de busca booleana para o tema \"impacto da inteligência artificial na tomada de decisão de gestores\":",
+            itens: [
+              "Liste 5 termos sinônimos para \"inteligência artificial\"",
+              "Liste 5 termos sinônimos para \"tomada de decisão gerencial\"",
+              "Combine com AND, OR e parênteses",
+              "Adicione filtros (anos, tipo de documento, idioma)",
+              "Teste no Web of Science e anote o número de resultados"
+            ],
+            gabarito: [
+              "Exemplo de string aceitável: TS=((\"artificial intelligence\" OR \"AI\" OR \"machine learning\" OR \"deep learning\" OR \"neural network*\") AND (\"managerial decision*\" OR \"executive decision*\" OR \"strategic decision*\" OR \"decision making\" OR \"decision-making\")) AND DT=(Article OR Review) AND PY=(2015-2025) AND LA=(English OR Portuguese)",
+              "O número exato de resultados varia conforme a base e a data — anote para sua replicabilidade."
+            ]
+          },
+          {
+            tipo: "exercicio",
+            nivel: "avancado",
+            enunciado: "Compare WoS e Scopus para o seu tema: qual retorna mais resultados? Qual é mais relevante? Justifique a escolha (ou combinação) baseado em literatura.",
+            itens: [
+              "Resultado WoS: __ artigos",
+              "Resultado Scopus: __ artigos",
+              "Sobreposição estimada: __",
+              "Justificativa metodológica da escolha"
+            ],
+            gabarito: "Bramer et al. (2018) recomendam combinar WoS+Scopus para cobrir ~95% dos artigos relevantes em business. Cite essa referência na justificativa."
+          },
+          {
+            tipo: "estudo-caso",
+            nivel: "intermediario",
+            real: true,
+            referencia: "Donthu, N., Kumar, S., Mukherjee, D., Pandey, N. & Lim, W. M. (2021). How to conduct a bibliometric analysis. Journal of Business Research, 133, 285–296.",
+            enunciado: "Leia a seção \"Step 1: Define the aims and scope\" e \"Step 2: Choose the techniques\". Reflita:",
+            itens: [
+              "Como os autores recomendam definir o escopo da busca?",
+              "Que critérios eles dão para escolher entre WoS e Scopus?",
+              "Que armadilhas eles alertam (ex: sobre keywords)?"
+            ],
+            gabarito: "Os autores recomendam definir aims relacionados à performance ou à science mapping. Para a escolha de base, indicam considerar coverage e quality. Alertam sobre limpeza de keywords e desambiguação de autores."
+          },
+          {
+            tipo: "checklist",
+            nivel: "intermediario",
+            enunciado: "Sua estratégia de busca está pronta?",
+            itens: [
+              "String testada em pelo menos 2 bases",
+              "Sinônimos e variações ortográficas incluídos",
+              "Operadores booleanos e parênteses corretos",
+              "Filtros (anos, idioma, tipo) justificados",
+              "Documentei tudo (data, base, string, n. resultados) para replicabilidade"
+            ]
+          }
+        ]
+      },
+
+      // ============================================================
+      {
+        id: "e3",
+        titulo: "Etapa 3 — Triagem e seleção",
+        nivel: "intermediario",
+        objetivos: [
+          "Definir critérios de inclusão e exclusão",
+          "Aplicar triagem em duas etapas (título/resumo + texto completo)",
+          "Calcular concordância entre revisores (kappa de Cohen)"
+        ],
+        leitura: [
+          "Texto-base, cap. \"Triagem\" (pp. 35–42)",
+          "Page, M. J. et al. (2021). The PRISMA 2020 statement",
+          "Card 'Sistemática (SLR)' — passos de triagem"
+        ],
+        atividades: [
+          {
+            tipo: "exercicio",
+            nivel: "intermediario",
+            enunciado: "Para um corpus inicial de 250 artigos sobre \"liderança remota\", defina:",
+            itens: [
+              "5 critérios de inclusão (positivos)",
+              "5 critérios de exclusão (negativos)",
+              "Quem fará a triagem (1 ou 2 revisores cegos?)",
+              "Como será resolvida discordância",
+              "Que ferramenta usar (Rayyan, Covidence, planilha)"
+            ],
+            gabarito: [
+              "Exemplos de inclusão: estudos empíricos, peer-reviewed, em inglês ou português, contexto organizacional, 2015-2025",
+              "Exemplos de exclusão: editoriais e cartas, não peer-reviewed, fora de contexto organizacional, foco em educação remota e não trabalho",
+              "Padrão: 2 revisores cegos. Discordância resolvida por terceiro revisor ou consenso. Ferramenta: Rayyan (gratuito) ou Covidence."
+            ]
+          },
+          {
+            tipo: "exercicio",
+            nivel: "avancado",
+            enunciado: "Calcule o kappa de Cohen para a triagem de título/resumo de 30 artigos onde os 2 revisores tiveram:",
+            itens: [
+              "Concordaram em incluir: 8 artigos",
+              "Concordaram em excluir: 17 artigos",
+              "Discordaram (revisor 1 incluiu, revisor 2 excluiu): 3 artigos",
+              "Discordaram (revisor 1 excluiu, revisor 2 incluiu): 2 artigos",
+              "Calcule o kappa, interprete (Landis & Koch 1977) e diga se é aceitável"
+            ],
+            gabarito: "Po = (8+17)/30 = 0.833. Marg revisor 1: 11/30 inclui, 19/30 exclui. Marg revisor 2: 10/30 inclui, 20/30 exclui. Pe = (11/30 × 10/30) + (19/30 × 20/30) = 0.122 + 0.422 = 0.544. Kappa = (0.833 - 0.544) / (1 - 0.544) = 0.633. Interpretação: substancial agreement (Landis & Koch). Aceitável para SLR (≥0.60 é o mínimo padrão)."
+          },
+          {
+            tipo: "estudo-caso",
+            nivel: "intermediario",
+            real: false,
+            enunciado: "Cenário hipotético: você é orientador de mestrando que fez triagem sozinho, encontrou 67 artigos elegíveis, e quer publicar a SLR em journal Qualis A1.",
+            itens: [
+              "Que problema metodológico isso traz?",
+              "Como você orientaria a correção?",
+              "Que referência metodológica citar para defender a correção?"
+            ],
+            gabarito: "Triagem por 1 revisor é fonte de viés (Tranfield, Denyer & Smart 2003). Para Qualis A1 é obrigatório 2 revisores cegos com kappa reportado. Solução: 2º revisor faz triagem cega de uma amostra (mín. 20%), calcula kappa. Se aceitável (>0.60), defende-se a triagem original. Se não, redo completo. Cite: Tranfield et al. 2003 + PRISMA 2020 (item 6)."
+          },
+          {
+            tipo: "checklist",
+            nivel: "intermediario",
+            enunciado: "Sua triagem está rigorosa?",
+            itens: [
+              "Critérios de inclusão e exclusão definidos antes da triagem",
+              "Triagem feita por 2 revisores cegos",
+              "Concordância calculada (kappa ≥ 0.60)",
+              "Discordâncias resolvidas e documentadas",
+              "Diagrama de fluxo PRISMA construído"
+            ]
+          }
+        ]
+      },
+
+      // ============================================================
+      {
+        id: "e4",
+        titulo: "Etapa 4 — Extração e análise",
+        nivel: "avancado",
+        objetivos: [
+          "Construir formulário de extração de dados",
+          "Conduzir análise compatível com o método escolhido",
+          "Avaliar qualidade dos estudos incluídos"
+        ],
+        leitura: [
+          "Texto-base, cap. \"Extração e análise\" (pp. 43–60)",
+          "Cards do método específico escolhido (cocitação, meta-análise, síntese temática, etc.)",
+          "Hannigan, T. R. et al. (2019). Topic modeling in management research. Academy of Management Annals, 13(2), 586–632. (para extração computacional)"
+        ],
+        atividades: [
+          {
+            tipo: "exercicio",
+            nivel: "avancado",
+            enunciado: "Desenhe um formulário de extração para uma SLR sobre \"adoção de tecnologias digitais em PMEs\":",
+            itens: [
+              "Variáveis bibliográficas (autores, ano, journal, país)",
+              "Variáveis teóricas (teoria usada, construtos)",
+              "Variáveis metodológicas (método, amostra, contexto)",
+              "Variáveis substantivas (achados principais, mediadores, moderadores)",
+              "Avaliação de qualidade (instrumento usado)"
+            ],
+            gabarito: "Use planilha estruturada (Excel, Google Sheets ou software dedicado como CADIMA). Para SLR em business, instrumento de qualidade comum: MMAT (Mixed Methods Appraisal Tool) ou critérios próprios derivados de Tranfield et al."
+          },
+          {
+            tipo: "estudo-caso",
+            nivel: "avancado",
+            real: true,
+            referencia: "Quevedo-Silva, F., Almeida Santos, E. B., Brandão, M. M. & Vils, L. (2016). Estudo bibliométrico: Orientações sobre sua aplicação. ReMark, 15(2), 246–262.",
+            enunciado: "Esse paper é guia em português para análise bibliométrica. Examine o exemplo didático sobre priming e propaganda:",
+            itens: [
+              "Que dados foram extraídos dos artigos?",
+              "Como foi feita a análise dos dados?",
+              "Que cuidados de limpeza foram tomados (autores duplicados, sinônimos)?",
+              "Que softwares são recomendados?"
+            ],
+            gabarito: "Os autores extraem: autores, instituições, países, palavras-chave, citações. Análise: contagem de frequência, redes de coautoria, redes de cocitação. Cuidados: padronização de autores (\"Smith, J.\" e \"Smith, J.A.\" desambiguados manualmente). Softwares mencionados: Bibexcel, VOSviewer."
+          },
+          {
+            tipo: "estudo-caso",
+            nivel: "avancado",
+            real: true,
+            referencia: "Arias, M. I., Serra, F. A. R., Guerrazzi, L. A. de C. & Ferreira, M. P. (2019). Intellectual foundations and mainstream research of e-government in public administration. Management Research, 17(1), 89–115.",
+            enunciado: "Esse paper combina cocitação E acoplamento bibliográfico no mesmo estudo. Analise:",
+            itens: [
+              "Por que combinar as duas técnicas? Que cada uma revela?",
+              "Como os autores apresentam os clusters identificados?",
+              "Como a apresentação dos achados conecta-se à teoria existente?",
+              "Como você adaptaria essa abordagem ao seu tema?"
+            ],
+            gabarito: "Cocitação revela bases intelectuais (raízes históricas) e acoplamento revela frentes atuais (subcampos contemporâneos). Os autores apresentam clusters nomeados teoricamente (não numéricos). A interpretação dialoga com a literatura prévia de cada cluster — não apenas descreve mecânica. Para adaptação: aplicar o mesmo desenho metodológico a outro tema, ajustando bases e janela temporal."
+          },
+          {
+            tipo: "exercicio",
+            nivel: "avancado",
+            enunciado: "Para uma meta-análise, especifique:",
+            itens: [
+              "Que tamanho de efeito você usará? (d, r, OR, β)",
+              "Que modelo? (efeitos fixos ou aleatórios — justifique)",
+              "Como tratar heterogeneidade? (I², τ², subgrupos, meta-regressão)",
+              "Como avaliar viés de publicação? (funnel plot, Egger, trim-and-fill)",
+              "Que software? (R metafor, CMA, Stata)"
+            ],
+            gabarito: "Em ciências sociais, modelo de efeitos aleatórios é padrão (heterogeneidade esperada). Sempre reportar I², τ² e funnel plot + teste de Egger. R com metafor é gratuito e padrão atual. Cite: Borenstein et al. (2009) + Combs, Crook & Rauch (2019)."
+          },
+          {
+            tipo: "checklist",
+            nivel: "avancado",
+            enunciado: "Sua análise está compatível com o método?",
+            itens: [
+              "Formulário de extração testado em piloto antes da extração completa",
+              "Análise compatível com o método declarado",
+              "Avaliação de qualidade dos estudos feita e reportada",
+              "Software usado documentado (versão, parâmetros)",
+              "Critérios de interpretação justificados teoricamente"
+            ]
+          }
+        ]
+      },
+
+      // ============================================================
+      {
+        id: "e5",
+        titulo: "Etapa 5 — Síntese e escrita",
+        nivel: "avancado",
+        objetivos: [
+          "Construir narrativa coerente a partir dos achados",
+          "Reportar conforme guideline apropriado (PRISMA, eMERGe, RAMESES)",
+          "Identificar contribuição teórica e prática"
+        ],
+        leitura: [
+          "Texto-base, cap. \"Síntese e escrita\" (pp. 61–75)",
+          "Page, M. J. et al. (2021). PRISMA 2020 statement",
+          "Elsbach, K. D. & van Knippenberg, D. (2020). Creating high-impact literature reviews"
+        ],
+        atividades: [
+          {
+            tipo: "exercicio",
+            nivel: "avancado",
+            enunciado: "Esboce a estrutura de um manuscrito de revisão para o seu tema:",
+            itens: [
+              "Título (10-15 palavras, com método explícito)",
+              "Resumo estruturado (Background, Aims, Methods, Findings, Implications)",
+              "Introdução (problema, lacuna, contribuição esperada)",
+              "Método (replicável)",
+              "Achados (organizados por tema/cluster)",
+              "Discussão (3 contribuições teóricas + 3 práticas)",
+              "Limitações + agenda futura"
+            ],
+            gabarito: "Use frameworks como TCCM, ADO ou SPAR-4-SLR para estruturar achados. Discussão deve ir além de \"resumir\" — precisa interpretar e propor. Cite: Elsbach & van Knippenberg (2020) sobre revisões de alto impacto."
+          },
+          {
+            tipo: "estudo-caso",
+            nivel: "avancado",
+            real: true,
+            referencia: "Lim, W. M., Yap, S. F. & Makkar, M. (2021). Home sharing in marketing and tourism at a tipping point. Journal of Business Research, 125, 534–566.",
+            enunciado: "Esse paper combina SPAR-4-SLR + ADO + TCCM. Analise como os 3 frameworks são integrados:",
+            itens: [
+              "Onde cada framework aparece na estrutura do paper?",
+              "Como os 3 conversam entre si (não competem)?",
+              "Que tabelas e figuras eles usam para apresentar achados?",
+              "Como a agenda de pesquisa futura é estruturada?"
+            ],
+            gabarito: "SPAR-4-SLR estrutura o método (assemble-arrange-assess). TCCM organiza os achados em 4 dimensões. ADO organiza a discussão em cadeia causal. Tabelas: TCCM-grid; figuras: ADO-network. Agenda futura é estruturada por dimensão (TCCM) com proposições no formato ADO."
+          },
+          {
+            tipo: "exercicio",
+            nivel: "avancado",
+            enunciado: "Aplique o checklist PRISMA 2020 ao seu próprio rascunho de revisão. Marque quais dos 27 itens estão atendidos:",
+            itens: [
+              "Items 1-4 (título e resumo)",
+              "Items 5-9 (introdução e métodos — eligibilidade, fontes, busca, seleção, extração)",
+              "Items 10-15 (métodos continuação — síntese, viés, certeza)",
+              "Items 16-23 (resultados — fluxo, características, viés, achados, certeza)",
+              "Items 24-27 (discussão e outros — interpretação, limitações, conclusões, registro)"
+            ],
+            gabarito: "PRISMA 2020 está em http://www.prisma-statement.org/. O ideal é atender 100% dos itens em SLRs publicáveis em journals top. Items frequentemente esquecidos: 24c (avaliação de certeza), 25 (limitações da evidência) e 27 (registro do protocolo)."
+          },
+          {
+            tipo: "checklist",
+            nivel: "avancado",
+            enunciado: "Seu manuscrito está pronto para submissão?",
+            itens: [
+              "Resumo estruturado nos 250 palavras com métodos e achados",
+              "Diagrama PRISMA incluído (para SLR/meta-análise)",
+              "Tabelas e figuras autoexplicativas",
+              "Discussão com contribuição teórica clara",
+              "Limitações honestas",
+              "Agenda de pesquisa concreta",
+              "Reportagem conforme guideline (PRISMA, eMERGe, RAMESES, etc.)"
+            ]
+          }
+        ]
+      }
+    ]
+  },
+
+  // =============================================================
+  // TRILHA III — APROFUNDAMENTOS OPCIONAIS
+  // Para quem quer dominar uma técnica específica
+  // =============================================================
+  trilhaIII: {
+    id: "trilha-3",
+    nome: "Aprofundamentos opcionais",
+    icone: "ᛟ",
+    descricao: "Para quem quer dominar uma técnica específica. Cada módulo é independente e pode ser feito conforme a necessidade do projeto.",
+    nivel: "intermediario-a-avancado",
+    modulos: [
+      {
+        id: "a1",
+        titulo: "Bibliometria avançada — combinando técnicas",
+        nivel: "avancado",
+        objetivos: [
+          "Combinar cocitação + acoplamento + coword + coautoria em um mesmo estudo",
+          "Interpretar visualizações de redes (clusters, centralidade, density)",
+          "Reportar bibliometria publicável em journals top"
+        ],
+        leitura: [
+          "Donthu et al. (2021). How to conduct a bibliometric analysis",
+          "Zupic & Čater (2015). Bibliometric methods in management and organization",
+          "Quevedo-Silva, Almeida Santos, Brandão & Vils (2016). Estudo bibliométrico (em português)",
+          "Mukherjee, Lim, Kumar & Donthu (2022). Guidelines for advancing theory and practice through bibliometric research"
+        ],
+        atividades: [
+          {
+            tipo: "exercicio",
+            nivel: "avancado",
+            enunciado: "Conduza um mini-bibliometria sobre seu tema usando o Bibliometrix (R):",
+            itens: [
+              "Baixe corpus de 100-300 artigos da WoS",
+              "Importe no Bibliometrix (biblioshiny)",
+              "Gere análise de cocitação (top 30 referências)",
+              "Gere análise de acoplamento (clusters de frentes atuais)",
+              "Gere coautoria (rede)",
+              "Interprete cada análise em 1 parágrafo"
+            ],
+            gabarito: "Bibliometrix é gratuito e roda como Shiny app (biblioshiny). Tutorial em https://www.bibliometrix.org/. Cocitação revela raízes; acoplamento revela frentes; coautoria revela rede social."
+          },
+          {
+            tipo: "estudo-caso",
+            nivel: "avancado",
+            real: true,
+            referencia: "Paraíso de Campos Serra, B., Tomei, P. A., Serra, F. & Guerrazzi, L. A. de C. (2022). What has been studied in cultural intelligence? Management Research, 20(1), 50–73.",
+            enunciado: "Modelo brasileiro de bibliometria publicada em Emerald (Qualis A2). Estude o desenho:",
+            itens: [
+              "Quantos artigos analisados? Como o corpus foi montado?",
+              "Como cocitação e acoplamento foram apresentados?",
+              "Que softwares foram usados?",
+              "Como os autores discutem implicações teóricas dos clusters identificados?"
+            ],
+            gabarito: "Corpus de 219 artigos. 60 selecionados para acoplamento (frentes atuais), 32 referências para cocitação (raízes). Apresentação em redes visuais com clusters nomeados. Software: VOSviewer + Bibexcel. Discussão articula clusters teóricos (CQ como traço, CQ como capacidade, CQ como processo) à literatura prévia."
+          }
+        ]
+      },
+      {
+        id: "a2",
+        titulo: "Meta-análise estatística",
+        nivel: "avancado",
+        objetivos: [
+          "Calcular tamanhos de efeito e seus intervalos de confiança",
+          "Conduzir meta-análise de efeitos aleatórios",
+          "Diagnosticar e tratar viés de publicação"
+        ],
+        leitura: [
+          "Borenstein, M., Hedges, L. V., Higgins, J. P. T. & Rothstein, H. R. (2009). Introduction to Meta-Analysis (cap. 1-15)",
+          "Hunter, J. E. & Schmidt, F. L. (2004). Methods of Meta-Analysis (cap. 1-7)",
+          "Combs, J. G., Crook, T. R. & Rauch, A. (2019). Meta-analytic research in management"
+        ],
+        atividades: [
+          {
+            tipo: "exercicio",
+            nivel: "avancado",
+            enunciado: "Replique uma meta-análise simples no R com metafor:",
+            itens: [
+              "Instale o pacote metafor: install.packages('metafor')",
+              "Carregue dataset de exemplo: data(dat.bcg) [estudos sobre vacina BCG]",
+              "Calcule risco relativo (RR) com escalc()",
+              "Conduza meta-análise de efeitos aleatórios com rma()",
+              "Gere forest plot e funnel plot",
+              "Calcule heterogeneidade (Q, I², τ²) e teste de Egger"
+            ],
+            gabarito: "Pacote metafor é o padrão atual (gratuito). Documentação em https://www.metafor-project.org/. Forest plot mostra tamanhos individuais + síntese. Funnel plot avalia simetria (publication bias)."
+          }
+        ]
+      },
+      {
+        id: "a3",
+        titulo: "Topic modeling computacional",
+        nivel: "avancado",
+        objetivos: [
+          "Compreender a lógica do LDA (Latent Dirichlet Allocation)",
+          "Pré-processar corpus para análise topical",
+          "Validar tópicos qualitativamente"
+        ],
+        leitura: [
+          "Blei, D. M., Ng, A. Y. & Jordan, M. I. (2003). Latent Dirichlet Allocation. JMLR",
+          "Hannigan, T. R. et al. (2019). Topic modeling in management research. AOM Annals",
+          "Kobayashi, V. B. et al. (2018). Text classification for organizational researchers. ORM"
+        ],
+        atividades: [
+          {
+            tipo: "exercicio",
+            nivel: "avancado",
+            enunciado: "Conduza topic modeling em R no seu corpus:",
+            itens: [
+              "Pacote: topicmodels ou stm",
+              "Pré-processamento: tokenização, stopwords, lemmatização",
+              "Escolha K (número de tópicos) por perplexity ou coherence score",
+              "Rode LDA",
+              "Valide tópicos qualitativamente (top words por tópico fazem sentido?)"
+            ],
+            gabarito: "K mal escolhido gera tópicos sem sentido. Sempre validar qualitativamente após o algoritmo. Cite: Hannigan et al. (2019) — topic modeling em management requer validação humana, não é automation."
+          }
+        ]
+      },
+      {
+        id: "a4",
+        titulo: "Frameworks de business — TCCM, SPAR-4-SLR e ADO",
+        nivel: "intermediario",
+        objetivos: [
+          "Aplicar TCCM para organizar revisão temática",
+          "Seguir SPAR-4-SLR como protocolo de SLR em business",
+          "Construir cadeia ADO para apresentar achados"
+        ],
+        leitura: [
+          "Paul, J. & Rosado-Serrano, A. (2019). Gradual Internationalization vs Born-Global. International Marketing Review (TCCM)",
+          "Paul, J. et al. (2021). Scientific procedures and rationales for systematic literature reviews (SPAR-4-SLR). IJCS",
+          "Paul, J. & Benito, G. R. G. (2018). A review of research on outward FDI from emerging countries. APBR (ADO)"
+        ],
+        atividades: [
+          {
+            tipo: "exercicio",
+            nivel: "intermediario",
+            enunciado: "Para uma SLR fictícia sobre \"engajamento de funcionários em trabalho híbrido\", aplique:",
+            itens: [
+              "TCCM: liste 3 teorias usadas, 3 contextos, 3 características de população, 3 métodos",
+              "SPAR-4-SLR: descreva os 6 sub-passos com decisões justificadas",
+              "ADO: organize 3 antecedentes, 3 decisões e 3 outcomes da literatura"
+            ],
+            gabarito: "TCCM exemplo: Teorias (JD-R, social exchange, conservation of resources). Contextos (knowledge workers, retail, healthcare). SPAR-4-SLR: Identification (problema), Acquisition (busca), Organization (extração), Purification (filtragem), Evaluation (síntese), Reporting (PRISMA). ADO: Antecedentes (cultura, tecnologia, autonomia), Decisões (políticas de hibridização), Outcomes (engajamento, performance, retenção)."
+          },
+          {
+            tipo: "estudo-caso",
+            nivel: "avancado",
+            real: true,
+            referencia: "Lim, W. M., Yap, S. F. & Makkar, M. (2021). Home sharing in marketing and tourism at a tipping point. JBR, 125, 534–566.",
+            enunciado: "Modelo de aplicação combinada dos 3 frameworks. Reproduza a estrutura para o seu tema:",
+            itens: [
+              "Use SPAR-4-SLR para descrever seu protocolo metodológico",
+              "Use TCCM para organizar a apresentação dos achados",
+              "Use ADO para apresentar a discussão como cadeia causal"
+            ],
+            gabarito: "Atividade integradora. Discutir com orientador a integração dos 3."
+          }
+        ]
+      }
+    ]
+  }
+};
+
+// Exporta para uso global no HTML
+
+window.guideData = guideData;
+</script>
+<script>
+(function() {
+  'use strict';
+
+  const STORAGE_KEY = guideData.meta.storageKey;
+  const container = document.getElementById('trilhas-container');
+
+  // ============== STATE ==============
+  // Estrutura: { 'trilhaId-moduloId-atividadeIdx-itemIdx': true, ... }
+  let progress = {};
+  try {
+    const stored = localStorage.getItem(STORAGE_KEY);
+    if (stored) progress = JSON.parse(stored);
+  } catch(e) { progress = {}; }
+
+  function saveProgress() {
+    try { localStorage.setItem(STORAGE_KEY, JSON.stringify(progress)); }
+    catch(e) { /* silently fail */ }
+  }
+
+  // ============== HELPERS ==============
+  function el(tag, cls, html) {
+    const e = document.createElement(tag);
+    if (cls) e.className = cls;
+    if (html !== undefined) e.innerHTML = html;
+    return e;
+  }
+
+  function nivelLabel(nivel) {
+    return ({
+      'iniciante': 'Iniciante',
+      'intermediario': 'Intermediário',
+      'avancado': 'Avançado',
+      'todos': 'Todos os níveis',
+      'iniciante-a-avancado': 'Iniciante → Avançado',
+      'intermediario-a-avancado': 'Intermediário → Avançado'
+    })[nivel] || nivel;
+  }
+
+  function nivelClass(nivel) {
+    if (nivel.startsWith('iniciante')) return 'iniciante';
+    if (nivel.startsWith('intermediario')) return 'intermediario';
+    if (nivel === 'avancado') return 'avancado';
+    return 'todos';
+  }
+
+  // ============== RENDER ==============
+  function renderItem(itemKey, text) {
+    const li = el('li', 'checkable-item' + (progress[itemKey] ? ' done' : ''));
+    li.dataset.key = itemKey;
+    const cb = el('span', 'checkbox');
+    const tx = el('span', 'checkable-text', text);
+    li.appendChild(cb);
+    li.appendChild(tx);
+    li.addEventListener('click', () => toggleItem(itemKey, li));
+    return li;
+  }
+
+  function toggleItem(key, liElement) {
+    const novoEstado = !progress[key];
+    if (novoEstado) progress[key] = true;
+    else delete progress[key];
+    liElement.classList.toggle('done', novoEstado);
+    saveProgress();
+    updateAllProgress();
+  }
+
+  function renderAtividade(atv, baseKey, idx) {
+    const tipo = atv.tipo;
+    const wrap = el('div', 'atividade ' + tipo);
+
+    const header = el('div', 'atividade-header');
+    const tipoTag = el('span', 'atividade-tipo',
+      tipo === 'exercicio' ? '⚔ Exercício' :
+      tipo === 'estudo-caso' ? (atv.real ? '◈ Estudo de caso (real)' : '◈ Estudo de caso (cenário)') :
+      '✦ Checklist'
+    );
+    header.appendChild(tipoTag);
+    if (atv.nivel) {
+      const nivT = el('span', 'nivel-tag ' + nivelClass(atv.nivel), nivelLabel(atv.nivel));
+      header.appendChild(nivT);
+    }
+    wrap.appendChild(header);
+
+    if (atv.referencia) {
+      const ref = el('div', 'atividade-referencia', '📚 ' + atv.referencia);
+      wrap.appendChild(ref);
+    }
+
+    const enun = el('div', 'atividade-enunciado', atv.enunciado);
+    wrap.appendChild(enun);
+
+    // Lista de items (checkboxes)
+    if (atv.itens && atv.itens.length > 0) {
+      const ul = el('ul', 'checkable-list');
+      atv.itens.forEach((item, i) => {
+        const itemKey = baseKey + '-atv' + idx + '-it' + i;
+        ul.appendChild(renderItem(itemKey, item));
+      });
+      wrap.appendChild(ul);
+    }
+
+    // Gabarito (toggle)
+    if (atv.gabarito) {
+      const btn = el('button', 'gabarito-toggle', '✧ Revelar gabarito');
+      const gab = el('div', 'gabarito');
+      const gabT = el('div', 'gabarito-titulo', 'Gabarito');
+      gab.appendChild(gabT);
+      const gabC = el('div', 'gabarito-content');
+      if (Array.isArray(atv.gabarito)) {
+        const ul = el('ul');
+        atv.gabarito.forEach(g => ul.appendChild(el('li', null, g)));
+        gabC.appendChild(ul);
+      } else {
+        gabC.appendChild(el('p', null, atv.gabarito));
+      }
+      gab.appendChild(gabC);
+      btn.addEventListener('click', () => {
+        const visible = gab.classList.toggle('visible');
+        btn.textContent = visible ? '✧ Ocultar gabarito' : '✧ Revelar gabarito';
+      });
+      wrap.appendChild(btn);
+      wrap.appendChild(gab);
+    }
+
+    return wrap;
+  }
+
+  function renderModulo(mod, trilhaId) {
+    const baseKey = trilhaId + '-' + mod.id;
+    const moduloEl = el('div', 'modulo');
+    moduloEl.dataset.basekey = baseKey;
+
+    // Header (clicável para abrir/fechar)
+    const header = el('div', 'modulo-header');
+    const toggle = el('span', 'modulo-toggle', '▸');
+    header.appendChild(toggle);
+
+    const titWrap = el('div', 'modulo-titulo-wrap');
+    const tit = el('div', 'modulo-titulo', mod.titulo);
+    titWrap.appendChild(tit);
+    const meta = el('div', 'modulo-meta');
+    const nivT = el('span', 'nivel-tag ' + nivelClass(mod.nivel), nivelLabel(mod.nivel));
+    meta.appendChild(nivT);
+    const progMini = el('span', 'modulo-progresso-mini');
+    progMini.dataset.basekey = baseKey;
+    meta.appendChild(progMini);
+    titWrap.appendChild(meta);
+    header.appendChild(titWrap);
+    moduloEl.appendChild(header);
+
+    header.addEventListener('click', () => moduloEl.classList.toggle('aberto'));
+
+    // Body
+    const body = el('div', 'modulo-body');
+    const content = el('div', 'modulo-content');
+
+    // Objetivos
+    if (mod.objetivos && mod.objetivos.length > 0) {
+      const sec = el('div', 'secao');
+      sec.appendChild(el('div', 'secao-titulo', 'Objetivos de aprendizagem'));
+      const ul = el('ul');
+      mod.objetivos.forEach(o => ul.appendChild(el('li', null, o)));
+      sec.appendChild(ul);
+      content.appendChild(sec);
+    }
+
+    // Leitura
+    if (mod.leitura && mod.leitura.length > 0) {
+      const sec = el('div', 'secao');
+      sec.appendChild(el('div', 'secao-titulo', 'Leitura sugerida'));
+      const ul = el('ul', 'leitura');
+      mod.leitura.forEach(l => ul.appendChild(el('li', null, l)));
+      sec.appendChild(ul);
+      content.appendChild(sec);
+    }
+
+    // Atividades
+    if (mod.atividades && mod.atividades.length > 0) {
+      const sec = el('div', 'secao');
+      sec.appendChild(el('div', 'secao-titulo', 'Atividades'));
+      mod.atividades.forEach((atv, i) => {
+        sec.appendChild(renderAtividade(atv, baseKey, i));
+      });
+      content.appendChild(sec);
+    }
+
+    body.appendChild(content);
+    moduloEl.appendChild(body);
+
+    return moduloEl;
+  }
+
+  function renderTrilha(t) {
+    const trilhaEl = el('div', 'trilha');
+    trilhaEl.id = t.id;
+
+    const header = el('div', 'trilha-header');
+    const rune = el('div', 'trilha-rune', t.icone);
+    header.appendChild(rune);
+
+    const info = el('div', 'trilha-info');
+    info.appendChild(el('div', 'trilha-eyebrow', 'Trilha · ' + nivelLabel(t.nivel)));
+    info.appendChild(el('div', 'trilha-name', t.nome));
+    info.appendChild(el('div', 'trilha-desc', t.descricao));
+    header.appendChild(info);
+
+    const prog = el('div', 'trilha-progress');
+    const progNum = el('div', 'trilha-progress-num');
+    progNum.dataset.trilha = t.id;
+    progNum.textContent = '0%';
+    prog.appendChild(progNum);
+    prog.appendChild(el('div', 'trilha-progress-label', 'concluído'));
+    header.appendChild(prog);
+
+    trilhaEl.appendChild(header);
+
+    t.modulos.forEach(mod => {
+      trilhaEl.appendChild(renderModulo(mod, t.id));
+    });
+
+    return trilhaEl;
+  }
+
+  // ============== UPDATE PROGRESS ==============
+  function countItems() {
+    let total = 0;
+    [guideData.trilhaI, guideData.trilhaII, guideData.trilhaIII].forEach(t => {
+      t.modulos.forEach(mod => {
+        if (mod.atividades) {
+          mod.atividades.forEach(atv => {
+            if (atv.itens) total += atv.itens.length;
+          });
+        }
+      });
+    });
+    return total;
+  }
+
+  function countDone(trilhaPrefix) {
+    let total = 0, done = 0;
+    [guideData.trilhaI, guideData.trilhaII, guideData.trilhaIII].forEach(t => {
+      if (trilhaPrefix && t.id !== trilhaPrefix) return;
+      t.modulos.forEach(mod => {
+        if (mod.atividades) {
+          mod.atividades.forEach((atv, i) => {
+            if (atv.itens) {
+              atv.itens.forEach((_, j) => {
+                total++;
+                const key = t.id + '-' + mod.id + '-atv' + i + '-it' + j;
+                if (progress[key]) done++;
+              });
+            }
+          });
+        }
+      });
+    });
+    return { total, done };
+  }
+
+  function countModuloItems(baseKey) {
+    let total = 0, done = 0;
+    [guideData.trilhaI, guideData.trilhaII, guideData.trilhaIII].forEach(t => {
+      t.modulos.forEach(mod => {
+        const mbk = t.id + '-' + mod.id;
+        if (mbk !== baseKey) return;
+        if (mod.atividades) {
+          mod.atividades.forEach((atv, i) => {
+            if (atv.itens) {
+              atv.itens.forEach((_, j) => {
+                total++;
+                const key = mbk + '-atv' + i + '-it' + j;
+                if (progress[key]) done++;
+              });
+            }
+          });
+        }
+      });
+    });
+    return { total, done };
+  }
+
+  function updateAllProgress() {
+    // Global
+    const globalCount = countDone();
+    const globalPct = globalCount.total > 0 ? Math.round((globalCount.done / globalCount.total) * 100) : 0;
+    document.getElementById('progressGlobal').style.width = globalPct + '%';
+    document.getElementById('progressNum').textContent = globalCount.done;
+    document.getElementById('progressTotal').textContent = globalCount.total;
+
+    // Por trilha
+    document.querySelectorAll('.trilha-progress-num').forEach(elem => {
+      const tid = elem.dataset.trilha;
+      const c = countDone(tid);
+      const pct = c.total > 0 ? Math.round((c.done / c.total) * 100) : 0;
+      elem.textContent = pct + '%';
+    });
+
+    // Por módulo
+    document.querySelectorAll('.modulo-progresso-mini').forEach(elem => {
+      const bk = elem.dataset.basekey;
+      const c = countModuloItems(bk);
+      elem.textContent = c.done + '/' + c.total + ' itens';
+    });
+  }
+
+  // ============== RESET ==============
+  window.resetProgress = function() {
+    if (!confirm('Tem certeza que deseja reiniciar todo o progresso? Esta ação não pode ser desfeita.')) return;
+    progress = {};
+    saveProgress();
+    document.querySelectorAll('.checkable-item').forEach(li => li.classList.remove('done'));
+    document.querySelectorAll('.gabarito').forEach(g => g.classList.remove('visible'));
+    document.querySelectorAll('.gabarito-toggle').forEach(b => b.textContent = '✧ Revelar gabarito');
+    updateAllProgress();
+  };
+
+  // ============== INIT ==============
+  function init() {
+    [guideData.trilhaI, guideData.trilhaII, guideData.trilhaIII].forEach(t => {
+      container.appendChild(renderTrilha(t));
+    });
+    updateAllProgress();
+
+    // Abre primeiro módulo da Trilha I por padrão
+    const firstModulo = container.querySelector('.modulo');
+    if (firstModulo) firstModulo.classList.add('aberto');
+  }
+
+  init();
+})();
+</script>
+</body>
+</html>
