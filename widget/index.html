@@ -105,9 +105,13 @@
   /* Grid de cartões */
   .cards {
     display: grid;
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: repeat(3, 1fr);
     gap: 18px;
     margin-bottom: 32px;
+  }
+
+  @media (max-width: 800px) {
+    .cards { grid-template-columns: repeat(2, 1fr); }
   }
 
   @media (max-width: 600px) {
@@ -285,9 +289,9 @@
     <a class="card" href="slides.pdf" target="_blank" rel="noopener">
       <div class="card-icon">📊</div>
       <div class="card-title">Apresentação</div>
-      <div class="card-format">PDF · 38 slides</div>
+      <div class="card-format">PDF · 62 slides</div>
       <div class="card-description">
-        Aula completa em formato apresentação, no estilo MTPQI. Abre direto no navegador, com zoom e busca.
+        Aula completa em formato apresentação, no estilo MTPQI. Inclui slides com referências exemplares para cada abordagem.
       </div>
       <div class="card-action">Ver online</div>
     </a>
@@ -302,6 +306,16 @@
       <div class="card-action">Baixar .docx</div>
     </a>
 
+    <a class="card" href="guia/">
+      <div class="card-icon">📖</div>
+      <div class="card-title">Guia de Estudo</div>
+      <div class="card-format">Interativo · 154 itens · Trilhas por nível</div>
+      <div class="card-description">
+        Trilha estruturada do iniciante ao avançado: exercícios com gabarito, estudos de caso reais, checklists de autoavaliação. Progresso salvo no navegador.
+      </div>
+      <div class="card-action">Começar a trilha</div>
+    </a>
+
   </div>
 
   <div class="usage">
@@ -310,6 +324,7 @@
       <li>📚 <strong>Antes da aula:</strong> leia o texto-base com foco na tabela comparativa.</li>
       <li>🎓 <strong>Em sala:</strong> acompanhe pela apresentação em PDF.</li>
       <li>🌳 <strong>Atividade prática:</strong> use a árvore de decisão pensando na sua pesquisa.</li>
+      <li>📖 <strong>Estudo guiado:</strong> percorra o guia interativo no seu ritmo, com exercícios e checklists.</li>
       <li>🔁 <strong>Depois:</strong> volte ao texto-base sempre que precisar consultar uma abordagem específica.</li>
     </ul>
   </div>
