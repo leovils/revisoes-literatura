@@ -50,6 +50,32 @@ R (topicmodels, stm), Python (gensim, sklearn), MALLET.
 
 LDA aplicado a 10.000 abstracts de pesquisa em sustentabilidade revelando 12 tópicos latentes não capturados pelas keywords.
 
+## Exemplos publicados
+
+### Exemplo 1
+
+Blei, D. M., Ng, A. Y., & Jordan, M. I. (2003). Latent Dirichlet Allocation. *Journal of Machine Learning Research*, 3, 993–1022.
+
+**Ranking:** Top journal de ML, paper fundador
+
+**Por que é exemplar:** Paper que definiu LDA. Mais de 60 mil citações. Tecnicamente denso, mas leitura essencial para quem vai aplicar topic modeling com seriedade.
+
+### Exemplo 2
+
+Hannigan, T. R., Haans, R. F. J., Vakili, K., Tchalian, H., Glaser, V. L., Wang, M. S., Kaplan, S., & Jennings, P. D. (2019). Topic modeling in management research: Rendering new theory from textual data. *Academy of Management Annals*, 13(2), 586–632.
+
+**Ranking:** ABS 4* · Qualis A1
+
+**Por que é exemplar:** Paper definitivo sobre topic modeling em management. Em AOM Annals, top journal de revisões. Mostra como gerar **teoria** (não só descrição) a partir de modelos de tópicos. Aborda LDA e variantes (STM, dynamic topic models).
+
+### Exemplo 3
+
+Kobayashi, V. B., Mol, S. T., Berkers, H. A., Kismihók, G., & Den Hartog, D. N. (2018). Text classification for organizational researchers: A tutorial. *Organizational Research Methods*, 21(3), 766–799.
+
+**Ranking:** ABS 4 · Qualis A1
+
+**Por que é exemplar:** Tutorial operacional em ORM. Cobre não só topic modeling mas todo o pipeline de NLP em management research (preprocessing, classification, evaluation). Excelente para mestrandos quererem fazer "à mão" sem caixa-preta.
+
 ## Referência metodológica chave
 
 Blei, D. M., Ng, A. Y., & Jordan, M. I. (2003). Latent Dirichlet Allocation. Journal of Machine Learning Research, 3, 993–1022.

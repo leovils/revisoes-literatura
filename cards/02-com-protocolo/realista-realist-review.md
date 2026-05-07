@@ -46,6 +46,32 @@ NVivo, MAXQDA, planilhas para mapeamento C-M-R.
 
 Revisão realista sobre programas de mentoria executiva: o que funciona, para quem e em que contexto?
 
+## Exemplos publicados
+
+### Exemplo 1
+
+Pawson, R., Greenhalgh, T., Harvey, G., & Walshe, K. (2005). Realist review—a new method of systematic review designed for complex policy interventions. *Journal of Health Services Research & Policy*, 10(suppl 1), 21–34.
+
+**Ranking:** Qualis A1 (saúde, leitura obrigatória)
+
+**Por que é exemplar:** Paper fundador do método. Explica a lógica Context-Mechanism-Outcome (CMO) e por que SLRs convencionais falham em intervenções complexas. Mais de 5 mil citações.
+
+### Exemplo 2
+
+Wong, G., Greenhalgh, T., Westhorp, G., Buckingham, J., & Pawson, R. (2013). RAMESES publication standards: Realist syntheses. *BMC Medicine*, 11, 21.
+
+**Ranking:** Qualis A1
+
+**Por que é exemplar:** Guideline de reporte oficial para realist reviews. Equivalente ao PRISMA, mas específico para o método realista. Padrão exigido em journals que publicam o método.
+
+### Exemplo 3
+
+Saridakis, G., Lai, Y., & Cooper, C. L. (2017). Exploring the relationship between HRM and firm performance: A meta-analysis of longitudinal studies. *Human Resource Management Review*, 27(1), 87–96.
+
+**Ranking:** ABS 3 · Qualis A1
+
+**Por que é exemplar:** Embora seja meta-análise, exemplifica a lógica realista de "contextos em que o efeito se sustenta vs. desaparece". Mostra como aplicar pensamento Context-Mechanism em management. Alternativa para quem busca aplicação fora da saúde.
+
 ## Referência metodológica chave
 
 Pawson, R., Greenhalgh, T., Harvey, G., & Walshe, K. (2005). Realist review—a new method of systematic review designed for complex policy interventions. Journal of Health Services Research & Policy, 10(1_suppl), 21–34.

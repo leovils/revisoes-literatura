@@ -55,6 +55,32 @@ R (metafor, meta), CMA, Stata, RevMan, jamovi/JASP.
 
 Meta-análise sobre o efeito da liderança transformacional na satisfação no trabalho, agregando 80 estudos com k=78.000 respondentes.
 
+## Exemplos publicados
+
+### Exemplo 1
+
+Borenstein, M., Hedges, L. V., Higgins, J. P. T., & Rothstein, H. R. (2009). *Introduction to meta-analysis.* Chichester: Wiley.
+
+**Ranking:** Livro canônico
+
+**Por que é exemplar:** Tratado de referência para meta-análise. Cobre fixed/random effects, forest plots, heterogeneidade, publication bias. Acompanhamento natural do software Comprehensive Meta-Analysis (CMA).
+
+### Exemplo 2
+
+Hunter, J. E., & Schmidt, F. L. (2004). *Methods of meta-analysis: Correcting error and bias in research findings.* Thousand Oaks: Sage.
+
+**Ranking:** Livro canônico em management
+
+**Por que é exemplar:** Tradição **psychometric meta-analysis**, dominante em management e psicologia organizacional. Diferente de Borenstein (Hedges-Olkin) — corrige artefatos psicométricos (sampling error, measurement error). Padrão em journals como JAP, AMJ.
+
+### Exemplo 3
+
+Combs, J. G., Crook, T. R., & Rauch, A. (2019). Meta-analytic research in management: Contemporary approaches, unresolved controversies, and rising standards. *Journal of Management Studies*, 56(1), 1–18.
+
+**Ranking:** ABS 4 · Qualis A1
+
+**Por que é exemplar:** Editorial recente que mapeia controvérsias atuais (qual estimador usar, como lidar com publication bias, MASEM). Estado da arte da meta-análise em management. Útil para o aluno saber o que reviewers cobram.
+
 ## Referência metodológica chave
 
 Borenstein, M., Hedges, L. V., Higgins, J. P., & Rothstein, H. R. (2009). Introduction to Meta-Analysis. Wiley. | Hunter, J. E., & Schmidt, F. L. (2004). Methods of Meta-Analysis. Sage.

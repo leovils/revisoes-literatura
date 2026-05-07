@@ -47,6 +47,32 @@ NVivo, MAXQDA, Atlas.ti.
 
 Meta-síntese de estudos qualitativos sobre a experiência de empreendedoras mulheres em ambientes masculinizados.
 
+## Exemplos publicados
+
+### Exemplo 1
+
+Sandelowski, M., & Barroso, J. (2007). *Handbook for synthesizing qualitative research.* New York: Springer Publishing.
+
+**Ranking:** Livro canônico
+
+**Por que é exemplar:** Tratado fundador da meta-síntese qualitativa rigorosa. Define os 7 passos do método (que viraram referência em saúde, educação e management), incluindo meta-summary como etapa intermediária. Leitura obrigatória antes de qualquer meta-síntese séria.
+
+### Exemplo 2
+
+Hoon, C. (2013). Meta-synthesis of qualitative case studies: An approach to theory building. *Organizational Research Methods*, 16(4), 522–556.
+
+**Ranking:** ABS 4 · Qualis A1
+
+**Por que é exemplar:** Adapta a meta-síntese para o contexto de management — especificamente para sintetizar **estudos de caso qualitativos**. Em ORM, top journal de método. Modelo do que faz a meta-síntese ser publicável em management e contribuir para construção teórica.
+
+### Exemplo 3
+
+Thorne, S., Jensen, L., Kearney, M. H., Noblit, G., & Sandelowski, M. (2004). Qualitative metasynthesis: Reflections on methodological orientation and ideological agenda. *Qualitative Health Research*, 14(10), 1342–1365.
+
+**Ranking:** Qualis A1
+
+**Por que é exemplar:** Reflexão dos pioneiros sobre tensões metodológicas: até que ponto sintetizar achados qualitativos não destrói o contexto que os tornava significativos? Útil para o aluno entender as armadilhas filosóficas antes de embarcar no método.
+
 ## Referência metodológica chave
 
 Sandelowski, M., & Barroso, J. (2007). Handbook for Synthesizing Qualitative Research. Springer.

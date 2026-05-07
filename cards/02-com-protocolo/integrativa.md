@@ -46,6 +46,32 @@ NVivo, MAXQDA, Atlas.ti, Mendeley, Excel para extração.
 
 Revisão integrativa sobre cultura organizacional em projetos híbridos, integrando estudos de caso, surveys e ensaios teóricos.
 
+## Exemplos publicados
+
+### Exemplo 1
+
+Elsbach, K. D., & van Knippenberg, D. (2020). Creating high-impact literature reviews: An argument for 'integrative reviews'. *Journal of Management Studies*, 57(6), 1277–1289.
+
+**Ranking:** ABS 4 · Qualis A1
+
+**Por que é exemplar:** Editores experientes de top journals defendem por que a integrativa é o tipo de revisão de maior impacto em management. Define o método e mostra exemplos publicados na AOM Annals.
+
+### Exemplo 2
+
+Cronin, M. A., & George, E. (2023). The why and how of the integrative review. *Organizational Research Methods*, 26(1), 168–192.
+
+**Ranking:** ABS 4 · Qualis A1
+
+**Por que é exemplar:** Guia operacional mais recente e detalhado. Explica decisões metodológicas com exemplos. Atualiza Torraco (2005) para os padrões atuais de management.
+
+### Exemplo 3
+
+Alvesson, M., & Sandberg, J. (2020). The problematizing review: A counterpoint to Elsbach and Van Knippenberg's argument for integrative reviews. *Journal of Management Studies*, 57(6), 1290–1304.
+
+**Ranking:** ABS 4 · Qualis A1
+
+**Por que é exemplar:** Contraponto valioso. Argumenta que integrar literatura existente raramente gera knowledge novo — é melhor "problematizar" assumptions. Excelente para discussão crítica em aula sobre as duas posturas.
+
 ## Referência metodológica chave
 
 Whittemore, R., & Knafl, K. (2005). The integrative review: updated methodology. Journal of Advanced Nursing, 52(5), 546–553. | Torraco, R. J. (2005). Human Resource Development Review, 4(3), 356–367.

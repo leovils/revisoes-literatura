@@ -49,6 +49,40 @@ VOSviewer, CiteSpace, Bibliometrix (R), Gephi, BibExcel, Biblioshiny.
 
 Bibliometria sobre 30 anos de pesquisa em comportamento do consumidor, usando 5.000 artigos do Scopus e VOSviewer.
 
+## Exemplos publicados
+
+### Exemplo 1
+
+Donthu, N., Kumar, S., Mukherjee, D., Pandey, N., & Lim, W. M. (2021). How to conduct a bibliometric analysis: An overview and guidelines. *Journal of Business Research*, 133, 285–296.
+
+**Ranking:** ABS 3 · Qualis A1
+
+**Por que é exemplar:** O guia operacional mais citado em business para bibliometria. Define quando usar vs. SLR vs. meta-análise, lista técnicas e ferramentas (VOSviewer, Gephi, Bibliometrix R), e fornece guidelines passo a passo. Mais de 12 mil citações em 4 anos.
+
+### Exemplo 2
+
+Zupic, I., & Čater, T. (2015). Bibliometric methods in management and organization. *Organizational Research Methods*, 18(3), 429–472.
+
+**Ranking:** ABS 4 · Qualis A1
+
+**Por que é exemplar:** Paper canônico em ORM (top journal de método). Introduz as 5 técnicas bibliométricas (citação, cocitação, acoplamento, coautoria, coword) e propõe workflow padrão. Demonstra tudo aplicado à própria ORM.
+
+### Exemplo 3
+
+Quevedo-Silva, F., Almeida Santos, E. B., Brandão, M. M., & Vils, L. (2016). Estudo bibliométrico: Orientações sobre sua aplicação. *ReMark — Revista Brasileira de Marketing*, 15(2), 246–262.
+
+**Ranking:** Qualis A4 (atual)
+
+**Por que é exemplar:** Guia em português voltado especificamente para mestrandos brasileiros. Apresenta as características da pesquisa bibliométrica e benefícios de sua utilização através de exemplo didático (priming e propaganda). Acessível, com terminologia adaptada à comunidade brasileira de marketing e administração.
+
+### Exemplo 4
+
+Mukherjee, D., Lim, W. M., Kumar, S., & Donthu, N. (2022). Guidelines for advancing theory and practice through bibliometric research. *Journal of Business Research*, 148, 101–115.
+
+**Ranking:** ABS 3 · Qualis A1
+
+**Por que é exemplar:** Continuação do Donthu et al. (2021), focada em como gerar contribuição teórica a partir da bibliometria. Crítica recorrente é que estudos bibliométricos são apenas descritivos — esse paper mostra como ir além.
+
 ## Referência metodológica chave
 
 Donthu, N., Kumar, S., Mukherjee, D., Pandey, N., & Lim, W. M. (2021). How to conduct a bibliometric analysis: An overview and guidelines. Journal of Business Research, 133, 285–296. | Zupic, I., & Čater, T. (2015). Bibliometric methods in management and organization. Organizational Research Methods, 18(3), 429–472.

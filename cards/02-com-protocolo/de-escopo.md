@@ -49,6 +49,32 @@ Rayyan, Covidence, planilhas para charting, NVivo, MAXQDA.
 
 Revisão de escopo sobre métodos de pesquisa usados em estudos de comportamento do consumidor com IA generativa.
 
+## Exemplos publicados
+
+### Exemplo 1
+
+Arksey, H., & O'Malley, L. (2005). Scoping studies: Towards a methodological framework. *International Journal of Social Research Methodology*, 8(1), 19–32.
+
+**Ranking:** ABS 2 · Qualis A2
+
+**Por que é exemplar:** Paper seminal da metodologia. Define os 5 estágios canônicos (mais 1 opcional) que viraram a referência mundial para scoping reviews. Mais de 25 mil citações.
+
+### Exemplo 2
+
+Tricco, A. C., Lillie, E., Zarin, W., O'Brien, K. K., Colquhoun, H., Levac, D., et al. (2018). PRISMA Extension for Scoping Reviews (PRISMA-ScR): Checklist and explanation. *Annals of Internal Medicine*, 169(7), 467–473.
+
+**Ranking:** Qualis A1 (medicina, com adoção universal)
+
+**Por que é exemplar:** É a guideline de reporte que journals top em management estão começando a exigir. Não é específico de business, mas é o padrão atual de qualidade.
+
+### Exemplo 3
+
+Pham, M. T., Rajić, A., Greig, J. D., Sargeant, J. M., Papadopoulos, A., & McEwen, S. A. (2014). A scoping review of scoping reviews: Advancing the approach and enhancing the consistency. *Research Synthesis Methods*, 5(4), 371–385.
+
+**Ranking:** ABS 2 · Qualis A1
+
+**Por que é exemplar:** Mostra como o método amadureceu e onde está em 2014. Útil para o aluno entender a evolução e variabilidade na qualidade dos scoping reviews publicados.
+
 ## Referência metodológica chave
 
 Arksey, H., & O'Malley, L. (2005). International Journal of Social Research Methodology, 8(1), 19–32. | Tricco, A. C., et al. (2018). PRISMA-ScR. Annals of Internal Medicine, 169(7), 467–473.

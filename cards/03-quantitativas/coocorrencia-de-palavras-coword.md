@@ -45,6 +45,24 @@ VOSviewer, CiteSpace, Bibliometrix.
 
 Coocorrência de keywords em 1.200 artigos sobre "digital marketing" mostrando emergência de "AI", "chatbot" e "voice search" após 2020.
 
+## Exemplos publicados
+
+### Exemplo 1
+
+Callon, M., Courtial, J. P., & Laville, F. (1991). Co-word analysis as a tool for describing the network of interactions between basic and technological research: The case of polymer chemistry. *Scientometrics*, 22(1), 155–205.
+
+**Ranking:** Paper fundador
+
+**Por que é exemplar:** Paper canônico que define o método. Introduz "strategic diagram" (centralidade × densidade) para identificar temas motor, periféricos, emergentes e em declínio. Base de toda análise de coword publicada depois.
+
+### Exemplo 2
+
+Cobo, M. J., López-Herrera, A. G., Herrera-Viedma, E., & Herrera, F. (2011). An approach for detecting, quantifying, and visualizing the evolution of a research field: A practical application to the Fuzzy Sets Theory field. *Journal of Informetrics*, 5(1), 146–166.
+
+**Ranking:** Qualis A1
+
+**Por que é exemplar:** Atualiza o método para mostrar **evolução longitudinal** (não só snapshot). Apresenta o software SciMAT (gratuito) e demonstra com aplicação real. Padrão atual para coword com componente temporal.
+
 ## Referência metodológica chave
 
 Callon, M., Courtial, J. P., & Laville, F. (1991). Co-word analysis as a tool for describing the network of interactions between basic and technological research. Scientometrics, 22(1), 155–205.

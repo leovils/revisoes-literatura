@@ -44,6 +44,24 @@ Bases de dados (Web of Science, Scopus), gerenciador de referências.
 
 Estado da arte sobre algoritmos de recomendação e vulnerabilidade do consumidor entre 2018 e 2024.
 
+## Exemplos publicados
+
+### Exemplo 1
+
+Donthu, N., Kumar, S., Mukherjee, D., Pandey, N., & Lim, W. M. (2021). How to conduct a bibliometric analysis: An overview and guidelines. *Journal of Business Research*, 133, 285–296.
+
+**Ranking:** ABS 3 · Qualis A1
+
+**Por que é exemplar:** Estado da arte da bibliometria em business até 2021 — sintetiza guidelines, exemplifica e propõe templates. Mais de 5 mil citações em 4 anos. Modelo claro de "onde estamos, para onde vamos".
+
+### Exemplo 2
+
+Kunisch, S., Denyer, D., Bartunek, J. M., Menz, M., & Cardinal, L. B. (2023). Review research as scientific inquiry. *Organizational Research Methods*, 26(1), 3–45.
+
+**Ranking:** ABS 4 · Qualis A1
+
+**Por que é exemplar:** Estado da arte sobre reviews em management — feito por editores experientes. Mostra estado atual do campo, identifica gaps. Modelo de "qual a fronteira do conhecimento agora".
+
 ## Referência metodológica chave
 
 Snyder, H. (2019). Literature review as a research methodology: An overview and guidelines. Journal of Business Research, 104, 333–339.

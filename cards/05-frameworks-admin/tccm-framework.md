@@ -47,6 +47,32 @@ Excel, Mendeley/Zotero, NVivo opcional.
 
 Revisão TCCM sobre internacionalização de PMEs em mercados emergentes, mapeando 200 artigos.
 
+## Exemplos publicados
+
+### Exemplo 1
+
+Paul, J., & Rosado-Serrano, A. (2019). Gradual internationalization vs born-global/international new venture models: A review and research agenda. *International Marketing Review*, 36(6), 830–858.
+
+**Ranking:** ABS 3 · Qualis A1
+
+**Por que é exemplar:** Paper fundador do TCCM. Define explicitamente as quatro dimensões (Theory, Context, Characteristics, Methodology) como estrutura para revisões em management, e demonstra com aplicação a internacionalização. Usado como referência metodológica em milhares de revisões publicadas desde 2019.
+
+### Exemplo 2
+
+Mandler, T., Sezen, B., Chen, J., & Özsomer, A. (2021). Performance consequences of marketing standardization/adaptation: A systematic literature review and future research agenda. *Journal of Business Research*, 125, 416–435.
+
+**Ranking:** ABS 3 · Qualis A1
+
+**Por que é exemplar:** Aplicação canônica do TCCM em marketing internacional. O artigo inteiro é estruturado pelas quatro dimensões. Modelo limpo para o aluno copiar a estrutura — desde a tabela de teorias até a agenda de pesquisa por dimensão.
+
+### Exemplo 3
+
+Kahiya, E. T. (2018). Five decades of research on export barriers: Review and future directions. *International Business Review*, 27(6), 1172–1188.
+
+**Ranking:** ABS 3 · Qualis A1
+
+**Por que é exemplar:** Revisão sistemática de cinco décadas usando estrutura framework-based em IB. Referenciada por Paul e Rosado-Serrano como exemplar do tipo de revisão que o TCCM padroniza. Útil para mostrar como o framework funciona em retrospectivas longas.
+
 ## Referência metodológica chave
 
 Paul, J., & Rosado-Serrano, A. (2019). Gradual internationalization vs born-global/international new venture models: A review and research agenda. International Marketing Review, 36(6), 830–858. | Paul, J., & Criado, A. R. (2020). The art of writing literature review. International Business Review, 29(4), 101717.

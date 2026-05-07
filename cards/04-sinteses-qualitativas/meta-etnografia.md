@@ -47,6 +47,32 @@ NVivo, MAXQDA.
 
 Meta-etnografia sobre identidade profissional de jovens executivos em ambientes corporativos disruptivos.
 
+## Exemplos publicados
+
+### Exemplo 1
+
+Noblit, G. W., & Hare, R. D. (1988). *Meta-ethnography: Synthesizing qualitative studies.* Newbury Park: Sage.
+
+**Ranking:** Livro fundador
+
+**Por que é exemplar:** Obra fundadora do método. Define os 7 passos canônicos de Noblit e Hare e os conceitos centrais de **tradução recíproca**, **tradução refutacional** e **linha de argumento**. Toda meta-etnografia publicada depois cita esse livro.
+
+### Exemplo 2
+
+France, E. F., Cunningham, M., Ring, N., Uny, I., Duncan, E. A. S., Jepson, R. G., et al. (2019). Improving reporting of meta-ethnography: The eMERGe reporting guidance. *BMC Medical Research Methodology*, 19, 25.
+
+**Ranking:** Qualis A1
+
+**Por que é exemplar:** Guideline de reporte oficial (eMERGe) — equivalente ao PRISMA, mas específico para meta-etnografia. Padrão atual exigido por journals que publicam o método. Inclui 19 itens de reporte cobrindo todos os 7 passos.
+
+### Exemplo 3
+
+Britten, N., Campbell, R., Pope, C., Donovan, J., Morgan, M., & Pill, R. (2002). Using meta-ethnography to synthesise qualitative research: A worked example. *Journal of Health Services Research & Policy*, 7(4), 209–215.
+
+**Ranking:** Qualis A1
+
+**Por que é exemplar:** Primeiro "worked example" influente do método aplicado fora da educação. Mostra passo a passo como Noblit e Hare funciona na prática com estudos sobre uso de medicação. Modelo didático para mestrandos copiarem a estrutura.
+
 ## Referência metodológica chave
 
 Noblit, G. W., & Hare, R. D. (1988). Meta-Ethnography: Synthesizing Qualitative Studies. Sage. | France, E. F., et al. (2019). Improving reporting of meta-ethnography: The eMERGe reporting guidance. BMC Medical Research Methodology, 19(1), 25.

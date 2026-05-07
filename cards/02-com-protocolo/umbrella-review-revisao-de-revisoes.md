@@ -46,6 +46,32 @@ Rayyan, AMSTAR-2 checklist, Excel.
 
 Umbrella review sintetizando meta-análises sobre o efeito da diversidade de gênero em conselhos sobre desempenho empresarial.
 
+## Exemplos publicados
+
+### Exemplo 1
+
+Aromataris, E., Fernandez, R., Godfrey, C. M., Holly, C., Khalil, H., & Tungpunkom, P. (2015). Summarizing systematic reviews: Methodological development, conduct and reporting of an umbrella review approach. *International Journal of Evidence-Based Healthcare*, 13(3), 132–140.
+
+**Ranking:** Qualis A2
+
+**Por que é exemplar:** Paper canônico do JBI (Joanna Briggs Institute) que define o método de umbrella review. Explica o que distingue UR de meta-análise e de SLR.
+
+### Exemplo 2
+
+Sarkis-Onofre, R., Catalá-López, F., Aromataris, E., & Lockwood, C. (2021). How to properly use the PRISMA Statement. *Systematic Reviews*, 10, 117.
+
+**Ranking:** Qualis A1
+
+**Por que é exemplar:** Mostra como reportar umbrella reviews seguindo os padrões PRIOR (Preferred Reporting Items for Overviews of Reviews) — específico para review of reviews. Complementa o anterior.
+
+### Exemplo 3
+
+Pollock, M., Fernandes, R. M., Pieper, D., Tricco, A. C., Gates, M., Gates, A., & Hartling, L. (2019). Preferred Reporting Items for Overviews of Reviews (PRIOR): A protocol for development of a reporting guideline for overviews of reviews of healthcare interventions. *Systematic Reviews*, 8, 335.
+
+**Ranking:** Qualis A1
+
+**Por que é exemplar:** Protocolo da guideline PRIOR (em desenvolvimento ativo). Útil para o aluno saber qual é o padrão emergente de reporte para umbrella reviews. Embora original em saúde, é o padrão sendo adotado em management também.
+
 ## Referência metodológica chave
 
 Aromataris, E., et al. (2015). Summarizing systematic reviews: methodological development, conduct and reporting of an umbrella review approach. International Journal of Evidence-Based Healthcare, 13(3), 132–140.

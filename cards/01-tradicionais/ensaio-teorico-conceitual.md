@@ -45,6 +45,32 @@ Word, Mendeley/Zotero. Ferramentas de modelagem (Lucidchart, draw.io) para frame
 
 Ensaio propondo o construto de "vulnerabilidade algorítmica" articulando teoria do consumidor, ética e ciência de dados.
 
+## Exemplos publicados
+
+### Exemplo 1
+
+Whetten, D. A. (1989). What constitutes a theoretical contribution? *Academy of Management Review*, 14(4), 490–495.
+
+**Ranking:** ABS 4* · Qualis A1
+
+**Por que é exemplar:** Não é apenas um ensaio — é o ensaio que define o que conta como contribuição teórica em management. Curto (5 páginas), denso, com mais de 7 mil citações. Modelo do que um ensaio teórico bem feito pode causar.
+
+### Exemplo 2
+
+Suddaby, R. (2010). Construct clarity in theories of management and organization. *Academy of Management Review*, 35(3), 346–357.
+
+**Ranking:** ABS 4* · Qualis A1
+
+**Por que é exemplar:** Ensaio editorial sobre como definir construtos teóricos com precisão — argumento conceitual, sem dados empíricos, mas com impacto prático grande na forma como artigos são avaliados.
+
+### Exemplo 3
+
+Cornelissen, J. (2017). Editor's comments: Developing propositions, a process model, or a typology? Addressing the challenges of writing theory without a boilerplate. *Academy of Management Review*, 42(1), 1–9.
+
+**Ranking:** ABS 4* · Qualis A1
+
+**Por que é exemplar:** Mostra três formatos típicos de ensaio teórico em management — proposições, modelo de processo, tipologia. Útil para o aluno escolher a estrutura do próprio ensaio.
+
 ## Referência metodológica chave
 
 Whetten, D. A. (1989). What constitutes a theoretical contribution? Academy of Management Review, 14(4), 490–495.
