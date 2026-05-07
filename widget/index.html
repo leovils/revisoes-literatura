@@ -3,7 +3,8 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Árvore de Decisão — Família das Revisões de Literatura | MTPQI</title>
+<title>Família das Revisões de Literatura | MTPQI · UNINOVE</title>
+<meta name="description" content="Material didático sobre 24 abordagens de revisão de literatura em ciências sociais aplicadas. Curso MTPQI · PPGA/UNINOVE.">
 <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=EB+Garamond:ital,wght@0,400;0,500;1,400&display=swap" rel="stylesheet">
 <style>
   * { box-sizing: border-box; margin: 0; padding: 0; }
@@ -13,833 +14,266 @@
     color: #F5F0E1;
     font-family: 'EB Garamond', Garamond, serif;
     min-height: 100vh;
-    line-height: 1.5;
+    line-height: 1.55;
   }
 
   body {
     background: radial-gradient(ellipse at top, #15152B 0%, #050511 70%);
-    padding: 28px 16px 48px;
+    padding: 32px 16px 48px;
   }
 
-  #mtpqi-app {
+  .container {
     max-width: 920px;
     margin: 0 auto;
     background: #0F0F1E;
-    padding: 36px 32px 32px;
+    padding: 48px 40px 40px;
     border-radius: 8px;
     border: 1px solid rgba(212, 175, 55, 0.3);
-    position: relative;
-    box-shadow: 0 24px 60px rgba(0, 0, 0, 0.6);
-  }
-
-  #mtpqi-app::before {
-    content: "";
-    position: absolute;
-    top: 0; left: 0; right: 0;
-    height: 2px;
-    background: linear-gradient(90deg, transparent 0%, #D4AF37 30%, #D4AF37 70%, transparent 100%);
-  }
-
-  .header {
-    text-align: center;
-    margin-bottom: 28px;
-    padding-bottom: 22px;
-    border-bottom: 1px solid rgba(212, 175, 55, 0.25);
+    box-shadow: 0 0 50px rgba(0,0,0,0.5);
   }
 
   .ornament {
+    text-align: center;
     color: #D4AF37;
-    font-family: 'Cinzel', serif;
-    font-size: 16px;
-    letter-spacing: 8px;
-    margin-bottom: 10px;
+    font-size: 14px;
+    letter-spacing: 12px;
+    margin-bottom: 18px;
+    user-select: none;
   }
 
-  .h-title {
+  .header { text-align: center; margin-bottom: 8px; }
+
+  .title-eyebrow {
+    font-family: 'Cinzel', serif;
+    color: #D4AF37;
+    font-size: 13px;
+    letter-spacing: 4px;
+    text-transform: uppercase;
+    margin-bottom: 14px;
+  }
+
+  h1 {
     font-family: 'Cinzel', serif;
     font-weight: 700;
-    font-size: 26px;
-    color: #D4AF37;
-    letter-spacing: 4px;
+    color: #E8B86F;
+    font-size: clamp(28px, 5vw, 44px);
+    line-height: 1.15;
+    margin-bottom: 18px;
+    letter-spacing: 1px;
+  }
+
+  .divider {
+    display: block;
+    width: 80px;
+    height: 1px;
+    background: #D4AF37;
+    margin: 24px auto;
+    position: relative;
+  }
+  .divider::before, .divider::after {
+    content: '';
+    position: absolute;
+    width: 6px; height: 6px;
+    background: #D4AF37;
+    border-radius: 50%;
+    top: -2.5px;
+  }
+  .divider::before { left: -10px; }
+  .divider::after { right: -10px; }
+
+  .subtitle {
+    text-align: center;
+    font-style: italic;
+    color: #E8DCC4;
+    font-size: 18px;
+    max-width: 620px;
+    margin: 0 auto 8px;
+  }
+
+  .meta {
+    text-align: center;
+    font-family: 'Cinzel', serif;
+    color: #C99B30;
+    font-size: 12px;
+    letter-spacing: 3px;
+    margin-top: 14px;
+    margin-bottom: 40px;
+  }
+
+  .cards {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 18px;
+    margin-bottom: 32px;
+  }
+
+  @media (max-width: 600px) {
+    .cards { grid-template-columns: 1fr; }
+    .container { padding: 32px 22px 28px; }
+  }
+
+  .card {
+    background: #16162A;
+    border: 1px solid rgba(212, 175, 55, 0.25);
+    border-radius: 6px;
+    padding: 26px 22px;
+    text-decoration: none;
+    color: inherit;
+    display: flex;
+    flex-direction: column;
+    transition: all 0.2s ease;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .card:hover {
+    border-color: #D4AF37;
+    background: #1A1A30;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(212, 175, 55, 0.15);
+  }
+
+  .card-icon {
+    font-size: 32px;
+    margin-bottom: 14px;
+    line-height: 1;
+  }
+
+  .card-title {
+    font-family: 'Cinzel', serif;
+    color: #E8B86F;
+    font-size: 17px;
+    font-weight: 600;
+    letter-spacing: 1.5px;
     text-transform: uppercase;
     margin-bottom: 6px;
   }
 
-  .h-sub {
-    font-style: italic;
-    color: #A8A39A;
-    font-size: 15px;
-  }
-
-  .step-label {
+  .card-format {
     font-family: 'Cinzel', serif;
-    font-size: 11px;
-    color: #C99B30;
-    letter-spacing: 4px;
+    color: #8A7B4A;
+    font-size: 10px;
+    letter-spacing: 2px;
     text-transform: uppercase;
-    margin-bottom: 8px;
-    text-align: center;
+    margin-bottom: 12px;
   }
 
-  .question {
-    font-family: 'Cinzel', serif;
-    font-size: 21px;
-    font-weight: 600;
-    color: #F5F0E1;
-    line-height: 1.4;
-    margin-bottom: 24px;
-    text-align: center;
-    letter-spacing: 1px;
-  }
-
-  .options {
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
-    max-width: 760px;
-    margin: 0 auto;
-  }
-
-  .opt-btn {
-    background: #242440;
-    border: 1px solid rgba(212, 175, 55, 0.4);
-    color: #F5F0E1;
-    padding: 15px 20px;
-    font-family: 'EB Garamond', Garamond, serif;
+  .card-description {
+    color: #E8DCC4;
     font-size: 15px;
-    text-align: left;
-    cursor: pointer;
-    border-radius: 4px;
-    transition: all 0.2s ease;
-    line-height: 1.45;
-    display: flex;
-    align-items: flex-start;
-    gap: 14px;
+    flex-grow: 1;
+    margin-bottom: 14px;
   }
 
-  .opt-btn:hover {
-    border-color: #D4AF37;
-    background: #2D2D52;
-    transform: translateX(4px);
-    box-shadow: 0 4px 16px rgba(212, 175, 55, 0.15);
-  }
-
-  .opt-btn .marker {
+  .card-action {
     color: #D4AF37;
-    font-family: 'Cinzel', serif;
-    font-weight: 700;
-    flex-shrink: 0;
-    margin-top: 1px;
+    font-style: italic;
     font-size: 14px;
-    letter-spacing: 1px;
+    margin-top: auto;
   }
 
-  .breadcrumb {
-    text-align: center;
-    margin-bottom: 18px;
-    font-size: 12px;
-    color: #A8A39A;
-    font-style: italic;
+  .card-action::after {
+    content: ' →';
+    font-style: normal;
   }
 
-  .breadcrumb span {
-    color: #C99B30;
+  .card-featured {
+    grid-column: 1 / -1;
+    background: linear-gradient(135deg, #1A1A30 0%, #16162A 100%);
+    border-color: rgba(212, 175, 55, 0.5);
   }
 
-  .nav {
-    margin-top: 28px;
-    text-align: center;
-    padding-top: 18px;
-    border-top: 1px solid rgba(212, 175, 55, 0.15);
-  }
-
-  .nav-btn {
-    background: transparent;
-    border: 1px solid rgba(212, 175, 55, 0.4);
-    color: #C99B30;
-    padding: 9px 22px;
-    font-family: 'Cinzel', serif;
-    font-size: 11px;
-    letter-spacing: 3px;
-    text-transform: uppercase;
-    cursor: pointer;
-    border-radius: 3px;
-    margin: 0 6px;
-    transition: all 0.2s;
-  }
-
-  .nav-btn:hover {
-    border-color: #D4AF37;
-    color: #D4AF37;
-    background: rgba(212, 175, 55, 0.08);
-  }
-
-  /* Result */
-  .result-card {
-    background: linear-gradient(180deg, #1A1A2E 0%, #242440 100%);
-    border: 1px solid #D4AF37;
-    border-radius: 6px;
-    padding: 28px 26px;
-    margin: 6px auto 0;
-    max-width: 800px;
-    position: relative;
-  }
-
-  .result-card::before {
-    content: "◊";
-    position: absolute;
-    top: -15px;
-    left: 50%;
-    transform: translateX(-50%);
-    color: #D4AF37;
-    background: #0F0F1E;
-    padding: 0 14px;
+  .card-featured .card-title {
     font-size: 20px;
   }
 
-  .result-tag {
-    font-family: 'Cinzel', serif;
-    font-size: 10px;
-    color: #C99B30;
-    letter-spacing: 4px;
-    text-transform: uppercase;
-    text-align: center;
-    margin-bottom: 8px;
-  }
-
-  .result-name {
-    font-family: 'Cinzel', serif;
-    font-size: 28px;
-    font-weight: 700;
-    color: #D4AF37;
-    text-align: center;
-    margin-bottom: 4px;
-    letter-spacing: 2px;
-  }
-
-  .result-family {
-    text-align: center;
-    color: #A8A39A;
-    font-size: 12px;
-    font-style: italic;
-    margin-bottom: 18px;
-  }
-
-  .result-divider {
-    width: 70px;
-    height: 1px;
-    background: #D4AF37;
-    margin: 0 auto 18px;
-  }
-
-  .result-def {
+  .usage {
+    background: #0A0A18;
+    border-left: 3px solid #D4AF37;
+    padding: 20px 22px;
+    margin: 32px 0 28px;
+    font-size: 15px;
     color: #E8DCC4;
-    font-size: 16px;
-    line-height: 1.55;
-    margin-bottom: 22px;
-    text-align: center;
-    font-style: italic;
-    padding: 0 8px;
   }
 
-  .result-grid {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 20px;
-    margin-bottom: 18px;
-  }
-
-  @media (max-width: 640px) {
-    .result-grid { grid-template-columns: 1fr; }
-    .h-title { font-size: 20px; }
-    .question { font-size: 18px; }
-    .result-name { font-size: 22px; }
-    #mtpqi-app { padding: 24px 18px; }
-  }
-
-  .result-block h4 {
+  .usage-title {
     font-family: 'Cinzel', serif;
-    font-size: 11px;
+    color: #C99B30;
+    font-size: 12px;
     letter-spacing: 3px;
     text-transform: uppercase;
     margin-bottom: 10px;
-    font-weight: 700;
   }
 
-  .result-block ul {
+  .usage ul {
     list-style: none;
     padding: 0;
-    margin: 0;
   }
 
-  .result-block li {
-    font-size: 13.5px;
-    color: #F5F0E1;
-    padding: 5px 0 5px 22px;
-    position: relative;
-    line-height: 1.45;
+  .usage li {
+    padding: 4px 0;
   }
 
-  .result-block.use h4 { color: #7AA050; }
-  .result-block.use li::before { content: "✓"; position: absolute; left: 0; color: #7AA050; font-weight: 700; }
-
-  .result-block.avoid h4 { color: #C97851; }
-  .result-block.avoid li::before { content: "✗"; position: absolute; left: 0; color: #C97851; font-weight: 700; }
-
-  .result-bottom {
-    background: rgba(15, 15, 30, 0.55);
-    border: 1px solid rgba(212, 175, 55, 0.25);
-    border-radius: 4px;
-    padding: 14px 18px;
-    margin-bottom: 14px;
+  .usage strong {
+    color: #E8B86F;
+    font-weight: 600;
   }
 
-  .result-bottom h4 {
+  .footer {
+    text-align: center;
+    padding-top: 28px;
+    border-top: 1px solid rgba(212, 175, 55, 0.2);
+    color: #8A7B4A;
+    font-size: 12px;
     font-family: 'Cinzel', serif;
-    font-size: 10px;
-    letter-spacing: 3px;
-    text-transform: uppercase;
-    color: #C99B30;
-    margin-bottom: 6px;
-  }
-
-  .result-bottom p {
-    color: #E8DCC4;
-    font-size: 13.5px;
-    line-height: 1.5;
-  }
-
-  .result-tip {
-    background: rgba(184, 97, 45, 0.12);
-    border-left: 3px solid #C97851;
-    padding: 12px 16px;
-    border-radius: 3px;
-    margin-bottom: 14px;
-  }
-
-  .result-tip strong {
-    color: #C97851;
-    font-family: 'Cinzel', serif;
-    font-size: 11px;
     letter-spacing: 2px;
-    text-transform: uppercase;
-    display: block;
+  }
+
+  .footer-name {
+    color: #C99B30;
     margin-bottom: 4px;
   }
 
-  .result-tip p {
-    color: #E8DCC4;
-    font-size: 13.5px;
-    line-height: 1.5;
-  }
-
-  .combos {
-    text-align: center;
-    color: #A8A39A;
-    font-size: 13px;
+  .footer-cite {
+    margin-top: 14px;
+    font-family: 'EB Garamond', serif;
     font-style: italic;
-    padding: 8px 0;
-    line-height: 1.45;
-  }
-
-  .combos strong {
-    color: #C99B30;
-    font-style: normal;
-    font-family: 'Cinzel', serif;
-    letter-spacing: 2px;
-    font-size: 11px;
-    text-transform: uppercase;
-  }
-
-  /* Start screen */
-  .start-cta {
-    text-align: center;
-    padding: 30px 20px 16px;
-  }
-
-  .start-title {
-    font-family: 'Cinzel', serif;
-    font-size: 30px;
-    font-weight: 700;
-    color: #D4AF37;
-    margin-bottom: 14px;
-    letter-spacing: 5px;
-  }
-
-  .start-subtitle {
-    color: #E8DCC4;
-    font-size: 16px;
-    line-height: 1.55;
-    max-width: 620px;
-    margin: 0 auto 28px;
-    font-style: italic;
-  }
-
-  .start-btn {
-    background: #D4AF37;
-    color: #0F0F1E;
-    border: none;
-    padding: 15px 40px;
-    font-family: 'Cinzel', serif;
-    font-size: 13px;
-    font-weight: 700;
-    letter-spacing: 5px;
-    text-transform: uppercase;
-    cursor: pointer;
-    border-radius: 3px;
-    transition: all 0.2s;
-  }
-
-  .start-btn:hover {
-    background: #E8B86F;
-    transform: translateY(-2px);
-    box-shadow: 0 6px 20px rgba(212, 175, 55, 0.35);
-  }
-
-  .footer-note {
-    text-align: center;
-    margin-top: 28px;
-    padding-top: 20px;
-    border-top: 1px solid rgba(212, 175, 55, 0.15);
-    color: #A8A39A;
-    font-size: 11px;
-    font-style: italic;
-    letter-spacing: 1px;
-  }
-
-  .footer-note .branding {
-    color: #C99B30;
-    font-family: 'Cinzel', serif;
-    letter-spacing: 3px;
-    font-style: normal;
-    text-transform: uppercase;
+    font-size: 12px;
+    color: #6E6240;
+    letter-spacing: 0;
+    text-transform: none;
+    line-height: 1.4;
   }
 </style>
 </head>
 <body>
-<div id="mtpqi-app">
-  <div id="content"></div>
-</div>
 
-<script>
-(function() {
-  // ===== DADOS DAS ABORDAGENS =====
-  const APPS = {
-    sistematica: { name: "Revisão Sistemática (SLR)", family: "Com Protocolo",
-      def: "Revisão com protocolo explícito, replicável e transparente, para responder uma pergunta de pesquisa específica minimizando viés.",
-      use: ["Pergunta confirmatória sobre efeito de X em Y", "Há corpo de evidência suficiente", "Para subsidiar decisão (evidence-based)"],
-      avoid: ["Para mapear campo emergente (use escopo)", "Quando a literatura é heterogênea demais"],
-      tools: "Rayyan, Covidence, EPPI-Reviewer; bases WoS, Scopus, EBSCO. Reportar conforme PRISMA 2020.",
-      tip: "Triagem por dois revisores cegos com kappa de Cohen é o padrão. Strings de busca pobres geram corpus enviesado.",
-      combo: "Costuma vir junto com Meta-análise (síntese estatística) e/ou Bibliometria (mapa do campo)."
-    },
-    metaanalise: { name: "Meta-análise", family: "Quantitativa/Computacional",
-      def: "Síntese estatística que combina múltiplos estudos quantitativos para estimar o tamanho de efeito agregado, com IC e teste de heterogeneidade.",
-      use: ["Vários estudos quantitativos sobre a mesma relação", "Quer estimar tamanho de efeito médio", "Quer testar moderadores"],
-      avoid: ["Estudos metodologicamente incomparáveis", "Sínteses qualitativas (use meta-síntese)"],
-      tools: "R (metafor, meta), CMA, Stata, RevMan, jamovi/JASP. Reportar conforme MARS (APA).",
-      tip: "Modelo de efeitos aleatórios é padrão em ciências sociais. Sempre reportar I², τ², funnel plot e teste de Egger.",
-      combo: "Construída sobre uma Revisão Sistemática (SLR) — primeiro o protocolo, depois a estatística."
-    },
-    escopo: { name: "Revisão de Escopo (Scoping)", family: "Com Protocolo",
-      def: "Mapeia a extensão, alcance e natureza de uma literatura. Foco em \"o que existe\" e \"como tem sido estudado\", não em \"o que funciona\".",
-      use: ["Pergunta ampla — \"o que se sabe sobre X?\"", "Campos emergentes ou heterogêneos", "Para identificar gaps antes de uma SLR"],
-      avoid: ["Quando a pergunta é confirmatória (use SLR)", "Quando se quer estimar efeito (use meta-análise)"],
-      tools: "Rayyan, Covidence, planilhas para charting. Reportar conforme PRISMA-ScR.",
-      tip: "Não há avaliação de qualidade dos estudos — não confunda com SLR. Charting estruturado é o passo central.",
-      combo: "Frequentemente usada como mapeamento inicial antes de uma SLR ou Meta-análise."
-    },
-    integrativa: { name: "Revisão Integrativa", family: "Com Protocolo",
-      def: "Integra estudos com diferentes desenhos (qualis, quantis e teóricos) em uma síntese única. Mais flexível que a SLR clássica.",
-      use: ["Literatura combina quali + quanti + teóricos", "Construir framework integrador", "Tema interdisciplinar"],
-      avoid: ["Literatura predominantemente quanti homogênea (use meta-análise)", "Pergunta estritamente confirmatória (use SLR)"],
-      tools: "NVivo, MAXQDA, Atlas.ti, Mendeley, Excel para extração.",
-      tip: "Critérios de qualidade devem ser compatíveis com cada tipo de estudo — quali e quanti não usam o mesmo instrumento.",
-      combo: "Pode combinar com TCCM ou ADO para estruturar a apresentação dos achados."
-    },
-    realista: { name: "Revisão Realista (Realist Review)", family: "Com Protocolo",
-      def: "Orientada à teoria, busca explicar \"o que funciona, para quem, em que circunstâncias e por quê\" pela lógica Contexto–Mecanismo–Resultado (C-M-O).",
-      use: ["Intervenções complexas (programas, políticas)", "Quando o efeito depende fortemente do contexto", "Para informar desenho de intervenções"],
-      avoid: ["Perguntas de eficácia descontextualizada (use SLR)", "Mapeamento descritivo (use escopo)"],
-      tools: "NVivo, MAXQDA, planilhas para C-M-O. Reportar conforme RAMESES.",
-      tip: "Comece com uma Teoria Inicial do Programa (ITP) e refine iterativamente com a evidência. Triangule fontes diversas.",
-      combo: "Independente — mas pode complementar com Síntese Temática se houver muitos estudos qualitativos."
-    },
-    umbrella: { name: "Umbrella Review", family: "Com Protocolo",
-      def: "Sintetiza múltiplas SLRs e meta-análises sobre o mesmo tópico. Útil quando o campo já acumulou muitas revisões.",
-      use: ["Existem várias SLRs/meta-análises sobre o tema", "Para mapear convergências e divergências", "Para subsidiar guidelines"],
-      avoid: ["Quando o campo ainda não acumulou SLRs", "Para perguntas com poucos estudos primários"],
-      tools: "Rayyan, AMSTAR-2 checklist, Excel. Reportar conforme PRIOR.",
-      tip: "Lide com sobreposição de estudos primários (corrected covered area – CCA) e avalie qualidade das revisões com AMSTAR-2.",
-      combo: "Independente — é a síntese de mais alto nível."
-    },
-    rapida: { name: "Revisão Rápida (Rapid Review)", family: "Com Protocolo",
-      def: "Adapta o método sistemático para conclusão em prazo reduzido (semanas), abreviando alguns passos. Ganhou tração na pandemia.",
-      use: ["Há urgência decisória", "Para subsidiar relatórios de fomento ou consultoria", "Como pré-estudo de uma SLR completa"],
-      avoid: ["Quando há tempo para SLR completa", "Para journals top sem justificativa do trade-off"],
-      tools: "Rayyan, Covidence, Excel. Diretrizes do Cochrane Rapid Reviews Methods Group.",
-      tip: "Documente todos os atalhos tomados (1 base só? 1 revisor? Sem meta-análise?). Transparência total.",
-      combo: "Geralmente usada isolada, mas pode preceder uma SLR completa."
-    },
-    bibliometria: { name: "Bibliometria (Visão Geral)", family: "Quantitativa/Computacional",
-      def: "Análise quantitativa da produção científica usando metadados (autores, citações, keywords) para revelar a estrutura de um campo.",
-      use: ["Mapear estrutura de um campo (tradições, frentes, redes)", "Volume grande de literatura (centenas/milhares)", "Para subsidiar uma SLR"],
-      avoid: ["Para responder \"o que funciona\"", "Corpus pequeno (menos de 50 artigos)"],
-      tools: "VOSviewer, CiteSpace, Bibliometrix (R), Gephi, Biblioshiny.",
-      tip: "Use WoS + Scopus para cobertura. Limpeza criteriosa de nomes de autores é essencial — \"Smith, J.\" e \"Smith, J. A.\" precisam virar um.",
-      combo: "Combina cocitação (raízes) + acoplamento (frentes) + coword (conceitos) + coautoria (rede social)."
-    },
-    cocitacao: { name: "Cocitação", family: "Quantitativa/Computacional",
-      def: "Frequência com que pares de obras são citadas juntas. Revela a estrutura intelectual passada — as raízes teóricas do campo.",
-      use: ["Mapear tradições e \"escolas de pensamento\"", "Identificar obras-pilares", "Estudos histórico-conceituais"],
-      avoid: ["Para mapear pesquisa em curso (use acoplamento)", "Em campos muito jovens"],
-      tools: "VOSviewer, CiteSpace, Bibliometrix.",
-      tip: "Defina limiar mínimo de cocitação justificado e normalize com cosseno ou association strength.",
-      combo: "Geralmente usada com Acoplamento Bibliográfico (frentes atuais) — diagnóstico completo do campo."
-    },
-    acoplamento: { name: "Acoplamento Bibliográfico", family: "Quantitativa/Computacional",
-      def: "Mede a similaridade entre artigos pela quantidade de referências compartilhadas. Revela frentes de pesquisa atuais.",
-      use: ["Mapear frentes contemporâneas", "Identificar agrupamentos temáticos atuais", "Campos em transformação"],
-      avoid: ["Para estrutura intelectual histórica (use cocitação)"],
-      tools: "VOSviewer, CiteSpace, Bibliometrix.",
-      tip: "Não confunda com cocitação — acoplamento = frentes atuais; cocitação = raízes históricas.",
-      combo: "Combina muito bem com Cocitação para diagnóstico passado + presente do campo."
-    },
-    coautoria: { name: "Análise de Coautoria", family: "Quantitativa/Computacional",
-      def: "Analisa redes de colaboração entre autores, instituições ou países. Revela a estrutura social do campo.",
-      use: ["Mapear comunidades científicas", "Identificar autores centrais e brokers", "Estudos sobre internacionalização do campo"],
-      avoid: ["Para estrutura conceitual ou intelectual"],
-      tools: "VOSviewer, Gephi, UCINet, Bibliometrix.",
-      tip: "Calcule centralidade (grau, betweenness) e comunidades (algoritmo de Louvain). Desambigue nomes!",
-      combo: "Complementa cocitação/acoplamento na visão completa de bibliometria."
-    },
-    coword: { name: "Coocorrência de Palavras (Coword)", family: "Quantitativa/Computacional",
-      def: "Pares de keywords que aparecem juntos em artigos. Revela a estrutura conceitual do campo — temas e suas relações.",
-      use: ["Mapear estrutura conceitual e tópicos", "Identificar temas emergentes (com análise temporal)", "Complementar cocitação/acoplamento"],
-      avoid: ["Quando keywords são pobres ou inexistentes (use topic modeling)"],
-      tools: "VOSviewer, CiteSpace, Bibliometrix.",
-      tip: "Limpeza de keywords é crítica — sinonímia, plural, capitalização. Análise temporal (overlay) revela tendências.",
-      combo: "Combina com Topic Modeling (LDA) quando keywords são insuficientes."
-    },
-    topicmodeling: { name: "Topic Modeling (LDA)", family: "Quantitativa/Computacional",
-      def: "Aprendizado de máquina não supervisionado que descobre tópicos latentes em corpora textuais. LDA é a abordagem mais usada.",
-      use: ["Corpora muito grandes (milhares de docs)", "Quando keywords são insuficientes", "Para descobrir tópicos não previstos"],
-      avoid: ["Corpora pequenos (menos de 200)", "Sem competência mínima em R/Python"],
-      tools: "R (topicmodels, stm), Python (gensim), MALLET.",
-      tip: "K mal escolhido gera tópicos sem sentido — use perplexity e coherence score, e sempre valide qualitativamente.",
-      combo: "Combina com Bibliometria (Coword) para visão conceitual completa."
-    },
-    metasintese: { name: "Meta-síntese", family: "Síntese Qualitativa",
-      def: "Termo guarda-chuva para sínteses qualitativas que vão além da soma dos estudos primários, gerando interpretação de mais alto nível.",
-      use: ["Corpo significativo de estudos qualitativos", "Para construir teoria substantiva", "Em fenômenos complexos"],
-      avoid: ["Para evidência quantitativa (use meta-análise)", "Como mero somatório descritivo"],
-      tools: "NVivo, MAXQDA, Atlas.ti.",
-      tip: "Estratégia de síntese deve ser explícita — meta-etnografia, síntese temática ou outra. Reflexividade do pesquisador é central.",
-      combo: "Meta-etnografia ou Síntese Temática são suas duas variantes mais consolidadas."
-    },
-    metaetnografia: { name: "Meta-etnografia", family: "Síntese Qualitativa",
-      def: "Método de Noblit & Hare (1988) que sintetiza estudos qualitativos por translação recíproca de conceitos entre estudos.",
-      use: ["Sínteses interpretativas de estudos etnográficos ou afins", "Para gerar teoria substantiva nova", "Estudos do mesmo fenômeno por ângulos próximos"],
-      avoid: ["Corpus muito heterogêneo metodologicamente", "Quando o objetivo é descritivo (use síntese temática)"],
-      tools: "NVivo, MAXQDA. Reportar conforme eMERGe.",
-      tip: "São 7 passos formais — translação recíproca é o mais sofisticado. Não é mera codificação temática agregada.",
-      combo: "Independente — é a síntese qualitativa mais teoricamente sofisticada."
-    },
-    sintesetematica: { name: "Síntese Temática", family: "Síntese Qualitativa",
-      def: "Sintetiza estudos qualitativos por codificação temática indutiva em três etapas: livre, descritiva e analítica. Mais acessível que meta-etnografia.",
-      use: ["Sínteses qualitativas com método estruturado", "Estudos primários com formatos heterogêneos", "Campos aplicados (gestão, saúde, educação)"],
-      avoid: ["Quando se busca teoria substantiva nova (use meta-etnografia)", "Para evidência quantitativa"],
-      tools: "NVivo, MAXQDA, Atlas.ti.",
-      tip: "O salto descritivo→analítico exige reflexividade. Triangule codificadores. Não fique só no descritivo.",
-      combo: "Pode combinar com ADO para organizar achados em modelo Antecedentes-Decisões-Outcomes."
-    },
-    narrativa: { name: "Revisão Narrativa", family: "Tradicional",
-      def: "Síntese conduzida com critérios pessoais do autor, sem protocolo explícito. Útil para argumento livre e contextualização.",
-      use: ["Capítulos introdutórios de teses", "Panorama abrangente de campo amplo", "Conectar ideias em ensaios reflexivos"],
-      avoid: ["Quando se busca evidência cumulativa (use sistemática)", "Em journals top como única revisão"],
-      tools: "Word, gerenciador de referências (Mendeley, Zotero, EndNote).",
-      tip: "Cuidado com viés de confirmação — citar só o que reforça a tese é a armadilha mais comum.",
-      combo: "Geralmente isolada como capítulo de tese — não exige combinação."
-    },
-    critica: { name: "Revisão Crítica", family: "Tradicional",
-      def: "Avalia criticamente a qualidade conceitual e metodológica da literatura, posicionando-se argumentativamente. Não busca exaustividade.",
-      use: ["Para questionar pressupostos consolidados", "Para desestabilizar paradigma dominante", "Em artigos teóricos com novas lentes"],
-      avoid: ["Quando o objetivo é descritivo ou cumulativo", "Para sínteses quantitativas"],
-      tools: "Mendeley, Zotero, NVivo (codificação opcional).",
-      tip: "Crítica sem proposição construtiva é a armadilha. Após criticar, proponha um reposicionamento conceitual.",
-      combo: "Pode preceder um Ensaio Teórico-Conceitual quando o objetivo é construir teoria nova."
-    },
-    estadoarte: { name: "Estado da Arte", family: "Tradicional",
-      def: "Descreve o que se sabe e o que se faz hoje em um campo, com foco em contribuições recentes e tendências em curso.",
-      use: ["Posicionar leitor sobre fronteira atual", "Capítulos introdutórios sobre temas com produção recente intensa", "Relatórios técnicos"],
-      avoid: ["Para sínteses cumulativas (use SLR/meta-análise)", "Para mapear estrutura intelectual histórica (use cocitação)"],
-      tools: "Bases (WoS, Scopus), gerenciador de referências.",
-      tip: "Janela temporal de 5–10 anos é o padrão. Cuidado para não confundir tendência momentânea com consolidada.",
-      combo: "Pode preceder uma SLR ou Bibliometria para aprofundar."
-    },
-    ensaio: { name: "Ensaio Teórico-Conceitual", family: "Tradicional",
-      def: "Constrói argumento teórico original a partir do diálogo com a literatura, podendo propor construto, modelo ou framework.",
-      use: ["Propor novo construto ou framework", "Conectar teorias de campos distintos", "Reposicionar fenômeno sob nova lente"],
-      avoid: ["Para descrever uma área", "Para sintetizar evidência empírica"],
-      tools: "Word, Mendeley/Zotero, Lucidchart/draw.io para frameworks.",
-      tip: "Apresentar framework sem fundamentação teórica robusta é o erro fatal. Proposições devem ser falseáveis.",
-      combo: "Pode dialogar com Revisão Crítica como preparação argumentativa."
-    },
-    tccm: { name: "TCCM Framework", family: "Framework de Administração",
-      def: "Organiza a literatura em quatro dimensões: Theory, Context, Characteristics, Methodology. Útil para revisões temáticas em business.",
-      use: ["Revisões temáticas em business/marketing/IB", "Para organizar literatura em dimensões claras", "Para identificar gaps por dimensão"],
-      avoid: ["Para revisões em outras áreas (saúde, educação)", "Quando outro framework serve melhor (realista, escopo)"],
-      tools: "Excel, Mendeley/Zotero, NVivo opcional.",
-      tip: "Mapear superficialmente sem síntese é a armadilha. Cada dimensão precisa de leitura analítica e agenda futura.",
-      combo: "Combina com SPAR-4-SLR (procedimento) ou ADO (modelo causal)."
-    },
-    spar: { name: "SPAR-4-SLR Protocol", family: "Framework de Administração",
-      def: "Protocolo de Paul et al. (2021) específico para business: Assembling, Arranging, Assessing, com 6 sub-procedimentos.",
-      use: ["SLRs em business/marketing/management", "Quando se quer protocolo específico do campo", "Para journals de admin que pedem rigor"],
-      avoid: ["Para revisões fora de business", "Quando PRISMA ou JBI já bastam"],
-      tools: "Mendeley/Zotero, Excel, Rayyan, VOSviewer.",
-      tip: "São 6 sub-passos (Identification, Acquisition, Organization, Purification, Evaluation, Reporting). Justifique cada decisão.",
-      combo: "Combina com TCCM (apresentação dos achados) ou Bibliometria."
-    },
-    ado: { name: "ADO Framework", family: "Framework de Administração",
-      def: "Organiza revisões identificando Antecedentes (o que vem antes), Decisões (processos centrais) e Outcomes (resultados).",
-      use: ["Construir modelos integradores", "Revisões temáticas com construto central", "Como complemento ao TCCM"],
-      avoid: ["Quando o tema não envolve cadeia causal A→D→O", "Para mapeamento descritivo amplo"],
-      tools: "Excel, software de modelagem (draw.io, Lucidchart).",
-      tip: "Listar variáveis sem categorização teórica é a armadilha. Antecedentes não são apenas correlatos.",
-      combo: "Frequentemente combinado com TCCM (forma TCCM-ADO) ou Síntese Temática."
-    }
-  };
+<div class="container">
 
-  // ===== ÁRVORE DE PERGUNTAS =====
-  const QUESTIONS = {
-    start: {
-      step: "Início",
-      q: "Qual o objetivo principal da sua revisão?",
-      opts: [
-        { label: "Sintetizar evidência (testar relação X→Y, integrar achados, estimar efeitos)", next: "q_sintese" },
-        { label: "Mapear ou explorar um campo (estrutura intelectual, tendências, panorama)", next: "q_mapa" },
-        { label: "Argumentar ou propor teoria (ensaio, contextualização, crítica, framework)", next: "q_teoria" }
-      ]
-    },
-    q_sintese: {
-      step: "Síntese",
-      q: "Que tipo de evidência você quer sintetizar?",
-      opts: [
-        { label: "Estudos quantitativos comparáveis sobre a mesma relação X→Y (quero tamanho de efeito agregado)", result: "metaanalise" },
-        { label: "Pergunta confirmatória X→Y, mas evidência heterogênea demais para meta-análise", result: "sistematica" },
-        { label: "Mistura quali + quanti + estudos teóricos sobre o mesmo tema", result: "integrativa" },
-        { label: "Quero entender por que e em que contexto uma intervenção/programa funciona", result: "realista" },
-        { label: "Estudos qualitativos sobre o mesmo fenômeno (gerar interpretação de alto nível)", next: "q_quali" },
-        { label: "Já existem várias SLRs sobre meu tema (quero sintetizar revisões)", result: "umbrella" },
-        { label: "Preciso de resposta urgente em prazo curto (semanas)", result: "rapida" }
-      ]
-    },
-    q_quali: {
-      step: "Síntese Qualitativa",
-      q: "Que tipo de síntese qualitativa serve melhor?",
-      opts: [
-        { label: "Quero gerar teoria substantiva nova com translação recíproca de conceitos (sofisticado)", result: "metaetnografia" },
-        { label: "Quero método estruturado e replicável, com codificação descritiva → analítica (mais acessível)", result: "sintesetematica" },
-        { label: "Não sei qual escolher — quero ver o termo guarda-chuva", result: "metasintese" }
-      ]
-    },
-    q_mapa: {
-      step: "Mapeamento",
-      q: "Que tipo de mapa do campo você precisa?",
-      opts: [
-        { label: "Pergunta ampla — \"o que se sabe sobre X?\". Quero mapear extensão e tipos de evidência", result: "escopo" },
-        { label: "Volume grande de literatura — quero diagnóstico completo (estrutura intelectual + frentes + temas + redes)", result: "bibliometria" },
-        { label: "Especificamente: as RAÍZES intelectuais (tradições, escolas de pensamento)", result: "cocitacao" },
-        { label: "Especificamente: as FRENTES atuais (agrupamentos contemporâneos)", result: "acoplamento" },
-        { label: "Especificamente: a estrutura SOCIAL (quem colabora com quem, hubs)", result: "coautoria" },
-        { label: "Especificamente: a estrutura CONCEITUAL (temas e tendências por keyword)", result: "coword" },
-        { label: "Tópicos LATENTES em corpora textuais grandes (milhares de docs)", result: "topicmodeling" },
-        { label: "Atualização recente do campo (5–10 anos), com tendências em curso", result: "estadoarte" }
-      ]
-    },
-    q_teoria: {
-      step: "Argumento/Teoria",
-      q: "Qual o objetivo argumentativo?",
-      opts: [
-        { label: "Capítulo introdutório de tese — contextualização ampla sem pretensão de exaustividade", result: "narrativa" },
-        { label: "Questionar pressuposto/teoria dominante e propor reposicionamento", result: "critica" },
-        { label: "Propor construto, modelo ou framework teórico novo", result: "ensaio" },
-        { label: "Mostrar onde está a fronteira do campo hoje (atualização recente)", result: "estadoarte" },
-        { label: "Revisão em business/management — quero usar framework específico do campo", next: "q_admin" }
-      ]
-    },
-    q_admin: {
-      step: "Frameworks de Admin",
-      q: "Que tipo de framework de admin?",
-      opts: [
-        { label: "Quero organizar literatura em 4 dimensões (Teoria, Contexto, Características, Método)", result: "tccm" },
-        { label: "Quero protocolo estruturado para SLR específico de business (6 sub-passos)", result: "spar" },
-        { label: "Quero modelo causal: Antecedentes → Decisões → Outcomes", result: "ado" }
-      ]
-    }
-  };
+  <div class="ornament">◊ ◊ ◊</div>
 
-  const state = { screen: "start", currentQ: null, history: [], result: null };
+  <div class="header">
+    <div class="title-eyebrow">MTPQI · UNINOVE</div>
+    <h1>A Família das<br>Revisões de Literatura</h1>
+    <span class="divider"></span>
+    <p class="subtitle">
+      Vinte e quatro abordagens, cinco famílias, um caminho para escolher a sua —
+      guia operacional para mestrandos e doutorandos.
+    </p>
+    <div class="meta">PROF. DR. LEONARDO VILS · PPGA / PPGP</div>
+  </div>
 
-  function el(tag, cls, html) {
-    const e = document.createElement(tag);
-    if (cls) e.className = cls;
-    if (html !== undefined) e.innerHTML = html;
-    return e;
-  }
+  <div class="cards">
 
-  function render() {
-    const c = document.getElementById("content");
-    c.innerHTML = "";
+    <a class="card card-featured" href="arvore/">
+      <div class="card-icon">🌳</div>
+      <div class="card-title">Árvore de Decisão</div>
+      <div class="card-format">Widget interativo · 2 a 3 cliques</div>
+      <div class="card-description">
+        Responda algumas perguntas sobre sua pesquisa e descubra qual abordagem combina com seu objetivo.
+        Cada resposta vem com quando usar, ferramentas e armadilhas a evitar.
+      </div>
+      <div class="card-action">Iniciar a jornada</div>
+    </a>
 
-    const header = el("div", "header");
-    header.innerHTML = '<div class="ornament">◊ ◊ ◊</div><div class="h-title">Árvore de Decisão</div><div class="h-sub">Qual abordagem de revisão de literatura combina com sua pesquisa?</div>';
-    c.appendChild(header);
-
-    if (state.screen === "start") renderStart(c);
-    else if (state.screen === "question") renderQuestion(c);
-    else if (state.screen === "result") renderResult(c);
-
-    const footer = el("div", "footer-note");
-    footer.innerHTML = '<span class="branding">MTPQI</span> · Família das Revisões de Literatura · Prof. Leonardo Vils · UNINOVE';
-    c.appendChild(footer);
-  }
-
-  function renderStart(c) {
-    const wrap = el("div", "start-cta");
-    wrap.innerHTML = '<div class="start-title">Comece aqui</div><div class="start-subtitle">Responda 2 a 3 perguntas e o pergaminho indicará a abordagem mais adequada à sua pesquisa, com quando usar, software e armadilhas. São 19 abordagens possíveis.</div>';
-    const btn = el("button", "start-btn");
-    btn.textContent = "Iniciar";
-    btn.onclick = () => {
-      state.screen = "question";
-      state.currentQ = "start";
-      state.history = ["start"];
-      render();
-    };
-    wrap.appendChild(btn);
-    c.appendChild(wrap);
-  }
-
-  function renderQuestion(c) {
-    const Q = QUESTIONS[state.currentQ];
-    if (!Q) return;
-
-    if (state.history.length > 1) {
-      const bc = el("div", "breadcrumb");
-      bc.innerHTML = state.history.map(qid => `<span>${QUESTIONS[qid].step}</span>`).join(" ▸ ");
-      c.appendChild(bc);
-    }
-
-    const sl = el("div", "step-label");
-    sl.textContent = `Etapa · ${Q.step}`;
-    c.appendChild(sl);
-
-    const q = el("div", "question");
-    q.textContent = Q.q;
-    c.appendChild(q);
-
-    const opts = el("div", "options");
-    Q.opts.forEach((o, i) => {
-      const b = el("button", "opt-btn");
-      const marker = String.fromCharCode(65 + i);
-      b.innerHTML = `<span class="marker">${marker}</span><span>${o.label}</span>`;
-      b.onclick = () => {
-        if (o.next) {
-          state.currentQ = o.next;
-          state.history.push(o.next);
-          render();
-        } else if (o.result) {
-          state.result = o.result;
-          state.screen = "result";
-          render();
-        }
-      };
-      opts.appendChild(b);
-    });
-    c.appendChild(opts);
-
-    const nav = el("div", "nav");
-    if (state.history.length > 1) {
-      const back = el("button", "nav-btn");
-      back.textContent = "← Voltar";
-      back.onclick = () => {
-        state.history.pop();
-        state.currentQ = state.history[state.history.length - 1];
-        render();
-      };
-      nav.appendChild(back);
-    }
-    const reset = el("button", "nav-btn");
-    reset.textContent = "↻ Recomeçar";
-    reset.onclick = () => {
-      state.screen = "start";
-      state.history = [];
-      state.currentQ = null;
-      render();
-    };
-    nav.appendChild(reset);
-    c.appendChild(nav);
-  }
-
-  function renderResult(c) {
-    const a = APPS[state.result];
-    if (!a) return;
-
-    const card = el("div", "result-card");
-    card.appendChild(el("div", "result-tag", "abordagem recomendada"));
-    card.appendChild(el("div", "result-name", a.name));
-    card.appendChild(el("div", "result-family", `Família · ${a.family}`));
-    card.appendChild(el("div", "result-divider"));
-    card.appendChild(el("div", "result-def", a.def));
-
-    const grid = el("div", "result-grid");
-    const useBlock = el("div", "result-block use");
-    useBlock.innerHTML = "<h4>Quando usar</h4><ul>" + a.use.map(u => `<li>${u}</li>`).join("") + "</ul>";
-    grid.appendChild(useBlock);
-    const avoidBlock = el("div", "result-block avoid");
-    avoidBlock.innerHTML = "<h4>Quando NÃO usar</h4><ul>" + a.avoid.map(u => `<li>${u}</li>`).join("") + "</ul>";
-    grid.appendChild(avoidBlock);
-    card.appendChild(grid);
-
-    const tools = el("div", "result-bottom");
-    tools.innerHTML = `<h4>Ferramentas típicas</h4><p>${a.tools}</p>`;
-    card.appendChild(tools);
-
-    const tip = el("div", "result-tip");
-    tip.innerHTML = `<strong>⚠ Armadilha-chave</strong><p>${a.tip}</p>`;
-    card.appendChild(tip);
-
-    const combo = el("div", "combos");
-    combo.innerHTML = `<strong>Combinações:</strong> ${a.combo}`;
-    card.appendChild(combo);
-
-    c.appendChild(card);
-
-    const nav = el("div", "nav");
-    const back = el("button", "nav-btn");
-    back.textContent = "← Voltar";
-    back.onclick = () => {
-      state.screen = "question";
-      state.currentQ = state.history[state.history.length - 1];
-      render();
-    };
-    nav.appendChild(back);
-    const reset = el("button", "nav-btn");
-    reset.textContent = "↻ Recomeçar";
-    reset.onclick = () => {
-      state.screen = "start";
-      state.history = [];
-      state.currentQ = null;
-      state.result = null;
-      render();
-    };
-    nav.appendChild(reset);
-    c.appendChild(nav);
-  }
-
-  render();
-})();
-</script>
-</body>
-</html>
+    <a class="card" href="slides.pdf" target="_
